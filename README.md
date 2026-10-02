@@ -1,13 +1,6 @@
 # Hệ Thống Phân Tích Hành Vi Mua Sắm & Gợi Ý Sản Phẩm Mua Kèm
 ### (Market Basket Analysis & Real-time Product Recommendation System)
 
-> **Học phần:** Nhập môn Dữ liệu lớn (Big Data)  
-> **Trường Đại học Công Thương TP. Hồ Chí Minh (HUIT)**  
-> **Giảng viên hướng dẫn:** TS. Ngô Dương Hà  
-> **Nhóm thực hiện (Nhóm 11):**  
-> * Trần Thị Kim Ngân - MSSV: 2001230554  
-> * Lê Tuấn Hội - MSSV: 2001230278  
-
 ---
 
 ## 1. Giới thiệu Đề tài
