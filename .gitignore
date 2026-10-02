@@ -26,3 +26,6 @@ Thumbs.db
 
 # Jupyter Notebook Checkpoints
 .ipynb_checkpoints/
+
+# Course documents & reports (local only)
+Docs/
