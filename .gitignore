@@ -1,0 +1,28 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Huge Raw Data (Exceeds GitHub 100MB limit)
+data/InstacartMarketBasketAnalysis/
+data/*.zip
+data/*.csv
+data/*.jsonl
+data_export/
+baskets*.jsonl
+
+# Logs and OS specific
+*.log
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
