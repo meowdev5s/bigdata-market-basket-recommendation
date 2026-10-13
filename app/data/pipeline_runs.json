@@ -1,0 +1,138 @@
+[
+  {
+    "run_id": "RUN-SPARK-SAMPLE-TRAIN",
+    "dataset_name": "Phân hệ 1: Dữ Liệu Mẫu (124k Đơn)",
+    "timestamp": "2026-10-13 20:04:10",
+    "spark_version": "3.5.3",
+    "master": "local[*]",
+    "driver_memory": "4g",
+    "partitions": 4,
+    "total_duration_seconds": 23.52,
+    "stages": [
+      {
+        "stage_id": 1,
+        "name": "Đọc CSV thô (Parallel CSV Read)",
+        "input": 4805700,
+        "output": 4805700,
+        "duration_s": 6.5,
+        "spark_op": "spark.read.csv (products, train, orders)"
+      },
+      {
+        "stage_id": 2,
+        "name": "Lọc phạm vi dữ liệu (eval_set == 'train')",
+        "input": 3421083,
+        "output": 131209,
+        "duration_s": 0.85,
+        "spark_op": "df_orders.filter(eval_set == 'train')"
+      },
+      {
+        "stage_id": 3,
+        "name": "Kiểm tra toàn vẹn & Join sản phẩm",
+        "input": 1384617,
+        "output": 1384617,
+        "duration_s": 1.22,
+        "spark_op": "broadcast inner join (train x products)"
+      },
+      {
+        "stage_id": 4,
+        "name": "Khử trùng lặp & Gom giỏ hàng",
+        "input": 1384617,
+        "output": 131209,
+        "duration_s": 1.15,
+        "spark_op": "groupBy(order_id).agg(collect_set)"
+      },
+      {
+        "stage_id": 5,
+        "name": "Lọc giỏ hàng hợp lệ (size >= 2)",
+        "input": 131209,
+        "output": 124364,
+        "duration_s": 0.35,
+        "spark_op": "df_baskets.filter(size(items) >= 2)"
+      },
+      {
+        "stage_id": 6,
+        "name": "Tính toán chỉ số Dashboard",
+        "input": 124364,
+        "output": 15,
+        "duration_s": 2.02,
+        "spark_op": "Spark SQL groupBy & count temporal metrics"
+      },
+      {
+        "stage_id": 7,
+        "name": "Huấn luyện Spark MLlib FP-Growth",
+        "input": 124364,
+        "output": 120,
+        "duration_s": 2.17,
+        "spark_op": "FPGrowth(minSupport=0.005, minConfidence=0.15).fit()"
+      },
+      {
+        "stage_id": 8,
+        "name": "Lưu trữ & Đánh Index MongoDB",
+        "input": 120,
+        "output": 120,
+        "duration_s": 1.26,
+        "spark_op": "create_index (antecedent, lift, confidence)"
+      }
+    ]
+  },
+  {
+    "run_id": "RUN-SPARK-BIGDATA-PRIOR",
+    "dataset_name": "Phân hệ 2: Dữ Liệu Big Data (3.2M Đơn)",
+    "timestamp": "2026-10-13 09:55:00",
+    "spark_version": "3.5.3",
+    "master": "local[4]",
+    "driver_memory": "4g",
+    "partitions": 24,
+    "total_duration_seconds": 379.51,
+    "stages": [
+      {
+        "stage_id": 1,
+        "name": "Đọc 32.4 triệu dòng CSV thô",
+        "input": 35855572,
+        "output": 35855572,
+        "duration_s": 13.98,
+        "spark_op": "spark.read.csv (32.4M prior tx + metadata)"
+      },
+      {
+        "stage_id": 2,
+        "name": "Tính phân phối thời gian 3.2M đơn",
+        "input": 3214874,
+        "output": 168,
+        "duration_s": 2.9,
+        "spark_op": "groupBy(order_dow, order_hour_of_day).count()"
+      },
+      {
+        "stage_id": 3,
+        "name": "Lọc ứng viên thường xuyên Apriori",
+        "input": 49688,
+        "output": 274,
+        "duration_s": 7.12,
+        "spark_op": "groupBy(product_id).count().filter(>=15000)"
+      },
+      {
+        "stage_id": 4,
+        "name": "Broadcast Join & Gom 2.06M giỏ hàng",
+        "input": 11188797,
+        "output": 2066543,
+        "duration_s": 19.57,
+        "spark_op": "broadcast join x groupBy(order_id).agg(collect_list)"
+      },
+      {
+        "stage_id": 5,
+        "name": "Huấn luyện Spark MLlib FP-Growth",
+        "input": 2066543,
+        "output": 102,
+        "duration_s": 36.27,
+        "spark_op": "FPGrowth(minSupport=0.00726, minConfidence=0.08).fit()"
+      },
+      {
+        "stage_id": 6,
+        "name": "Đánh chỉ mục kép MongoDB NoSQL",
+        "input": 200102,
+        "output": 200102,
+        "duration_s": 4.5,
+        "spark_op": "create_index (antecedent_1, lift_-1, order_dow_hour)"
+      }
+    ]
+  }
+]

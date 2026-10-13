@@ -1,0 +1,62 @@
+[
+  {
+    "config_id": "EXP-01",
+    "dataset": "Tập Mẫu (124k Đơn)",
+    "min_support": 0.003,
+    "min_confidence": 0.1,
+    "spark_training_time": 4.85,
+    "frequent_itemsets": 642,
+    "association_rules": 302,
+    "max_lift": 6.12,
+    "avg_confidence": 0.21,
+    "status": "Thử nghiệm độ bao phủ rộng"
+  },
+  {
+    "config_id": "EXP-02 (Đang dùng Phân hệ 1)",
+    "dataset": "Tập Mẫu (124k Đơn)",
+    "min_support": 0.005,
+    "min_confidence": 0.15,
+    "spark_training_time": 2.17,
+    "frequent_itemsets": 184,
+    "association_rules": 120,
+    "max_lift": 5.94,
+    "avg_confidence": 0.26,
+    "status": "Cấu hình chuẩn tối ưu Phân hệ 1"
+  },
+  {
+    "config_id": "EXP-03",
+    "dataset": "Tập Big Data (3.2M Đơn)",
+    "min_support": 0.005,
+    "min_confidence": 0.12,
+    "spark_training_time": 68.4,
+    "frequent_itemsets": 480,
+    "association_rules": 215,
+    "max_lift": 4.1,
+    "avg_confidence": 0.19,
+    "status": "Thử nghiệm ngưỡng hỗ trợ thấp"
+  },
+  {
+    "config_id": "EXP-04 (Đang dùng Phân hệ 2)",
+    "dataset": "Tập Big Data (3.2M Đơn)",
+    "min_support": 0.0073,
+    "min_confidence": 0.08,
+    "spark_training_time": 36.27,
+    "frequent_itemsets": 274,
+    "association_rules": 102,
+    "max_lift": 3.91,
+    "avg_confidence": 0.22,
+    "status": "Cấu hình chuẩn tối ưu Phân hệ 2"
+  },
+  {
+    "config_id": "EXP-05",
+    "dataset": "Tập Big Data (3.2M Đơn)",
+    "min_support": 0.01,
+    "min_confidence": 0.2,
+    "spark_training_time": 18.5,
+    "frequent_itemsets": 95,
+    "association_rules": 38,
+    "max_lift": 2.85,
+    "avg_confidence": 0.28,
+    "status": "Thử nghiệm ngưỡng chọn lọc khắt khe"
+  }
+]

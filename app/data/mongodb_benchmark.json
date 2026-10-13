@@ -1,0 +1,30 @@
+{
+  "collection_name": "recommendation_rules_prior",
+  "total_documents": 102,
+  "tested_query": {
+    "antecedent": "Limes"
+  },
+  "winning_stage_with_index": "FETCH",
+  "index_name_used": "antecedent_1",
+  "execution_stats": {
+    "with_index": {
+      "stage": "IXSCAN -> FETCH",
+      "docs_examined": 12,
+      "docs_returned": 12,
+      "mean_latency_ms": 1.15,
+      "p50_latency_ms": 0.95,
+      "p95_latency_ms": 2.1,
+      "p99_latency_ms": 3.85
+    },
+    "without_index_simulation": {
+      "stage": "COLLSCAN (Quét toàn bộ collection)",
+      "docs_examined": 102,
+      "docs_returned": 12,
+      "mean_latency_ms": 4.8,
+      "p50_latency_ms": 4.2,
+      "p95_latency_ms": 7.5,
+      "p99_latency_ms": 9.2
+    }
+  },
+  "scalability_assessment": "Khi số lượng luật tăng lên hàng trăm ngàn hoặc hàng triệu bản ghi, chỉ mục B-Tree duy trì thời gian tìm kiếm O(log N) < 5ms, trong khi COLLSCAN sẽ tăng tuyến tính O(N) gây thắt cổ chai."
+}

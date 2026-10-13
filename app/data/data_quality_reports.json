@@ -1,0 +1,206 @@
+{
+  "timestamp": "2026-10-13T09:00:00Z",
+  "author": "Nhom 11 Big Data",
+  "tables": [
+    {
+      "table_name": "products.csv",
+      "entity": "Sản phẩm",
+      "total_rows": 49688,
+      "total_cols": 4,
+      "primary_key": "product_id",
+      "null_count": 0,
+      "null_rate": "0.0%",
+      "duplicates": 0,
+      "description": "Danh mục sản phẩm chuẩn hóa với ID, tên, ngành hàng và quầy hàng."
+    },
+    {
+      "table_name": "order_products__train.csv",
+      "entity": "Giao dịch mẫu (Train)",
+      "total_rows": 1384617,
+      "total_cols": 4,
+      "primary_key": "(order_id, product_id)",
+      "null_count": 0,
+      "null_rate": "0.0%",
+      "duplicates": 0,
+      "description": "Chi tiết các mặt hàng trong 131.209 đơn hàng mẫu (124.364 đơn >=2 món)."
+    },
+    {
+      "table_name": "order_products__prior.csv",
+      "entity": "Giao dịch Big Data (Prior)",
+      "total_rows": 32434489,
+      "total_cols": 4,
+      "primary_key": "(order_id, product_id)",
+      "null_count": 0,
+      "null_rate": "0.0%",
+      "duplicates": 0,
+      "description": "Chi tiết toàn bộ lịch sử giao dịch 3.214.874 đơn hàng (2.066.543 đơn >=2 món)."
+    },
+    {
+      "table_name": "orders.csv",
+      "entity": "Thông tin đơn hàng",
+      "total_rows": 3421083,
+      "total_cols": 7,
+      "primary_key": "order_id",
+      "null_count": 206209,
+      "null_rate": "6.03% (chỉ ở cột days_since_prior_order của đơn đầu tiên)",
+      "duplicates": 0,
+      "description": "Metadata đơn hàng: người dùng, thứ trong tuần, giờ đặt hàng, khoảng cách ngày."
+    },
+    {
+      "table_name": "aisles.csv",
+      "entity": "Quầy hàng (Aisles)",
+      "total_rows": 134,
+      "total_cols": 2,
+      "primary_key": "aisle_id",
+      "null_count": 0,
+      "null_rate": "0.0%",
+      "duplicates": 0,
+      "description": "Danh mục phân loại 134 quầy hàng chi tiết."
+    },
+    {
+      "table_name": "departments.csv",
+      "entity": "Ngành hàng (Departments)",
+      "total_rows": 21,
+      "total_cols": 2,
+      "primary_key": "department_id",
+      "null_count": 0,
+      "null_rate": "0.0%",
+      "duplicates": 0,
+      "description": "Danh mục 21 ngành hàng lớn (produce, dairy eggs, beverages...)."
+    }
+  ],
+  "cleaning_stages": [
+    {
+      "dataset": "Phân hệ 1 (Tập Mẫu)",
+      "metric": "Số lượng đơn hàng (Orders)",
+      "before_cleaning": 131209,
+      "after_cleaning": 124364,
+      "removed_records": 6845,
+      "removed_rate": "5.22%",
+      "rule": "Loại bỏ các đơn hàng rác chỉ chứa < 2 món hàng vì không thể tạo luật kết hợp A -> B."
+    },
+    {
+      "dataset": "Phân hệ 1 (Tập Mẫu)",
+      "metric": "Dòng giao dịch (Transactions)",
+      "before_cleaning": 1384617,
+      "after_cleaning": 1377772,
+      "removed_records": 6845,
+      "removed_rate": "0.49%",
+      "rule": "Khử các dòng thuộc đơn hàng đơn lẻ và khử trùng lặp sản phẩm trong giỏ."
+    },
+    {
+      "dataset": "Phân hệ 2 (Tập Big Data)",
+      "metric": "Số lượng đơn hàng (Orders)",
+      "before_cleaning": 3214874,
+      "after_cleaning": 2066543,
+      "removed_records": 1148331,
+      "removed_rate": "35.72%",
+      "rule": "Loại bỏ các đơn hàng chỉ có 1 món hoặc đơn chứa toàn sản phẩm tần suất cực hiếm."
+    },
+    {
+      "dataset": "Phân hệ 2 (Tập Big Data)",
+      "metric": "Dòng giao dịch (Transactions)",
+      "before_cleaning": 32434489,
+      "after_cleaning": 11188797,
+      "removed_records": 21245692,
+      "removed_rate": "65.50%",
+      "rule": "Lọc ứng viên thường xuyên (Apriori Pruning: >= 15.000 lần xuất hiện) loại bỏ nhiễu thưa thớt."
+    }
+  ],
+  "sample_records": [
+    {
+      "order_id": 38,
+      "raw_items_count": 9,
+      "cleaned_items": [
+        "Bunched Cilantro",
+        "Organic Baby Arugula",
+        "Organic Hot House Tomato",
+        "Fresh Dill"
+      ]
+    },
+    {
+      "order_id": 218,
+      "raw_items_count": 6,
+      "cleaned_items": [
+        "Okra",
+        "Black Plum",
+        "Citrus Mandarins Organic",
+        "Organic Yellow Peaches"
+      ]
+    },
+    {
+      "order_id": 473,
+      "raw_items_count": 5,
+      "cleaned_items": [
+        "Organic Whole Milk with DHA Omega-3",
+        "Basil Pesto",
+        "Multi Grain Waffles"
+      ]
+    },
+    {
+      "order_id": 774,
+      "raw_items_count": 4,
+      "cleaned_items": [
+        "Nacho Cheese Sauce",
+        "Deli-Sliced Hot Jalapeno Peppers",
+        "Ice Cream Variety Pack"
+      ]
+    },
+    {
+      "order_id": 1001,
+      "raw_items_count": 6,
+      "cleaned_items": [
+        "Organic Roma Tomato",
+        "Organic Peeled Whole Baby Carrots",
+        "Tortilla Chips Organic"
+      ]
+    },
+    {
+      "order_id": 13,
+      "raw_items_count": 3,
+      "cleaned_items": [
+        "Soda",
+        "Lemonade",
+        "Sparkling Natural Mineral Water"
+      ]
+    },
+    {
+      "order_id": 22,
+      "raw_items_count": 4,
+      "cleaned_items": [
+        "2% Reduced Fat Milk",
+        "Banana",
+        "Vine Ripe Tomatoes",
+        "Asparagus"
+      ]
+    },
+    {
+      "order_id": 26,
+      "raw_items_count": 8,
+      "cleaned_items": [
+        "Organic Unsweetened Almond Milk",
+        "Banana",
+        "Boneless Skinless Chicken Breasts"
+      ]
+    },
+    {
+      "order_id": 27,
+      "raw_items_count": 5,
+      "cleaned_items": [
+        "Bag of Organic Bananas",
+        "Lemon Hummus",
+        "Roasted Red Pepper Hummus",
+        "Organic Avocado"
+      ]
+    },
+    {
+      "order_id": 28,
+      "raw_items_count": 7,
+      "cleaned_items": [
+        "Salted Butter",
+        "Air Chilled Organic Boneless Skinless Chicken Breasts",
+        "Organic Lemon"
+      ]
+    }
+  ]
+}
