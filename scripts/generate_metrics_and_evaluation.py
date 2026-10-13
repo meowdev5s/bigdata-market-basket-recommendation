@@ -99,7 +99,7 @@ def generate_data_quality_report():
             "after_cleaning": 124364,
             "removed_records": 6845,
             "removed_rate": "5.22%",
-            "rule": "Loại bỏ các đơn hàng rác chỉ chứa < 2 món hàng vì không thể tạo luật kết hợp A -> B."
+            "rule": "Loại bỏ các đơn hàng rác chỉ chứa < 2 món hàng vì không thể tạo luật kết hợp dạng A → B."
         },
         {
             "dataset": "Phân hệ 1 (Tập Mẫu)",

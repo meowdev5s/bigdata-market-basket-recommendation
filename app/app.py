@@ -282,7 +282,7 @@ if app_mode == "1. Tổng Quan Dữ Liệu & Hành Vi":
             st.plotly_chart(fig_line, use_container_width=True)
             
     # Heatmap
-    st.subheader("Bản đồ nhiệt: Mật độ mua sắm theo Ngày trong tuần x Giờ trong ngày")
+    st.subheader("Bản đồ nhiệt: Mật độ mua sắm theo Ngày trong tuần × Giờ trong ngày")
     heat_data = cache.get("heat_data", [])
     if heat_data:
         rows = []
@@ -324,7 +324,7 @@ elif app_mode == "2. Khám Phá & Chất Lượng Dữ Liệu":
     q1, q2, q3, q4 = st.columns(4)
     q1.metric("Tổng tệp CSV phân tích", "6 tệp", "Instacart Dataset")
     q2.metric("Tỷ lệ dữ liệu hợp lệ", "100%", "Sau kiểm tra toàn vẹn")
-    q3.metric("Đơn 1 món bị loại (Train)", "6.845 đơn", "Không thể tạo luật A->B")
+    q3.metric("Đơn 1 món bị loại (Train)", "6.845 đơn", "Không thể tạo luật A → B")
     q4.metric("Đơn 1 món bị loại (Prior)", "1.148.331 đơn", "Khử nhiễu giỏ hàng")
     
     st.markdown("---")
@@ -348,7 +348,7 @@ elif app_mode == "2. Khám Phá & Chất Lượng Dữ Liệu":
             go.Bar(name="Trước làm sạch", x=df_chart["dataset"], y=df_chart["before_cleaning"], marker_color="#94A3B8"),
             go.Bar(name="Sau làm sạch", x=df_chart["dataset"], y=df_chart["after_cleaning"], marker_color="#2563EB")
         ])
-        fig_clean.update_layout(barmode="group", title="Số lượng đơn hàng trước và sau khi lọc bỏ giỏ hàng rác (<2 món)")
+        fig_clean.update_layout(barmode="group", title="Số lượng đơn hàng trước và sau khi lọc bỏ giỏ hàng rác (< 2 món)")
         st.plotly_chart(fig_clean, use_container_width=True)
         
     st.markdown("---")
@@ -369,10 +369,13 @@ elif app_mode == "2. Khám Phá & Chất Lượng Dữ Liệu":
     <div class="insight-box">
         <b>Quy tắc làm sạch dữ liệu cốt lõi:</b><br>
         1. <b>Kiểm tra tính toàn vẹn khóa ngoại (Referential Integrity):</b> Mọi mã <code>product_id</code> trong bảng đơn hàng đều được đối soát với bảng sản phẩm chuẩn.<br>
-        2. <b>Lọc đơn hàng đơn lẻ (Basket Filtering):</b> Các đơn hàng chỉ chứa 1 món được loại bỏ hoàn toàn vì không thể hình thành luật kết hợp dạng $A \\rightarrow B$.<br>
+        2. <b>Lọc đơn hàng đơn lẻ (Basket Filtering):</b> Các đơn hàng chỉ chứa 1 món được loại bỏ hoàn toàn vì không thể hình thành luật kết hợp dạng <b>A → B</b>.<br>
         3. <b>Khử trùng lặp (Deduplication):</b> Dùng toán tử <code>collect_set</code> trên Apache Spark để đảm bảo mỗi mặt hàng chỉ xuất hiện duy nhất 1 lần trong mỗi giỏ hàng.
     </div>
     """, unsafe_allow_html=True)
+    
+    with st.expander("Xem định nghĩa toán học về giỏ hàng hợp lệ"):
+        st.latex(r"\text{Giỏ hàng hợp lệ } T_k = \{p_1, p_2, \dots, p_m\} \quad \text{thỏa mãn } |T_k| \ge 2 \quad (p_i \in \text{Catalog})")
 
 # =============================================================
 # MODULE 3: SPARK ETL & QUY TRÌNH XỬ LÝ
@@ -491,7 +494,7 @@ elif app_mode == "4. Khai Phá FP-Growth & Luật Kết Hợp":
                 "Support (%)": r["support"] * 100,
                 "Confidence (%)": r["confidence"] * 100,
                 "Lift": r["lift"],
-                "Luật": f"{', '.join(r['antecedent'])} -> {', '.join(r['consequent'])}"
+                "Luật": f"{', '.join(r['antecedent'])} → {', '.join(r['consequent'])}"
             } for r in all_rules])
             fig_scat = px.scatter(
                 df_scatter, x="Support (%)", y="Confidence (%)", color="Lift",
@@ -505,7 +508,7 @@ elif app_mode == "4. Khai Phá FP-Growth & Luật Kết Hợp":
         if all_rules:
             sorted_by_lift = sorted(all_rules, key=lambda x: x["lift"], reverse=True)[:10]
             df_lift = pd.DataFrame([{
-                "Luật kết hợp": f"{', '.join(r['antecedent'])} -> {', '.join(r['consequent'])}",
+                "Luật kết hợp": f"{', '.join(r['antecedent'])} → {', '.join(r['consequent'])}",
                 "Lift": round(r["lift"], 2)
             } for r in sorted_by_lift])
             fig_top_lift = px.bar(
@@ -534,11 +537,16 @@ elif app_mode == "4. Khai Phá FP-Growth & Luật Kết Hợp":
     st.markdown("""
     <div class="insight-box">
         <b>Ý nghĩa các chỉ số đo lường trong khai phá luật kết hợp:</b><br>
-        - <b>Support (Độ hỗ trợ):</b> Tần suất xuất hiện đồng thời của cả giỏ hàng $A$ và $B$ trên tổng số đơn.<br>
-        - <b>Confidence (Độ tin cậy):</b> Xác suất khách hàng sẽ mua tiếp món $B$ khi đã chọn món $A$ vào giỏ.<br>
-        - <b>Lift (Độ nâng):</b> Mức độ kích thích mua kèm. Nếu $\\text{Lift} > 1.0$, sự xuất hiện của $A$ làm tăng khả năng mua $B$. Giá trị $\\text{Lift} \\ge 2.0$ khẳng định mối liên kết rất chặt chẽ giữa hai sản phẩm.
+        - <b>Support (Độ hỗ trợ):</b> Tần suất xuất hiện đồng thời của cả nhóm sản phẩm <b>A</b> và <b>B</b> trên tổng số đơn hàng.<br>
+        - <b>Confidence (Độ tin cậy):</b> Xác suất khách hàng sẽ mua tiếp món <b>B</b> khi đã chọn món <b>A</b> vào giỏ hàng.<br>
+        - <b>Lift (Độ nâng):</b> Mức độ kích thích mua kèm. Nếu <b>Lift &gt; 1.0</b>, việc mua <b>A</b> làm tăng khả năng mua <b>B</b>. Giá trị <b>Lift &ge; 2.0</b> khẳng định mối liên kết rất mạnh mẽ giữa hai sản phẩm.
     </div>
     """, unsafe_allow_html=True)
+    
+    with st.expander("Xem chi tiết công thức toán học chuẩn (Support, Confidence, Lift)"):
+        st.latex(r"\text{Support}(A \rightarrow B) = \frac{\text{Số đơn hàng chứa cả } \{A, B\}}{\text{Tổng số đơn hàng}}")
+        st.latex(r"\text{Confidence}(A \rightarrow B) = \frac{\text{Support}(A \cup B)}{\text{Support}(A)} = P(B \mid A)")
+        st.latex(r"\text{Lift}(A \rightarrow B) = \frac{\text{Confidence}(A \rightarrow B)}{\text{Support}(B)} = \frac{P(A \cap B)}{P(A) \cdot P(B)}")
 
 # =============================================================
 # MODULE 5: ỨNG DỤNG GỢI Ý MUA KÈM REAL-TIME
@@ -605,7 +613,7 @@ elif app_mode == "5. Ứng Dụng Gợi Ý Mua Kèm Real-time":
                                     valid_recommendations[cons] = rule
                                     
             latency_ms = (time.time() - t_start) * 1000
-            mode_label = "MongoDB NoSQL (Chỉ mục Index B-Tree)" if db is not None else "Đồng bộ từ MongoDB"
+            mode_label = "MongoDB NoSQL (Chỉ mục Index B-Tree)" if db is not None else "Đồng bộ từ MongoDB (JSON Cache)"
             st.caption(f"Cơ chế: {mode_label} | Độ trễ phản hồi: {latency_ms:.2f} ms")
             
             if valid_recommendations:
@@ -624,7 +632,7 @@ elif app_mode == "5. Ứng Dụng Gợi Ý Mua Kèm Real-time":
                             #{i}. {cons_name}
                         </div>
                         <div style="font-size: 0.88rem; color: #475569; margin-top: 4px;">
-                            Giải thích: Khách mua <b>{ant_name}</b>; kích hoạt luật mua kèm có <b>Lift {lift_val:.2f}x</b>.
+                            Quy luật kích hoạt: <b>{ant_name} → {cons_name}</b> (Khách mua <b>{ant_name}</b> thường mua kèm <b>{cons_name}</b> với Lift <b>{lift_val:.2f}x</b>).
                         </div>
                         <div style="margin-top: 8px; font-size: 0.85rem;">
                             <span style="background:#EFF6FF; color:#1D4ED8; padding:3px 8px; border-radius:4px; font-weight:600; border:1px solid #BFDBFE;">Lift: {lift_val:.2f}x</span>
