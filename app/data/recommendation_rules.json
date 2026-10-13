@@ -1,39 +1,15 @@
 [
   {
     "antecedent": [
-      "Organic Garlic"
-    ],
-    "consequent": [
-      "Organic Yellow Onion"
-    ],
-    "confidence": 0.2045728038507822,
-    "lift": 5.9401102447113425,
-    "support": 0.006834775336914219,
-    "_id": "6ace2c53e418eb149b3235b7"
-  },
-  {
-    "antecedent": [
-      "Organic Yellow Onion"
-    ],
-    "consequent": [
-      "Organic Garlic"
-    ],
-    "confidence": 0.19845902404856408,
-    "lift": 5.940110244711342,
-    "support": 0.006834775336914219,
-    "_id": "6ace2c53e418eb149b3235b8"
-  },
-  {
-    "antecedent": [
       "Limes"
     ],
     "consequent": [
       "Organic Cilantro"
     ],
-    "confidence": 0.16724796545424347,
-    "lift": 5.912343938530851,
-    "support": 0.008097198546203081,
-    "_id": "6ace2c53e418eb149b3235b9"
+    "confidence": 0.12876905144164155,
+    "lift": 3.911494324338021,
+    "support": 0.008499702159596969,
+    "_id": "6acd9dbcdbc8a366c09ea91a"
   },
   {
     "antecedent": [
@@ -42,36 +18,34 @@
     "consequent": [
       "Limes"
     ],
-    "confidence": 0.286242183058556,
-    "lift": 5.912343938530851,
-    "support": 0.008097198546203081,
-    "_id": "6ace2c53e418eb149b3235ba"
+    "confidence": 0.2581873236124177,
+    "lift": 3.911494324338021,
+    "support": 0.008499702159596969,
+    "_id": "6acd9dbcdbc8a366c09ea91b"
   },
   {
     "antecedent": [
-      "Organic Strawberries",
-      "Bag of Organic Bananas"
+      "Organic Yellow Onion"
     ],
     "consequent": [
-      "Organic Raspberries"
+      "Organic Garlic"
     ],
-    "confidence": 0.2111255692908263,
-    "lift": 4.747996437483602,
-    "support": 0.005218551992538034,
-    "_id": "6ace2c53e418eb149b3235bb"
+    "confidence": 0.19873589815156617,
+    "lift": 3.798347090625036,
+    "support": 0.0106811230155869,
+    "_id": "6acd9dbcdbc8a366c09ea91c"
   },
   {
     "antecedent": [
-      "Organic Raspberries",
-      "Bag of Organic Bananas"
+      "Organic Garlic"
     ],
     "consequent": [
-      "Organic Strawberries"
+      "Organic Yellow Onion"
     ],
-    "confidence": 0.3646067415730337,
-    "lift": 4.178010947110362,
-    "support": 0.005218551992538034,
-    "_id": "6ace2c53e418eb149b3235bc"
+    "confidence": 0.20414335260115607,
+    "lift": 3.7983470906250356,
+    "support": 0.0106811230155869,
+    "_id": "6acd9dbcdbc8a366c09ea91d"
   },
   {
     "antecedent": [
@@ -80,10 +54,10 @@
     "consequent": [
       "Limes"
     ],
-    "confidence": 0.19640438369658908,
-    "lift": 4.056740537127156,
-    "support": 0.012825254896915507,
-    "_id": "6ace2c53e418eb149b3235bd"
+    "confidence": 0.18586621810437212,
+    "lift": 2.8158417966824536,
+    "support": 0.013260309608849174,
+    "_id": "6acd9dbcdbc8a366c09ea91e"
   },
   {
     "antecedent": [
@@ -92,35 +66,10 @@
     "consequent": [
       "Large Lemon"
     ],
-    "confidence": 0.2649061617671483,
-    "lift": 4.056740537127156,
-    "support": 0.012825254896915507,
-    "_id": "6ace2c53e418eb149b3235be"
-  },
-  {
-    "antecedent": [
-      "Organic Strawberries",
-      "Bag of Organic Bananas"
-    ],
-    "consequent": [
-      "Organic Hass Avocado"
-    ],
-    "confidence": 0.23096942094990242,
-    "lift": 3.9505268968523812,
-    "support": 0.005709047634363642,
-    "_id": "6ace2c53e418eb149b3235bf"
-  },
-  {
-    "antecedent": [
-      "Raspberries"
-    ],
-    "consequent": [
-      "Strawberries"
-    ],
-    "confidence": 0.20239926176561057,
-    "lift": 3.899485947361486,
-    "support": 0.005290920201987713,
-    "_id": "6ace2c53e418eb149b3235c0"
+    "confidence": 0.2008914498522803,
+    "lift": 2.8158417966824536,
+    "support": 0.013260309608849174,
+    "_id": "6acd9dbcdbc8a366c09ea91f"
   },
   {
     "antecedent": [
@@ -129,72 +78,47 @@
     "consequent": [
       "Organic Hass Avocado"
     ],
-    "confidence": 0.22333428653131254,
-    "lift": 3.8199347008912325,
-    "support": 0.006279952397800007,
-    "_id": "6ace2c53e418eb149b3235c1"
+    "confidence": 0.24875307341060765,
+    "lift": 2.483196495834492,
+    "support": 0.010280937778696111,
+    "_id": "6acd9dbcdbc8a366c09ea920"
   },
   {
     "antecedent": [
-      "Organic Hass Avocado",
-      "Organic Strawberries"
+      "Organic Hass Avocado"
     ],
     "consequent": [
+      "Organic Lemon"
+    ],
+    "confidence": 0.10263024418520397,
+    "lift": 2.483196495834492,
+    "support": 0.010280937778696111,
+    "_id": "6acd9dbcdbc8a366c09ea921"
+  },
+  {
+    "antecedent": [
+      "Organic Strawberries",
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.4613385315139701,
-    "lift": 3.73163610622461,
-    "support": 0.005709047634363642,
-    "_id": "6ace2c53e418eb149b3235c2"
+    "consequent": [
+      "Organic Hass Avocado"
+    ],
+    "confidence": 0.24446680080482897,
+    "lift": 2.4404084531826857,
+    "support": 0.007290436250298203,
+    "_id": "6acd9dbcdbc8a366c09ea922"
   },
   {
     "antecedent": [
-      "Organic Red Onion"
-    ],
-    "consequent": [
       "Limes"
     ],
-    "confidence": 0.17318289162949357,
-    "lift": 3.577099673577535,
-    "support": 0.005307002026309865,
-    "_id": "6ace2c53e418eb149b3235c3"
-  },
-  {
-    "antecedent": [
-      "Organic Raspberries"
-    ],
     "consequent": [
-      "Organic Strawberries"
+      "Organic Garlic"
     ],
-    "confidence": 0.30198915009041594,
-    "lift": 3.4604790068962026,
-    "support": 0.013428323308996173,
-    "_id": "6ace2c53e418eb149b3235c4"
-  },
-  {
-    "antecedent": [
-      "Organic Strawberries"
-    ],
-    "consequent": [
-      "Organic Raspberries"
-    ],
-    "confidence": 0.15387450474523173,
-    "lift": 3.460479006896202,
-    "support": 0.013428323308996173,
-    "_id": "6ace2c53e418eb149b3235c5"
-  },
-  {
-    "antecedent": [
-      "Organic Hass Avocado",
-      "Bag of Organic Bananas"
-    ],
-    "consequent": [
-      "Organic Strawberries"
-    ],
-    "confidence": 0.29338842975206614,
-    "lift": 3.361923770172851,
-    "support": 0.005709047634363642,
-    "_id": "6ace2c53e418eb149b3235c6"
+    "confidence": 0.11690015908274502,
+    "lift": 2.2342585475267804,
+    "support": 0.0077162681831445075,
+    "_id": "6acd9dbcdbc8a366c09ea923"
   },
   {
     "antecedent": [
@@ -203,35 +127,22 @@
     "consequent": [
       "Limes"
     ],
-    "confidence": 0.15740072202166064,
-    "lift": 3.2511183181368217,
-    "support": 0.005258756553343411,
-    "_id": "6ace2c53e418eb149b3235c7"
+    "confidence": 0.14747745664739884,
+    "lift": 2.2342585475267804,
+    "support": 0.0077162681831445075,
+    "_id": "6acd9dbcdbc8a366c09ea924"
   },
   {
     "antecedent": [
-      "Organic Raspberries"
-    ],
-    "consequent": [
       "Organic Hass Avocado"
     ],
-    "confidence": 0.18426763110307415,
-    "lift": 3.1517342421266283,
-    "support": 0.008193689492135989,
-    "_id": "6ace2c53e418eb149b3235c8"
-  },
-  {
-    "antecedent": [
-      "Organic Raspberries",
-      "Organic Strawberries"
-    ],
     "consequent": [
-      "Bag of Organic Bananas"
+      "Organic Cucumber"
     ],
-    "confidence": 0.38862275449101796,
-    "lift": 3.143458877367217,
-    "support": 0.005218551992538034,
-    "_id": "6ace2c53e418eb149b3235c9"
+    "confidence": 0.08432239209719103,
+    "lift": 2.2062450037565737,
+    "support": 0.00844695706791487,
+    "_id": "6acd9dbcdbc8a366c09ea925"
   },
   {
     "antecedent": [
@@ -240,46 +151,59 @@
     "consequent": [
       "Organic Hass Avocado"
     ],
-    "confidence": 0.180299414189629,
-    "lift": 3.0838614146993564,
-    "support": 0.006681998005853784,
-    "_id": "6ace2c53e418eb149b3235ca"
+    "confidence": 0.22100958434093412,
+    "lift": 2.2062450037565733,
+    "support": 0.00844695706791487,
+    "_id": "6acd9dbcdbc8a366c09ea926"
   },
   {
     "antecedent": [
-      "Yellow Onions"
-    ],
-    "consequent": [
-      "Large Lemon"
-    ],
-    "confidence": 0.19867021276595745,
-    "lift": 3.0424113213182524,
-    "support": 0.006006561384323437,
-    "_id": "6ace2c53e418eb149b3235cb"
-  },
-  {
-    "antecedent": [
-      "Organic Grape Tomatoes"
-    ],
-    "consequent": [
-      "Organic Avocado"
-    ],
-    "confidence": 0.17896389324960754,
-    "lift": 3.0117274181453575,
-    "support": 0.005499983918175678,
-    "_id": "6ace2c53e418eb149b3235cc"
-  },
-  {
-    "antecedent": [
-      "Organic Navel Orange"
+      "Organic Hass Avocado",
+      "Organic Strawberries"
     ],
     "consequent": [
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.3661616161616162,
-    "lift": 2.961777120801511,
-    "support": 0.005829661316779776,
-    "_id": "6ace2c53e418eb149b3235cd"
+    "confidence": 0.3693190175025739,
+    "lift": 2.17204012279213,
+    "support": 0.007290436250298203,
+    "_id": "6acd9dbcdbc8a366c09ea927"
+  },
+  {
+    "antecedent": [
+      "Organic Raspberries"
+    ],
+    "consequent": [
+      "Organic Strawberries"
+    ],
+    "confidence": 0.2555755979380665,
+    "lift": 2.0763946127767237,
+    "support": 0.016386303115879998,
+    "_id": "6acd9dbcdbc8a366c09ea928"
+  },
+  {
+    "antecedent": [
+      "Organic Strawberries"
+    ],
+    "consequent": [
+      "Organic Raspberries"
+    ],
+    "confidence": 0.13312863899230626,
+    "lift": 2.0763946127767237,
+    "support": 0.016386303115879998,
+    "_id": "6acd9dbcdbc8a366c09ea929"
+  },
+  {
+    "antecedent": [
+      "Organic Strawberries"
+    ],
+    "consequent": [
+      "Organic Blueberries"
+    ],
+    "confidence": 0.09339408640407607,
+    "lift": 2.0343075605512424,
+    "support": 0.011495526587155457,
+    "_id": "6acd9dbcdbc8a366c09ea92a"
   },
   {
     "antecedent": [
@@ -288,22 +212,95 @@
     "consequent": [
       "Organic Strawberries"
     ],
-    "confidence": 0.2572992700729927,
-    "lift": 2.9483798418278506,
-    "support": 0.010203917532404875,
-    "_id": "6ace2c53e418eb149b3235ce"
+    "confidence": 0.25039526108312077,
+    "lift": 2.0343075605512424,
+    "support": 0.011495526587155457,
+    "_id": "6acd9dbcdbc8a366c09ea92b"
   },
   {
     "antecedent": [
-      "Organic Yellow Onion"
+      "Large Lemon"
     ],
     "consequent": [
-      "Organic Hass Avocado"
+      "Organic Avocado"
     ],
-    "confidence": 0.17067476068176513,
-    "lift": 2.9192402609581953,
-    "support": 0.005877906789746229,
-    "_id": "6ace2c53e418eb149b3235cf"
+    "confidence": 0.1656130878901746,
+    "lift": 2.002542728095123,
+    "support": 0.011815384436713875,
+    "_id": "6acd9dbcdbc8a366c09ea92c"
+  },
+  {
+    "antecedent": [
+      "Organic Avocado"
+    ],
+    "consequent": [
+      "Large Lemon"
+    ],
+    "confidence": 0.14286800931506208,
+    "lift": 2.002542728095123,
+    "support": 0.011815384436713875,
+    "_id": "6acd9dbcdbc8a366c09ea92d"
+  },
+  {
+    "antecedent": [
+      "Cucumber Kirby"
+    ],
+    "consequent": [
+      "Organic Avocado"
+    ],
+    "confidence": 0.1642595659833947,
+    "lift": 1.9861763558097576,
+    "support": 0.007534321811837451,
+    "_id": "6acd9dbcdbc8a366c09ea92e"
+  },
+  {
+    "antecedent": [
+      "Organic Avocado"
+    ],
+    "consequent": [
+      "Cucumber Kirby"
+    ],
+    "confidence": 0.09110271143201526,
+    "lift": 1.9861763558097574,
+    "support": 0.007534321811837451,
+    "_id": "6acd9dbcdbc8a366c09ea92f"
+  },
+  {
+    "antecedent": [
+      "Organic Garlic"
+    ],
+    "consequent": [
+      "Large Lemon"
+    ],
+    "confidence": 0.14166936416184972,
+    "lift": 1.9857416391274836,
+    "support": 0.0074123790310678265,
+    "_id": "6acd9dbcdbc8a366c09ea930"
+  },
+  {
+    "antecedent": [
+      "Large Lemon"
+    ],
+    "consequent": [
+      "Organic Garlic"
+    ],
+    "confidence": 0.1038973371135559,
+    "lift": 1.9857416391274834,
+    "support": 0.0074123790310678265,
+    "_id": "6acd9dbcdbc8a366c09ea931"
+  },
+  {
+    "antecedent": [
+      "Organic Hass Avocado",
+      "Bag of Organic Bananas"
+    ],
+    "consequent": [
+      "Organic Strawberries"
+    ],
+    "confidence": 0.2416708105420189,
+    "lift": 1.9634267634441145,
+    "support": 0.007290436250298203,
+    "_id": "6acd9dbcdbc8a366c09ea932"
   },
   {
     "antecedent": [
@@ -312,226 +309,58 @@
     "consequent": [
       "Organic Avocado"
     ],
-    "confidence": 0.17223052649061618,
-    "lift": 2.89841369370487,
-    "support": 0.008338425911035348,
-    "_id": "6ace2c53e418eb149b3235d0"
-  },
-  {
-    "antecedent": [
-      "Organic Garlic"
-    ],
-    "consequent": [
-      "Large Lemon"
-    ],
-    "confidence": 0.18772563176895307,
-    "lift": 2.8748073475328257,
-    "support": 0.006271911485638931,
-    "_id": "6ace2c53e418eb149b3235d1"
-  },
-  {
-    "antecedent": [
-      "Organic Grape Tomatoes"
-    ],
-    "consequent": [
-      "Organic Baby Spinach"
-    ],
-    "confidence": 0.2218733647305076,
-    "lift": 2.83121887249588,
-    "support": 0.006818693512592068,
-    "_id": "6ace2c53e418eb149b3235d2"
-  },
-  {
-    "antecedent": [
-      "Organic Kiwi"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.3488,
-    "lift": 2.82134394796748,
-    "support": 0.005258756553343411,
-    "_id": "6ace2c53e418eb149b3235d3"
-  },
-  {
-    "antecedent": [
-      "Large Lemon"
-    ],
-    "consequent": [
-      "Organic Avocado"
-    ],
-    "confidence": 0.16611254771579856,
-    "lift": 2.795456141289252,
-    "support": 0.01084719050529092,
-    "_id": "6ace2c53e418eb149b3235d4"
+    "confidence": 0.16135535566356565,
+    "lift": 1.9510595342413488,
+    "support": 0.010650637320394495,
+    "_id": "6acd9dbcdbc8a366c09ea933"
   },
   {
     "antecedent": [
       "Organic Avocado"
     ],
     "consequent": [
-      "Large Lemon"
+      "Limes"
     ],
-    "confidence": 0.18254397834912042,
-    "lift": 2.795456141289251,
-    "support": 0.01084719050529092,
-    "_id": "6ace2c53e418eb149b3235d5"
-  },
-  {
-    "antecedent": [
-      "Asparagus"
-    ],
-    "consequent": [
-      "Large Lemon"
-    ],
-    "confidence": 0.18186528497409327,
-    "lift": 2.7850627140152855,
-    "support": 0.005644720337075038,
-    "_id": "6ace2c53e418eb149b3235d6"
-  },
-  {
-    "antecedent": [
-      "Organic Large Extra Fancy Fuji Apple"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.3370280568063734,
-    "lift": 2.726124049214167,
-    "support": 0.007823807532726513,
-    "_id": "6ace2c53e418eb149b3235d7"
-  },
-  {
-    "antecedent": [
-      "Organic Garlic"
-    ],
-    "consequent": [
-      "Organic Hass Avocado"
-    ],
-    "confidence": 0.15812274368231047,
-    "lift": 2.704549153528656,
-    "support": 0.005282879289826638,
-    "_id": "6ace2c53e418eb149b3235d8"
-  },
-  {
-    "antecedent": [
-      "Bag of Organic Bananas"
-    ],
-    "consequent": [
-      "Organic Hass Avocado"
-    ],
-    "confidence": 0.15739837398373985,
-    "lift": 2.692159452910717,
-    "support": 0.019459007429802836,
-    "_id": "6ace2c53e418eb149b3235d9"
+    "confidence": 0.12878424397036967,
+    "lift": 1.9510595342413486,
+    "support": 0.010650637320394495,
+    "_id": "6acd9dbcdbc8a366c09ea934"
   },
   {
     "antecedent": [
       "Organic Hass Avocado"
     ],
     "consequent": [
-      "Bag of Organic Bananas"
+      "Organic Raspberries"
     ],
-    "confidence": 0.3328290468986384,
-    "lift": 2.6921594529107167,
-    "support": 0.019459007429802836,
-    "_id": "6ace2c53e418eb149b3235da"
-  },
-  {
-    "antecedent": [
-      "Organic Red Onion"
-    ],
-    "consequent": [
-      "Large Lemon"
-    ],
-    "confidence": 0.1744948832327473,
-    "lift": 2.6721932838760476,
-    "support": 0.005347206587115242,
-    "_id": "6ace2c53e418eb149b3235db"
-  },
-  {
-    "antecedent": [
-      "Organic Zucchini"
-    ],
-    "consequent": [
-      "Organic Baby Spinach"
-    ],
-    "confidence": 0.20719738276990185,
-    "lift": 2.643945753211171,
-    "support": 0.0076388665530217744,
-    "_id": "6ace2c53e418eb149b3235dc"
+    "confidence": 0.12459483612298626,
+    "lift": 1.9432937079790817,
+    "support": 0.012481230731709914,
+    "_id": "6acd9dbcdbc8a366c09ea935"
   },
   {
     "antecedent": [
       "Organic Raspberries"
     ],
     "consequent": [
-      "Bag of Organic Bananas"
+      "Organic Hass Avocado"
     ],
-    "confidence": 0.321880650994575,
-    "lift": 2.6036009938399562,
-    "support": 0.014312823646714483,
-    "_id": "6ace2c53e418eb149b3235dd"
-  },
-  {
-    "antecedent": [
-      "Organic Cucumber"
-    ],
-    "consequent": [
-      "Organic Baby Spinach"
-    ],
-    "confidence": 0.20243002820568454,
-    "lift": 2.5831118436047356,
-    "support": 0.00750217104628349,
-    "_id": "6ace2c53e418eb149b3235de"
+    "confidence": 0.19466855853340076,
+    "lift": 1.9432937079790817,
+    "support": 0.012481230731709914,
+    "_id": "6acd9dbcdbc8a366c09ea936"
   },
   {
     "antecedent": [
       "Organic Large Extra Fancy Fuji Apple"
     ],
     "consequent": [
-      "Organic Strawberries"
+      "Bag of Organic Bananas"
     ],
-    "confidence": 0.22514721163837895,
-    "lift": 2.579950965465342,
-    "support": 0.005226592904699109,
-    "_id": "6ace2c53e418eb149b3235df"
-  },
-  {
-    "antecedent": [
-      "Organic Blackberries"
-    ],
-    "consequent": [
-      "Organic Strawberries"
-    ],
-    "confidence": 0.22421682506159804,
-    "lift": 2.5692897108597235,
-    "support": 0.005122061046605127,
-    "_id": "6ace2c53e418eb149b3235e0"
-  },
-  {
-    "antecedent": [
-      "Organic Cucumber"
-    ],
-    "consequent": [
-      "Organic Strawberries"
-    ],
-    "confidence": 0.22390974180950315,
-    "lift": 2.565770858785317,
-    "support": 0.00829822135022997,
-    "_id": "6ace2c53e418eb149b3235e1"
-  },
-  {
-    "antecedent": [
-      "Organic Garlic"
-    ],
-    "consequent": [
-      "Organic Baby Spinach"
-    ],
-    "confidence": 0.19783393501805055,
-    "lift": 2.524463317728795,
-    "support": 0.006609629796404104,
-    "_id": "6ace2c53e418eb149b3235e2"
+    "confidence": 0.3202478206041998,
+    "lift": 1.8834424511708512,
+    "support": 0.011305837817069377,
+    "_id": "6acd9dbcdbc8a366c09ea937"
   },
   {
     "antecedent": [
@@ -540,106 +369,130 @@
     "consequent": [
       "Banana"
     ],
-    "confidence": 0.3725369458128079,
-    "lift": 2.484591876927336,
-    "support": 0.009729503714901418,
-    "_id": "6ace2c53e418eb149b3235e3"
-  },
-  {
-    "antecedent": [
-      "Organic Red Onion"
-    ],
-    "consequent": [
-      "Organic Baby Spinach"
-    ],
-    "confidence": 0.19443715560220415,
-    "lift": 2.481118655788274,
-    "support": 0.005958315911356984,
-    "_id": "6ace2c53e418eb149b3235e4"
+    "confidence": 0.39539407776716445,
+    "lift": 1.8769556652191646,
+    "support": 0.016425015109775117,
+    "_id": "6acd9dbcdbc8a366c09ea938"
   },
   {
     "antecedent": [
       "Apple Honeycrisp Organic"
     ],
     "consequent": [
-      "Bag of Organic Bananas"
+      "Organic Hass Avocado"
     ],
-    "confidence": 0.30574098798397864,
-    "lift": 2.4730518523342777,
-    "support": 0.005524106654658904,
-    "_id": "6ace2c53e418eb149b3235e5"
+    "confidence": 0.18721951454905178,
+    "lift": 1.8689330592215112,
+    "support": 0.007509642915729312,
+    "_id": "6acd9dbcdbc8a366c09ea939"
   },
   {
     "antecedent": [
-      "Organic Lemon"
+      "Organic Raspberries"
     ],
     "consequent": [
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.3051186731484129,
-    "lift": 2.4680181247108437,
-    "support": 0.008579653275867615,
-    "_id": "6ace2c53e418eb149b3235e6"
+    "confidence": 0.3056899401495883,
+    "lift": 1.797824600608885,
+    "support": 0.01959939860917484,
+    "_id": "6acd9dbcdbc8a366c09ea93a"
   },
   {
     "antecedent": [
-      "Organic Zucchini"
+      "Bag of Organic Bananas"
     ],
     "consequent": [
-      "Large Lemon"
+      "Organic Raspberries"
     ],
-    "confidence": 0.16052344601962923,
-    "lift": 2.45823640448038,
-    "support": 0.005918111350551606,
-    "_id": "6ace2c53e418eb149b3235e7"
+    "confidence": 0.11526804238134675,
+    "lift": 1.797824600608885,
+    "support": 0.01959939860917484,
+    "_id": "6acd9dbcdbc8a366c09ea93b"
   },
   {
     "antecedent": [
       "Organic Hass Avocado"
     ],
     "consequent": [
-      "Organic Strawberries"
+      "Organic Yellow Onion"
     ],
-    "confidence": 0.21166276990785313,
-    "lift": 2.425433402452801,
-    "support": 0.012374963815895276,
-    "_id": "6ace2c53e418eb149b3235e8"
+    "confidence": 0.09625872521314881,
+    "lift": 1.791016186429418,
+    "support": 0.009642673779350346,
+    "_id": "6acd9dbcdbc8a366c09ea93c"
   },
   {
     "antecedent": [
-      "Organic Avocado"
+      "Organic Yellow Onion"
+    ],
+    "consequent": [
+      "Organic Hass Avocado"
+    ],
+    "confidence": 0.17941422744829696,
+    "lift": 1.791016186429418,
+    "support": 0.009642673779350346,
+    "_id": "6acd9dbcdbc8a366c09ea93d"
+  },
+  {
+    "antecedent": [
+      "Organic Cucumber"
     ],
     "consequent": [
       "Organic Baby Spinach"
     ],
-    "confidence": 0.18971583220568336,
-    "lift": 2.4208721276859846,
-    "support": 0.011273358849827924,
-    "_id": "6ace2c53e418eb149b3235e9"
+    "confidence": 0.20020763961865212,
+    "lift": 1.7770329483536915,
+    "support": 0.007651909493293873,
+    "_id": "6acd9dbcdbc8a366c09ea93e"
   },
   {
     "antecedent": [
-      "Organic Cilantro"
+      "Bag of Organic Bananas"
     ],
     "consequent": [
-      "Organic Baby Spinach"
+      "Organic Hass Avocado"
     ],
-    "confidence": 0.1856168277430358,
-    "lift": 2.368566711002966,
-    "support": 0.005250715641182336,
-    "_id": "6ace2c53e418eb149b3235ea"
+    "confidence": 0.1774171056488541,
+    "lift": 1.7710797660019801,
+    "support": 0.03016680514269483,
+    "_id": "6acd9dbcdbc8a366c09ea93f"
   },
   {
     "antecedent": [
-      "Organic Gala Apples"
+      "Organic Hass Avocado"
     ],
     "consequent": [
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.2888730385164051,
-    "lift": 2.336611808914095,
-    "support": 0.006513138850471198,
-    "_id": "6ace2c53e418eb149b3235eb"
+    "confidence": 0.30114242929256335,
+    "lift": 1.77107976600198,
+    "support": 0.03016680514269483,
+    "_id": "6acd9dbcdbc8a366c09ea940"
+  },
+  {
+    "antecedent": [
+      "Organic Baby Spinach"
+    ],
+    "consequent": [
+      "Organic Zucchini"
+    ],
+    "confidence": 0.08768388274455063,
+    "lift": 1.7660031001946466,
+    "support": 0.009878816942110569,
+    "_id": "6acd9dbcdbc8a366c09ea941"
+  },
+  {
+    "antecedent": [
+      "Organic Zucchini"
+    ],
+    "consequent": [
+      "Organic Baby Spinach"
+    ],
+    "confidence": 0.19896497280860767,
+    "lift": 1.7660031001946463,
+    "support": 0.009878816942110569,
+    "_id": "6acd9dbcdbc8a366c09ea942"
   },
   {
     "antecedent": [
@@ -648,202 +501,106 @@
     "consequent": [
       "Banana"
     ],
-    "confidence": 0.34705384832252606,
-    "lift": 2.3146353189672673,
-    "support": 0.009898362870284005,
-    "_id": "6ace2c53e418eb149b3235ec"
+    "confidence": 0.367222947556199,
+    "lift": 1.7432258867063073,
+    "support": 0.013746629032156602,
+    "_id": "6acd9dbcdbc8a366c09ea943"
   },
   {
     "antecedent": [
-      "Asparagus"
+      "Organic Garlic"
     ],
     "consequent": [
       "Organic Baby Spinach"
     ],
-    "confidence": 0.1810880829015544,
-    "lift": 2.3107775848521355,
-    "support": 0.005620597600591811,
-    "_id": "6ace2c53e418eb149b3235ed"
+    "confidence": 0.19418265895953757,
+    "lift": 1.72355552279274,
+    "support": 0.010159962797773868,
+    "_id": "6acd9dbcdbc8a366c09ea944"
   },
   {
     "antecedent": [
-      "Organic Strawberries"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.28323965723763017,
-    "lift": 2.2910449907447568,
-    "support": 0.02471776398314625,
-    "_id": "6ace2c53e418eb149b3235ee"
-  },
-  {
-    "antecedent": [
-      "Bag of Organic Bananas"
-    ],
-    "consequent": [
-      "Organic Strawberries"
-    ],
-    "confidence": 0.1999349593495935,
-    "lift": 2.2910449907447568,
-    "support": 0.02471776398314625,
-    "_id": "6ace2c53e418eb149b3235ef"
-  },
-  {
-    "antecedent": [
-      "Organic Granny Smith Apple"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.279089738085015,
-    "lift": 2.2574774755905564,
-    "support": 0.005226592904699109,
-    "_id": "6ace2c53e418eb149b3235f0"
-  },
-  {
-    "antecedent": [
-      "Organic Whole Milk"
-    ],
-    "consequent": [
-      "Organic Strawberries"
-    ],
-    "confidence": 0.1954517516902274,
-    "lift": 2.2396721318716892,
-    "support": 0.007671030201666077,
-    "_id": "6ace2c53e418eb149b3235f1"
-  },
-  {
-    "antecedent": [
-      "Organic Yellow Onion"
-    ],
-    "consequent": [
       "Organic Baby Spinach"
     ],
-    "confidence": 0.1746439411627364,
-    "lift": 2.2285470037720656,
-    "support": 0.006014602296484513,
-    "_id": "6ace2c53e418eb149b3235f2"
-  },
-  {
-    "antecedent": [
-      "Organic Cucumber"
-    ],
     "consequent": [
-      "Bag of Organic Bananas"
+      "Organic Garlic"
     ],
-    "confidence": 0.27511390757214144,
-    "lift": 2.225318113905808,
-    "support": 0.0101958766202438,
-    "_id": "6ace2c53e418eb149b3235f3"
+    "confidence": 0.09017931923118222,
+    "lift": 1.72355552279274,
+    "support": 0.010159962797773868,
+    "_id": "6acd9dbcdbc8a366c09ea945"
   },
   {
     "antecedent": [
       "Organic Grape Tomatoes"
     ],
     "consequent": [
-      "Organic Strawberries"
-    ],
-    "confidence": 0.19413919413919414,
-    "lift": 2.2246315986295717,
-    "support": 0.00596635682351806,
-    "_id": "6ace2c53e418eb149b3235f4"
-  },
-  {
-    "antecedent": [
-      "Organic Baby Carrots"
-    ],
-    "consequent": [
       "Organic Baby Spinach"
     ],
-    "confidence": 0.17399777282850779,
-    "lift": 2.2203015616708948,
-    "support": 0.005025570100672221,
-    "_id": "6ace2c53e418eb149b3235f5"
+    "confidence": 0.19276860504527188,
+    "lift": 1.7110044513092293,
+    "support": 0.007706106284747039,
+    "_id": "6acd9dbcdbc8a366c09ea946"
   },
   {
     "antecedent": [
-      "Organic Lemon"
+      "Organic Cucumber"
     ],
     "consequent": [
       "Organic Strawberries"
     ],
-    "confidence": 0.1935945095796397,
-    "lift": 2.2183900847104314,
-    "support": 0.005443697533048149,
-    "_id": "6ace2c53e418eb149b3235f6"
+    "confidence": 0.20960206626742464,
+    "lift": 1.702887931147543,
+    "support": 0.008010963236671097,
+    "_id": "6acd9dbcdbc8a366c09ea947"
   },
   {
     "antecedent": [
-      "Organic Baby Carrots"
+      "Organic Large Extra Fancy Fuji Apple"
     ],
     "consequent": [
       "Organic Strawberries"
     ],
-    "confidence": 0.19292873051224943,
-    "lift": 2.2107609547061076,
-    "support": 0.005572352127625358,
-    "_id": "6ace2c53e418eb149b3235f7"
+    "confidence": 0.20715225615439442,
+    "lift": 1.6829847300514253,
+    "support": 0.007313179546711585,
+    "_id": "6acd9dbcdbc8a366c09ea948"
+  },
+  {
+    "antecedent": [
+      "Apple Honeycrisp Organic"
+    ],
+    "consequent": [
+      "Bag of Organic Bananas"
+    ],
+    "confidence": 0.2858659460502823,
+    "lift": 1.681235666551659,
+    "support": 0.011466492591734118,
+    "_id": "6acd9dbcdbc8a366c09ea949"
+  },
+  {
+    "antecedent": [
+      "Organic Garlic"
+    ],
+    "consequent": [
+      "Organic Hass Avocado"
+    ],
+    "confidence": 0.16367167630057802,
+    "lift": 1.6338649709307318,
+    "support": 0.008563576949523916,
+    "_id": "6acd9dbcdbc8a366c09ea94a"
   },
   {
     "antecedent": [
       "Organic Hass Avocado"
     ],
     "consequent": [
-      "Organic Baby Spinach"
+      "Organic Garlic"
     ],
-    "confidence": 0.1721908953376427,
-    "lift": 2.1972448704874408,
-    "support": 0.010067222025666591,
-    "_id": "6ace2c53e418eb149b3235f8"
-  },
-  {
-    "antecedent": [
-      "Seedless Red Grapes"
-    ],
-    "consequent": [
-      "Organic Strawberries"
-    ],
-    "confidence": 0.1908057340583292,
-    "lift": 2.186433641429103,
-    "support": 0.006207584188350326,
-    "_id": "6ace2c53e418eb149b3235f9"
-  },
-  {
-    "antecedent": [
-      "Organic Red Bell Pepper"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.26306984525303223,
-    "lift": 2.127897120978738,
-    "support": 0.005057733749316522,
-    "_id": "6ace2c53e418eb149b3235fa"
-  },
-  {
-    "antecedent": [
-      "Broccoli Crown"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.31559194814056635,
-    "lift": 2.1048038311016994,
-    "support": 0.007437843748994886,
-    "_id": "6ace2c53e418eb149b3235fb"
-  },
-  {
-    "antecedent": [
-      "Blueberries"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.3094209161624892,
-    "lift": 2.0636468503047034,
-    "support": 0.0057572931073300955,
-    "_id": "6ace2c53e418eb149b3235fc"
+    "confidence": 0.08548655894500398,
+    "lift": 1.6338649709307316,
+    "support": 0.008563576949523916,
+    "_id": "6acd9dbcdbc8a366c09ea94b"
   },
   {
     "antecedent": [
@@ -852,22 +609,190 @@
     "consequent": [
       "Banana"
     ],
-    "confidence": 0.3085548172757475,
-    "lift": 2.0578705044072003,
-    "support": 0.005974397735679135,
-    "_id": "6ace2c53e418eb149b3235fd"
+    "confidence": 0.33861524016499805,
+    "lift": 1.6074236542599571,
+    "support": 0.015531735850645257,
+    "_id": "6acd9dbcdbc8a366c09ea94c"
   },
   {
     "antecedent": [
-      "Organic Tomato Cluster"
+      "Organic Avocado"
+    ],
+    "consequent": [
+      "Organic Baby Spinach"
+    ],
+    "confidence": 0.18073677928217852,
+    "lift": 1.604210570463357,
+    "support": 0.014947184742828966,
+    "_id": "6acd9dbcdbc8a366c09ea94d"
+  },
+  {
+    "antecedent": [
+      "Organic Baby Spinach"
+    ],
+    "consequent": [
+      "Organic Avocado"
+    ],
+    "confidence": 0.13267046064640825,
+    "lift": 1.6042105704633567,
+    "support": 0.014947184742828966,
+    "_id": "6acd9dbcdbc8a366c09ea94e"
+  },
+  {
+    "antecedent": [
+      "Organic Cucumber"
     ],
     "consequent": [
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.2505919494869771,
-    "lift": 2.0269669727478647,
-    "support": 0.005105979222282976,
-    "_id": "6ace2c53e418eb149b3235fe"
+    "confidence": 0.2726409480521125,
+    "lift": 1.6034567683240033,
+    "support": 0.01042030095671854,
+    "_id": "6acd9dbcdbc8a366c09ea94f"
+  },
+  {
+    "antecedent": [
+      "Organic Zucchini"
+    ],
+    "consequent": [
+      "Organic Hass Avocado"
+    ],
+    "confidence": 0.16045845272206305,
+    "lift": 1.601788721897497,
+    "support": 0.0079669283436154,
+    "_id": "6acd9dbcdbc8a366c09ea950"
+  },
+  {
+    "antecedent": [
+      "Organic Hass Avocado"
+    ],
+    "consequent": [
+      "Organic Strawberries"
+    ],
+    "confidence": 0.19705818418955148,
+    "lift": 1.6009766008799562,
+    "support": 0.019740213486968333,
+    "_id": "6acd9dbcdbc8a366c09ea951"
+  },
+  {
+    "antecedent": [
+      "Organic Strawberries"
+    ],
+    "consequent": [
+      "Organic Hass Avocado"
+    ],
+    "confidence": 0.16037709887051183,
+    "lift": 1.6009766008799562,
+    "support": 0.019740213486968333,
+    "_id": "6acd9dbcdbc8a366c09ea952"
+  },
+  {
+    "antecedent": [
+      "Organic Baby Spinach"
+    ],
+    "consequent": [
+      "Organic Yellow Onion"
+    ],
+    "confidence": 0.08464297218941265,
+    "lift": 1.5748903065467275,
+    "support": 0.009536215796138768,
+    "_id": "6acd9dbcdbc8a366c09ea953"
+  },
+  {
+    "antecedent": [
+      "Organic Yellow Onion"
+    ],
+    "consequent": [
+      "Organic Baby Spinach"
+    ],
+    "confidence": 0.1774334410761072,
+    "lift": 1.5748903065467275,
+    "support": 0.009536215796138768,
+    "_id": "6acd9dbcdbc8a366c09ea954"
+  },
+  {
+    "antecedent": [
+      "Organic Gala Apples"
+    ],
+    "consequent": [
+      "Bag of Organic Bananas"
+    ],
+    "confidence": 0.2666685421707084,
+    "lift": 1.5683318367899295,
+    "support": 0.009173774753295722,
+    "_id": "6acd9dbcdbc8a366c09ea955"
+  },
+  {
+    "antecedent": [
+      "Apple Honeycrisp Organic"
+    ],
+    "consequent": [
+      "Organic Strawberries"
+    ],
+    "confidence": 0.19145394006659266,
+    "lift": 1.5554455627077703,
+    "support": 0.0076794917889441445,
+    "_id": "6acd9dbcdbc8a366c09ea956"
+  },
+  {
+    "antecedent": [
+      "Organic Lemon"
+    ],
+    "consequent": [
+      "Bag of Organic Bananas"
+    ],
+    "confidence": 0.26206533192834564,
+    "lift": 1.5412594227895051,
+    "support": 0.010831131991930485,
+    "_id": "6acd9dbcdbc8a366c09ea957"
+  },
+  {
+    "antecedent": [
+      "Organic Grape Tomatoes"
+    ],
+    "consequent": [
+      "Organic Strawberries"
+    ],
+    "confidence": 0.1885077228489808,
+    "lift": 1.5315093590636268,
+    "support": 0.007535773511608517,
+    "_id": "6acd9dbcdbc8a366c09ea958"
+  },
+  {
+    "antecedent": [
+      "Organic Hass Avocado"
+    ],
+    "consequent": [
+      "Organic Baby Spinach"
+    ],
+    "confidence": 0.16859164794821632,
+    "lift": 1.4964109950643223,
+    "support": 0.01688859123666916,
+    "_id": "6acd9dbcdbc8a366c09ea959"
+  },
+  {
+    "antecedent": [
+      "Organic Baby Spinach"
+    ],
+    "consequent": [
+      "Organic Hass Avocado"
+    ],
+    "confidence": 0.14990228712552348,
+    "lift": 1.4964109950643223,
+    "support": 0.01688859123666916,
+    "_id": "6acd9dbcdbc8a366c09ea95a"
+  },
+  {
+    "antecedent": [
+      "Banana"
+    ],
+    "consequent": [
+      "Strawberries"
+    ],
+    "confidence": 0.09471391949133076,
+    "lift": 1.4957807292604268,
+    "support": 0.019952161653544107,
+    "_id": "6acd9dbcdbc8a366c09ea95b"
   },
   {
     "antecedent": [
@@ -876,10 +801,58 @@
     "consequent": [
       "Banana"
     ],
-    "confidence": 0.3017815646785438,
-    "lift": 2.012697083159887,
-    "support": 0.015663696889775175,
-    "_id": "6ace2c53e418eb149b3235ff"
+    "confidence": 0.3150968629398953,
+    "lift": 1.4957807292604268,
+    "support": 0.019952161653544107,
+    "_id": "6acd9dbcdbc8a366c09ea95c"
+  },
+  {
+    "antecedent": [
+      "Seedless Red Grapes"
+    ],
+    "consequent": [
+      "Banana"
+    ],
+    "confidence": 0.31407153894287865,
+    "lift": 1.49091346444009,
+    "support": 0.011901034723206824,
+    "_id": "6acd9dbcdbc8a366c09ea95d"
+  },
+  {
+    "antecedent": [
+      "Organic Whole Milk"
+    ],
+    "consequent": [
+      "Organic Strawberries"
+    ],
+    "confidence": 0.18272152481507628,
+    "lift": 1.484500057224998,
+    "support": 0.011523108882805728,
+    "_id": "6acd9dbcdbc8a366c09ea95e"
+  },
+  {
+    "antecedent": [
+      "Organic Strawberries"
+    ],
+    "consequent": [
+      "Organic Whole Milk"
+    ],
+    "confidence": 0.0936181755994386,
+    "lift": 1.484500057224998,
+    "support": 0.011523108882805728,
+    "_id": "6acd9dbcdbc8a366c09ea95f"
+  },
+  {
+    "antecedent": [
+      "Banana"
+    ],
+    "consequent": [
+      "Organic Avocado"
+    ],
+    "confidence": 0.12265351501842273,
+    "lift": 1.4830887323248825,
+    "support": 0.025837836425373194,
+    "_id": "6acd9dbcdbc8a366c09ea960"
   },
   {
     "antecedent": [
@@ -888,106 +861,94 @@
     "consequent": [
       "Banana"
     ],
-    "confidence": 0.2998646820027064,
-    "lift": 1.9999126568662293,
-    "support": 0.017818661348943426,
-    "_id": "6ace2c53e418eb149b323600"
+    "confidence": 0.31242320339835933,
+    "lift": 1.4830887323248825,
+    "support": 0.025837836425373194,
+    "_id": "6acd9dbcdbc8a366c09ea961"
   },
   {
     "antecedent": [
-      "Organic Garnet Sweet Potato (Yam)"
+      "Cucumber Kirby"
     ],
     "consequent": [
-      "Bag of Organic Bananas"
+      "Organic Baby Spinach"
     ],
-    "confidence": 0.24629773967264224,
-    "lift": 1.992232331489332,
-    "support": 0.005081856485799749,
-    "_id": "6ace2c53e418eb149b323601"
+    "confidence": 0.16664380888077732,
+    "lift": 1.4791220733851957,
+    "support": 0.00764368319459116,
+    "_id": "6acd9dbcdbc8a366c09ea962"
+  },
+  {
+    "antecedent": [
+      "Blueberries"
+    ],
+    "consequent": [
+      "Banana"
+    ],
+    "confidence": 0.3097375427919361,
+    "lift": 1.4703397657279411,
+    "support": 0.007880794157198761,
+    "_id": "6acd9dbcdbc8a366c09ea963"
   },
   {
     "antecedent": [
       "Limes"
     ],
     "consequent": [
-      "Organic Baby Spinach"
+      "Organic Hass Avocado"
     ],
-    "confidence": 0.15595416043846538,
-    "lift": 1.9900557365862208,
-    "support": 0.007550416519249943,
-    "_id": "6ace2c53e418eb149b323602"
+    "confidence": 0.14683997155571196,
+    "lift": 1.465841196718381,
+    "support": 0.00969251547149031,
+    "_id": "6acd9dbcdbc8a366c09ea964"
   },
   {
     "antecedent": [
-      "Organic Small Bunch Celery"
+      "Organic Hass Avocado"
+    ],
+    "consequent": [
+      "Limes"
+    ],
+    "confidence": 0.09675627369997343,
+    "lift": 1.4658411967183809,
+    "support": 0.00969251547149031,
+    "_id": "6acd9dbcdbc8a366c09ea965"
+  },
+  {
+    "antecedent": [
+      "Organic Lemon"
+    ],
+    "consequent": [
+      "Organic Strawberries"
+    ],
+    "confidence": 0.17740311438941575,
+    "lift": 1.4412912421210882,
+    "support": 0.007332051643735456,
+    "_id": "6acd9dbcdbc8a366c09ea966"
+  },
+  {
+    "antecedent": [
+      "Organic Strawberries"
     ],
     "consequent": [
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.2413134784268805,
-    "lift": 1.9519160605580856,
-    "support": 0.005081856485799749,
-    "_id": "6ace2c53e418eb149b323603"
+    "confidence": 0.24228366547021382,
+    "lift": 1.4249194261835787,
+    "support": 0.029821784497104584,
+    "_id": "6acd9dbcdbc8a366c09ea967"
   },
   {
     "antecedent": [
-      "Large Lemon"
-    ],
-    "consequent": [
-      "Organic Baby Spinach"
-    ],
-    "confidence": 0.15244428026105158,
-    "lift": 1.9452678504397105,
-    "support": 0.009954649255411533,
-    "_id": "6ace2c53e418eb149b323604"
-  },
-  {
-    "antecedent": [
-      "Organic Strawberries"
-    ],
-    "consequent": [
-      "Organic Baby Spinach"
-    ],
-    "confidence": 0.15101815166313462,
-    "lift": 1.9270697120289426,
-    "support": 0.013179055032002831,
-    "_id": "6ace2c53e418eb149b323605"
-  },
-  {
-    "antecedent": [
-      "Organic Baby Spinach"
+      "Bag of Organic Bananas"
     ],
     "consequent": [
       "Organic Strawberries"
     ],
-    "confidence": 0.16817155756207675,
-    "lift": 1.9270697120289424,
-    "support": 0.013179055032002831,
-    "_id": "6ace2c53e418eb149b323606"
-  },
-  {
-    "antecedent": [
-      "Red Peppers"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.28856749311294766,
-    "lift": 1.9245673681288478,
-    "support": 0.006738284390981313,
-    "_id": "6ace2c53e418eb149b323607"
-  },
-  {
-    "antecedent": [
-      "Seedless Red Grapes"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.28719723183391005,
-    "lift": 1.9154285697319884,
-    "support": 0.009343539931169792,
-    "_id": "6ace2c53e418eb149b323608"
+    "confidence": 0.17538796918444652,
+    "lift": 1.4249194261835787,
+    "support": 0.029821784497104584,
+    "_id": "6acd9dbcdbc8a366c09ea968"
   },
   {
     "antecedent": [
@@ -996,46 +957,70 @@
     "consequent": [
       "Banana"
     ],
-    "confidence": 0.2848404255319149,
-    "lift": 1.8997101239261578,
-    "support": 0.008611816924511916,
-    "_id": "6ace2c53e418eb149b323609"
+    "confidence": 0.30000425176093765,
+    "lift": 1.4241353414102418,
+    "support": 0.010243193584648373,
+    "_id": "6acd9dbcdbc8a366c09ea969"
   },
   {
     "antecedent": [
-      "Organic Yellow Onion"
+      "Organic Tomato Cluster"
     ],
     "consequent": [
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.23348120476301656,
-    "lift": 1.8885630275868481,
-    "support": 0.008040912161075553,
-    "_id": "6ace2c53e418eb149b32360a"
+    "confidence": 0.240452165027462,
+    "lift": 1.4141480002400424,
+    "support": 0.007287532850756069,
+    "_id": "6acd9dbcdbc8a366c09ea96a"
   },
   {
     "antecedent": [
-      "Asparagus"
+      "Red Vine Tomato"
     ],
     "consequent": [
-      "Organic Strawberries"
+      "Banana"
     ],
-    "confidence": 0.16424870466321242,
-    "lift": 1.8821179311467566,
-    "support": 0.0050979383101219,
-    "_id": "6ace2c53e418eb149b32360b"
+    "confidence": 0.29069634703196345,
+    "lift": 1.379950247361726,
+    "support": 0.007393506934043956,
+    "_id": "6acd9dbcdbc8a366c09ea96b"
   },
   {
     "antecedent": [
-      "Organic Zucchini"
+      "Large Lemon"
     ],
     "consequent": [
-      "Organic Strawberries"
+      "Organic Baby Spinach"
     ],
-    "confidence": 0.16379498364231188,
-    "lift": 1.8769187640000435,
-    "support": 0.00603872503296774,
-    "_id": "6ace2c53e418eb149b32360c"
+    "confidence": 0.15469973004869975,
+    "lift": 1.3731070298895314,
+    "support": 0.011036789459498302,
+    "_id": "6acd9dbcdbc8a366c09ea96c"
+  },
+  {
+    "antecedent": [
+      "Organic Baby Spinach"
+    ],
+    "consequent": [
+      "Large Lemon"
+    ],
+    "confidence": 0.09796198861806077,
+    "lift": 1.3731070298895314,
+    "support": 0.011036789459498302,
+    "_id": "6acd9dbcdbc8a366c09ea96d"
+  },
+  {
+    "antecedent": [
+      "Organic Small Bunch Celery"
+    ],
+    "consequent": [
+      "Bag of Organic Bananas"
+    ],
+    "confidence": 0.2320608173832363,
+    "lift": 1.3647967810940411,
+    "support": 0.007503836116645044,
+    "_id": "6acd9dbcdbc8a366c09ea96e"
   },
   {
     "antecedent": [
@@ -1044,106 +1029,58 @@
     "consequent": [
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.2305352798053528,
-    "lift": 1.8647342788756354,
-    "support": 0.009142517127142903,
-    "_id": "6ace2c53e418eb149b32360d"
+    "confidence": 0.2304951830849337,
+    "lift": 1.3555889679233883,
+    "support": 0.010581923531230658,
+    "_id": "6acd9dbcdbc8a366c09ea96f"
   },
   {
     "antecedent": [
-      "Small Hass Avocado"
+      "Limes"
     ],
     "consequent": [
-      "Banana"
+      "Organic Baby Spinach"
     ],
-    "confidence": 0.2792123950936088,
-    "lift": 1.86217462881008,
-    "support": 0.006955389019330353,
-    "_id": "6ace2c53e418eb149b32360e"
-  },
-  {
-    "antecedent": [
-      "Organic Baby Carrots"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.2296770601336303,
-    "lift": 1.8577923841599218,
-    "support": 0.00663375253288733,
-    "_id": "6ace2c53e418eb149b32360f"
+    "confidence": 0.15230889910341844,
+    "lift": 1.3518861345640532,
+    "support": 0.01005350481456229,
+    "_id": "6acd9dbcdbc8a366c09ea970"
   },
   {
     "antecedent": [
       "Organic Baby Spinach"
     ],
     "consequent": [
-      "Bag of Organic Bananas"
+      "Limes"
     ],
-    "confidence": 0.22942745741842807,
-    "lift": 1.8557734188218138,
-    "support": 0.017979479592164935,
-    "_id": "6ace2c53e418eb149b323610"
+    "confidence": 0.08923440352195855,
+    "lift": 1.351886134564053,
+    "support": 0.01005350481456229,
+    "_id": "6acd9dbcdbc8a366c09ea971"
   },
   {
     "antecedent": [
-      "Organic Whole Milk"
+      "Organic Strawberries"
     ],
     "consequent": [
-      "Bag of Organic Bananas"
+      "Organic Baby Spinach"
     ],
-    "confidence": 0.22905142388854743,
-    "lift": 1.8527317906000202,
-    "support": 0.008989739796082467,
-    "_id": "6ace2c53e418eb149b323611"
+    "confidence": 0.14991960308692695,
+    "lift": 1.3306788631893796,
+    "support": 0.018453039689955642,
+    "_id": "6acd9dbcdbc8a366c09ea972"
   },
   {
     "antecedent": [
-      "Organic Zucchini"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.22704471101417667,
-    "lift": 1.836500061175094,
-    "support": 0.00837058955967965,
-    "_id": "6ace2c53e418eb149b323612"
-  },
-  {
-    "antecedent": [
-      "100% Whole Wheat Bread"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.27399650959860383,
-    "lift": 1.8273878865083266,
-    "support": 0.005049692837155447,
-    "_id": "6ace2c53e418eb149b323613"
-  },
-  {
-    "antecedent": [
-      "Organic Yellow Onion"
+      "Organic Baby Spinach"
     ],
     "consequent": [
       "Organic Strawberries"
     ],
-    "confidence": 0.1566658883959841,
-    "lift": 1.7952268077469977,
-    "support": 0.005395452060081696,
-    "_id": "6ace2c53e418eb149b323614"
-  },
-  {
-    "antecedent": [
-      "Organic Garlic"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.21949458483754514,
-    "lift": 1.775429238942209,
-    "support": 0.007333311890900904,
-    "_id": "6ace2c53e418eb149b323615"
+    "confidence": 0.16378825297970578,
+    "lift": 1.3306788631893793,
+    "support": 0.018453039689955642,
+    "_id": "6acd9dbcdbc8a366c09ea973"
   },
   {
     "antecedent": [
@@ -1152,130 +1089,94 @@
     "consequent": [
       "Banana"
     ],
-    "confidence": 0.2657308213274227,
-    "lift": 1.7722608389319245,
-    "support": 0.017352288443601042,
-    "_id": "6ace2c53e418eb149b323616"
+    "confidence": 0.2772766119077011,
+    "lift": 1.3162460866685113,
+    "support": 0.019781828880405587,
+    "_id": "6acd9dbcdbc8a366c09ea974"
   },
   {
     "antecedent": [
-      "Organic Garlic"
+      "Banana"
     ],
     "consequent": [
-      "Organic Strawberries"
+      "Large Lemon"
     ],
-    "confidence": 0.15403128760529483,
-    "lift": 1.7650370452174409,
-    "support": 0.005146183783088353,
-    "_id": "6ace2c53e418eb149b323617"
+    "confidence": 0.09390534121084597,
+    "lift": 1.316246086668511,
+    "support": 0.019781828880405587,
+    "_id": "6acd9dbcdbc8a366c09ea975"
   },
   {
     "antecedent": [
-      "Organic Peeled Whole Baby Carrots"
+      "Organic Yellow Onion"
+    ],
+    "consequent": [
+      "Bag of Organic Bananas"
+    ],
+    "confidence": 0.2212538377735961,
+    "lift": 1.301238739926634,
+    "support": 0.011891356724733045,
+    "_id": "6acd9dbcdbc8a366c09ea976"
+  },
+  {
+    "antecedent": [
+      "Organic Zucchini"
+    ],
+    "consequent": [
+      "Bag of Organic Bananas"
+    ],
+    "confidence": 0.22057189638032865,
+    "lift": 1.2972281041419242,
+    "support": 0.010951623072929042,
+    "_id": "6acd9dbcdbc8a366c09ea977"
+  },
+  {
+    "antecedent": [
+      "100% Whole Wheat Bread"
     ],
     "consequent": [
       "Banana"
     ],
-    "confidence": 0.2629222629222629,
-    "lift": 1.7535294849608143,
-    "support": 0.005194429256054807,
-    "_id": "6ace2c53e418eb149b323618"
+    "confidence": 0.27273547293030975,
+    "lift": 1.2946890704929137,
+    "support": 0.00731559904633003,
+    "_id": "6acd9dbcdbc8a366c09ea978"
   },
   {
     "antecedent": [
-      "Organic Grape Tomatoes"
+      "Organic Baby Spinach"
     ],
     "consequent": [
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.21454735740450026,
-    "lift": 1.7354125239839526,
-    "support": 0.006593547972081953,
-    "_id": "6ace2c53e418eb149b323619"
+    "confidence": 0.216351336840975,
+    "lift": 1.2724061366134167,
+    "support": 0.0243750069560614,
+    "_id": "6acd9dbcdbc8a366c09ea979"
   },
   {
     "antecedent": [
-      "Organic Red Onion"
+      "Bag of Organic Bananas"
+    ],
+    "consequent": [
+      "Organic Baby Spinach"
+    ],
+    "confidence": 0.14335436463553805,
+    "lift": 1.2724061366134165,
+    "support": 0.0243750069560614,
+    "_id": "6acd9dbcdbc8a366c09ea97a"
+  },
+  {
+    "antecedent": [
+      "Organic Baby Carrots"
     ],
     "consequent": [
       "Bag of Organic Bananas"
     ],
-    "confidence": 0.211230648123852,
-    "lift": 1.7085846063918524,
-    "support": 0.00647293428966582,
-    "_id": "6ace2c53e418eb149b32361a"
-  },
-  {
-    "antecedent": [
-      "Organic Cilantro"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.2029562251279136,
-    "lift": 1.641655153288315,
-    "support": 0.005741211283007945,
-    "_id": "6ace2c53e418eb149b32361b"
-  },
-  {
-    "antecedent": [
-      "Michigan Organic Kale"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.24314024390243902,
-    "lift": 1.6215956074801805,
-    "support": 0.0051301019587662025,
-    "_id": "6ace2c53e418eb149b32361c"
-  },
-  {
-    "antecedent": [
-      "Organic Blackberries"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.24287222808870115,
-    "lift": 1.6198081071498487,
-    "support": 0.005548229391142131,
-    "_id": "6ace2c53e418eb149b32361d"
-  },
-  {
-    "antecedent": [
-      "Organic Gala Apples"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.23751783166904422,
-    "lift": 1.5840975823290082,
-    "support": 0.005355247499276318,
-    "_id": "6ace2c53e418eb149b32361e"
-  },
-  {
-    "antecedent": [
-      "Seedless Red Grapes"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.19228868017795353,
-    "lift": 1.5553684176683586,
-    "support": 0.00625582966131678,
-    "_id": "6ace2c53e418eb149b32361f"
-  },
-  {
-    "antecedent": [
-      "Asparagus"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.18860103626943006,
-    "lift": 1.5255401154218797,
-    "support": 0.005853784053263002,
-    "_id": "6ace2c53e418eb149b323620"
+    "confidence": 0.21338747351838774,
+    "lift": 1.2549750546760057,
+    "support": 0.007603519500924975,
+    "_id": "6acd9dbcdbc8a366c09ea97b"
   },
   {
     "antecedent": [
@@ -1284,165 +1185,45 @@
     "consequent": [
       "Banana"
     ],
-    "confidence": 0.22818086225026288,
-    "lift": 1.5218257496053893,
-    "support": 0.005234633816860184,
-    "_id": "6ace2c53e418eb149b323621"
+    "confidence": 0.26265307005524224,
+    "lift": 1.2468273946118607,
+    "support": 0.008811817610376364,
+    "_id": "6acd9dbcdbc8a366c09ea97c"
   },
   {
     "antecedent": [
-      "Organic Grape Tomatoes"
+      "Organic Yellow Onion"
     ],
     "consequent": [
-      "Banana"
+      "Organic Strawberries"
     ],
-    "confidence": 0.2273678702250131,
-    "lift": 1.5164035937503904,
-    "support": 0.006987552667974655,
-    "_id": "6ace2c53e418eb149b323622"
-  },
-  {
-    "antecedent": [
-      "Limes"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.2210596246470686,
-    "lift": 1.4743314827912286,
-    "support": 0.01070245408639156,
-    "_id": "6ace2c53e418eb149b323623"
-  },
-  {
-    "antecedent": [
-      "Organic Whole Milk"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.21389059618930548,
-    "lift": 1.4265184804250972,
-    "support": 0.008394712296162878,
-    "_id": "6ace2c53e418eb149b323624"
-  },
-  {
-    "antecedent": [
-      "Organic Baby Carrots"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.20573496659242763,
-    "lift": 1.3721254563898038,
-    "support": 0.0059422340870348336,
-    "_id": "6ace2c53e418eb149b323625"
-  },
-  {
-    "antecedent": [
-      "Asparagus"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.20544041450777203,
-    "lift": 1.3701609754837003,
-    "support": 0.006376443343732913,
-    "_id": "6ace2c53e418eb149b323626"
-  },
-  {
-    "antecedent": [
-      "Organic Baby Spinach"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.20521239482864764,
-    "lift": 1.368640224726226,
-    "support": 0.016081824322151106,
-    "_id": "6ace2c53e418eb149b323627"
+    "confidence": 0.14991851765150765,
+    "lift": 1.2179957903590521,
+    "support": 0.00805741762934524,
+    "_id": "6acd9dbcdbc8a366c09ea97d"
   },
   {
     "antecedent": [
       "Organic Zucchini"
     ],
     "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.20479825517993458,
-    "lift": 1.3658781684559116,
-    "support": 0.007550416519249943,
-    "_id": "6ace2c53e418eb149b323628"
-  },
-  {
-    "antecedent": [
       "Organic Strawberries"
     ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.20031327743481064,
-    "lift": 1.3359661304715391,
-    "support": 0.01748094303817825,
-    "_id": "6ace2c53e418eb149b323629"
+    "confidence": 0.14930900727052998,
+    "lift": 1.2130438932229248,
+    "support": 0.007413346830915205,
+    "_id": "6acd9dbcdbc8a366c09ea97e"
   },
   {
     "antecedent": [
-      "Sparkling Water Grapefruit"
+      "Organic Raspberries"
     ],
     "consequent": [
-      "Banana"
+      "Organic Baby Spinach"
     ],
-    "confidence": 0.19886363636363635,
-    "lift": 1.3262979177737584,
-    "support": 0.005347206587115242,
-    "_id": "6ace2c53e418eb149b32362a"
-  },
-  {
-    "antecedent": [
-      "Raspberries"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.19163334358658873,
-    "lift": 1.2780763201481482,
-    "support": 0.005009488276350069,
-    "_id": "6ace2c53e418eb149b32362b"
-  },
-  {
-    "antecedent": [
-      "Limes"
-    ],
-    "consequent": [
-      "Bag of Organic Bananas"
-    ],
-    "confidence": 0.15479156286331175,
-    "lift": 1.2520649056216522,
-    "support": 0.0074941301341224145,
-    "_id": "6ace2c53e418eb149b32362c"
-  },
-  {
-    "antecedent": [
-      "Organic Blueberries"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.1875506893755069,
-    "lift": 1.2508475322301464,
-    "support": 0.007437843748994886,
-    "_id": "6ace2c53e418eb149b32362d"
-  },
-  {
-    "antecedent": [
-      "Organic Cucumber"
-    ],
-    "consequent": [
-      "Banana"
-    ],
-    "confidence": 0.180299414189629,
-    "lift": 1.2024859948666822,
-    "support": 0.006681998005853784,
-    "_id": "6ace2c53e418eb149b32362e"
+    "confidence": 0.1361842154916715,
+    "lift": 1.208764253129197,
+    "support": 0.008731490223043991,
+    "_id": "6acd9dbcdbc8a366c09ea97f"
   }
 ]

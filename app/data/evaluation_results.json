@@ -1,6 +1,7 @@
 {
   "test_size_baskets": 5000,
   "evaluation_protocol": "Leave-k-out: Giữ lại 1-2 món làm giỏ hàng đầu vào, đánh giá khả năng mô hình gợi ý đúng các món còn lại trong giỏ hàng thực tế.",
+  "coverage_definition": "Tỷ lệ số lượng mặt hàng có thể được hệ thống gợi ý (xuất hiện trong Consequent của các luật) trên tổng số 274 mặt hàng thường xuyên được đưa vào khai phá.",
   "metrics_by_k": [
     {
       "k": 3,

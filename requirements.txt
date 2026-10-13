@@ -1,4 +1,10 @@
+# Web Dashboard & Visualizations
 streamlit>=1.30.0
-pandas>=2.0.0
 plotly>=5.15.0
+pandas>=2.0.0
+
+# Database Connectivity
 pymongo>=4.5.0
+
+# Apache Spark Distributed Compute Engine (Tested on PySpark 3.5.x)
+pyspark>=3.5.0

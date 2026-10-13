@@ -1,0 +1,731 @@
+{
+  "total_itemsets": 82,
+  "itemsets_1": [
+    {
+      "items": [
+        "Banana"
+      ],
+      "k": 1,
+      "frequency": 472565,
+      "support": 0.2287
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas"
+      ],
+      "k": 1,
+      "frequency": 379450,
+      "support": 0.1836
+    },
+    {
+      "items": [
+        "Organic Strawberries"
+      ],
+      "k": 1,
+      "frequency": 264683,
+      "support": 0.1281
+    },
+    {
+      "items": [
+        "Organic Baby Spinach"
+      ],
+      "k": 1,
+      "frequency": 241921,
+      "support": 0.1171
+    },
+    {
+      "items": [
+        "Organic Hass Avocado"
+      ],
+      "k": 1,
+      "frequency": 213584,
+      "support": 0.1034
+    },
+    {
+      "items": [
+        "Organic Avocado"
+      ],
+      "k": 1,
+      "frequency": 176815,
+      "support": 0.0856
+    },
+    {
+      "items": [
+        "Large Lemon"
+      ],
+      "k": 1,
+      "frequency": 152657,
+      "support": 0.0739
+    },
+    {
+      "items": [
+        "Strawberries"
+      ],
+      "k": 1,
+      "frequency": 142951,
+      "support": 0.0692
+    },
+    {
+      "items": [
+        "Limes"
+      ],
+      "k": 1,
+      "frequency": 140627,
+      "support": 0.068
+    },
+    {
+      "items": [
+        "Organic Whole Milk"
+      ],
+      "k": 1,
+      "frequency": 137905,
+      "support": 0.0667
+    },
+    {
+      "items": [
+        "Organic Raspberries"
+      ],
+      "k": 1,
+      "frequency": 137057,
+      "support": 0.0663
+    },
+    {
+      "items": [
+        "Organic Yellow Onion"
+      ],
+      "k": 1,
+      "frequency": 113426,
+      "support": 0.0549
+    },
+    {
+      "items": [
+        "Organic Garlic"
+      ],
+      "k": 1,
+      "frequency": 109778,
+      "support": 0.0531
+    },
+    {
+      "items": [
+        "Organic Zucchini"
+      ],
+      "k": 1,
+      "frequency": 104823,
+      "support": 0.0507
+    },
+    {
+      "items": [
+        "Organic Blueberries"
+      ],
+      "k": 1,
+      "frequency": 100060,
+      "support": 0.0484
+    }
+  ],
+  "itemsets_multi": [
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 62341,
+      "support": 0.0302
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 61628,
+      "support": 0.0298
+    },
+    {
+      "items": [
+        "Banana",
+        "Organic Avocado"
+      ],
+      "k": 2,
+      "frequency": 53395,
+      "support": 0.0258
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 50372,
+      "support": 0.0244
+    },
+    {
+      "items": [
+        "Banana",
+        "Strawberries"
+      ],
+      "k": 2,
+      "frequency": 41232,
+      "support": 0.02
+    },
+    {
+      "items": [
+        "Banana",
+        "Large Lemon"
+      ],
+      "k": 2,
+      "frequency": 40880,
+      "support": 0.0198
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 40794,
+      "support": 0.0197
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Raspberries"
+      ],
+      "k": 2,
+      "frequency": 40503,
+      "support": 0.0196
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 38134,
+      "support": 0.0185
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 34901,
+      "support": 0.0169
+    },
+    {
+      "items": [
+        "Organic Raspberries",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 33863,
+      "support": 0.0164
+    },
+    {
+      "items": [
+        "Banana",
+        "Organic Fuji Apple"
+      ],
+      "k": 2,
+      "frequency": 33943,
+      "support": 0.0164
+    },
+    {
+      "items": [
+        "Banana",
+        "Cucumber Kirby"
+      ],
+      "k": 2,
+      "frequency": 32097,
+      "support": 0.0155
+    },
+    {
+      "items": [
+        "Organic Avocado",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 30889,
+      "support": 0.0149
+    },
+    {
+      "items": [
+        "Banana",
+        "Honeycrisp Apple"
+      ],
+      "k": 2,
+      "frequency": 28408,
+      "support": 0.0137
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Limes"
+      ],
+      "k": 2,
+      "frequency": 27403,
+      "support": 0.0133
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Organic Raspberries"
+      ],
+      "k": 2,
+      "frequency": 25793,
+      "support": 0.0125
+    },
+    {
+      "items": [
+        "Banana",
+        "Seedless Red Grapes"
+      ],
+      "k": 2,
+      "frequency": 24594,
+      "support": 0.0119
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Yellow Onion"
+      ],
+      "k": 2,
+      "frequency": 24574,
+      "support": 0.0119
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Organic Avocado"
+      ],
+      "k": 2,
+      "frequency": 24417,
+      "support": 0.0118
+    },
+    {
+      "items": [
+        "Organic Blueberries",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 23756,
+      "support": 0.0115
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 23696,
+      "support": 0.0115
+    },
+    {
+      "items": [
+        "Organic Strawberries",
+        "Organic Whole Milk"
+      ],
+      "k": 2,
+      "frequency": 23813,
+      "support": 0.0115
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Large Extra Fancy Fuji Apple"
+      ],
+      "k": 2,
+      "frequency": 23364,
+      "support": 0.0113
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 22808,
+      "support": 0.011
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Zucchini"
+      ],
+      "k": 2,
+      "frequency": 22632,
+      "support": 0.011
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Lemon"
+      ],
+      "k": 2,
+      "frequency": 22383,
+      "support": 0.0108
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Organic Yellow Onion"
+      ],
+      "k": 2,
+      "frequency": 22073,
+      "support": 0.0107
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Avocado"
+      ],
+      "k": 2,
+      "frequency": 22010,
+      "support": 0.0107
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Blueberries"
+      ],
+      "k": 2,
+      "frequency": 21868,
+      "support": 0.0106
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Cucumber"
+      ],
+      "k": 2,
+      "frequency": 21534,
+      "support": 0.0104
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Organic Lemon"
+      ],
+      "k": 2,
+      "frequency": 21246,
+      "support": 0.0103
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Organic Garlic"
+      ],
+      "k": 2,
+      "frequency": 20996,
+      "support": 0.0102
+    },
+    {
+      "items": [
+        "Banana",
+        "Yellow Onions"
+      ],
+      "k": 2,
+      "frequency": 21168,
+      "support": 0.0102
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 20776,
+      "support": 0.0101
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Organic Zucchini"
+      ],
+      "k": 2,
+      "frequency": 20415,
+      "support": 0.0099
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 20030,
+      "support": 0.0097
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Organic Yellow Onion"
+      ],
+      "k": 2,
+      "frequency": 19927,
+      "support": 0.0096
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Organic Yellow Onion"
+      ],
+      "k": 2,
+      "frequency": 19707,
+      "support": 0.0095
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Gala Apples"
+      ],
+      "k": 2,
+      "frequency": 18958,
+      "support": 0.0092
+    },
+    {
+      "items": [
+        "Banana",
+        "Original Hummus"
+      ],
+      "k": 2,
+      "frequency": 18210,
+      "support": 0.0088
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Organic Raspberries"
+      ],
+      "k": 2,
+      "frequency": 18044,
+      "support": 0.0087
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 17697,
+      "support": 0.0086
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Cilantro"
+      ],
+      "k": 2,
+      "frequency": 17565,
+      "support": 0.0085
+    },
+    {
+      "items": [
+        "Organic Cucumber",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 17456,
+      "support": 0.0084
+    },
+    {
+      "items": [
+        "Organic Strawberries",
+        "Organic Yellow Onion"
+      ],
+      "k": 2,
+      "frequency": 16651,
+      "support": 0.0081
+    },
+    {
+      "items": [
+        "Organic Cucumber",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 16555,
+      "support": 0.008
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Organic Zucchini"
+      ],
+      "k": 2,
+      "frequency": 16464,
+      "support": 0.008
+    },
+    {
+      "items": [
+        "Banana",
+        "Blueberries"
+      ],
+      "k": 2,
+      "frequency": 16286,
+      "support": 0.0079
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Garlic"
+      ],
+      "k": 2,
+      "frequency": 15946,
+      "support": 0.0077
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Organic Cucumber"
+      ],
+      "k": 2,
+      "frequency": 15813,
+      "support": 0.0077
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Organic Grape Tomatoes"
+      ],
+      "k": 2,
+      "frequency": 15925,
+      "support": 0.0077
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15870,
+      "support": 0.0077
+    },
+    {
+      "items": [
+        "Cucumber Kirby",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 15796,
+      "support": 0.0076
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Baby Carrots"
+      ],
+      "k": 2,
+      "frequency": 15713,
+      "support": 0.0076
+    },
+    {
+      "items": [
+        "Cucumber Kirby",
+        "Organic Avocado"
+      ],
+      "k": 2,
+      "frequency": 15570,
+      "support": 0.0075
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 15519,
+      "support": 0.0075
+    },
+    {
+      "items": [
+        "Organic Grape Tomatoes",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15573,
+      "support": 0.0075
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Small Bunch Celery"
+      ],
+      "k": 2,
+      "frequency": 15507,
+      "support": 0.0075
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Organic Garlic"
+      ],
+      "k": 2,
+      "frequency": 15318,
+      "support": 0.0074
+    },
+    {
+      "items": [
+        "Banana",
+        "Red Vine Tomato"
+      ],
+      "k": 2,
+      "frequency": 15279,
+      "support": 0.0074
+    },
+    {
+      "items": [
+        "Organic Strawberries",
+        "Organic Zucchini"
+      ],
+      "k": 2,
+      "frequency": 15320,
+      "support": 0.0074
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Hass Avocado",
+        "Organic Strawberries"
+      ],
+      "k": 3,
+      "frequency": 15066,
+      "support": 0.0073
+    },
+    {
+      "items": [
+        "Organic Large Extra Fancy Fuji Apple",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15113,
+      "support": 0.0073
+    },
+    {
+      "items": [
+        "Organic Lemon",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15152,
+      "support": 0.0073
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas",
+        "Organic Tomato Cluster"
+      ],
+      "k": 2,
+      "frequency": 15060,
+      "support": 0.0073
+    },
+    {
+      "items": [
+        "100% Whole Wheat Bread",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15118,
+      "support": 0.0073
+    }
+  ]
+}
