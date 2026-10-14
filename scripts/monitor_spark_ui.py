@@ -45,7 +45,7 @@ def run_spark_with_ui():
     from pyspark.ml.fpm import FPGrowth
     
     spark = SparkSession.builder \
-        .appName("GiamSat_Instacart_FPGrowth_UI") \
+        .appName("Instacart_FP_Growth_3M_Prior") \
         .master("local[*]") \
         .config("spark.ui.enabled", "true") \
         .config("spark.ui.port", "4040") \
@@ -91,8 +91,10 @@ def run_spark_with_ui():
     print("=" * 70)
     
     try:
-        input("\n>>> Nhan phim [ENTER] trong cua so terminal de ket thuc phien lam viec...")
-    except KeyboardInterrupt:
+        print("\n>>> Spark Web UI dang hoat dong tai http://localhost:4040. Dang giu ket noi...")
+        while True:
+            time.sleep(2)
+    except (KeyboardInterrupt, EOFError):
         pass
         
     print("\nDang dong Spark Session...")

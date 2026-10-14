@@ -285,7 +285,13 @@ def get_popular_products():
             rule_items.add(item)
     cache = load_dashboard_cache()
     top_items = [p["_id"] for p in cache.get("top_products", [])]
-    combined = sorted(list(rule_items.union(set(top_items))))
+    # Bổ sung các sản phẩm thực tế từ danh mục Instacart chưa có luật FP-Growth phục vụ kiểm thử Fallback
+    long_tail_items = [
+        "Cold Brew Coffee Tahitian Vanilla",
+        "Foaming Hand Soap Kid Watermelon",
+        "Kiwi Strawberry Sparkling Water"
+    ]
+    combined = sorted(list(rule_items.union(set(top_items)).union(set(long_tail_items))))
     return combined if combined else ["Banana", "Bag of Organic Bananas", "Organic Strawberries", "Limes"]
 
 # =============================================================
@@ -920,7 +926,7 @@ elif app_mode == "5. Ứng Dụng Gợi Ý Mua Kèm Real-time":
         
         # Fast Demo Presets
         st.caption("Chọn nhanh kịch bản kiểm thử mẫu:")
-        d_c1, d_c2, d_c3 = st.columns(3)
+        d_c1, d_c2, d_c3, d_c4 = st.columns(4)
         preset_items = []
         if d_c1.button("Combo Chanh & Rau"):
             preset_items = ["Limes", "Organic Lemon"]
@@ -928,6 +934,8 @@ elif app_mode == "5. Ứng Dụng Gợi Ý Mua Kèm Real-time":
             preset_items = ["Organic Yellow Onion", "Organic Garlic"]
         if d_c3.button("Combo Trái cây"):
             preset_items = ["Banana", "Organic Strawberries"]
+        if d_c4.button("Món chưa có luật (Fallback)"):
+            preset_items = ["Cold Brew Coffee Tahitian Vanilla"]
             
         default_items = preset_items if preset_items else ["Limes", "Organic Lemon"]
         default_valid = [item for item in default_items if item in popular_products]

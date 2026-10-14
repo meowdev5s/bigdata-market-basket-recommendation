@@ -350,6 +350,19 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
     col_dq.insert_one(dq_spark)
     print(f"    [+] Saved data quality report from Spark ETL into {out_dq_path} and MongoDB 'data_quality_reports'")
     
+    if "--keep-alive" in sys.argv:
+        ui_url = spark.sparkContext.uiWebUrl
+        print(f"\n" + "=" * 75)
+        print(f"  >>> SPARK WEB UI DANG MO TAI: {ui_url or 'http://localhost:4040'}")
+        print(f"  >>> DANG GIU PHIEN DE BAN CHUP HINH 3.7...")
+        print(f"  >>> (De dong, nhan Ctrl+C hoac dung tien trinh)")
+        print("=" * 75)
+        try:
+            while True:
+                time.sleep(2)
+        except (KeyboardInterrupt, EOFError):
+            pass
+
     spark.stop()
     print(f"\n=============================================================")
     print(f" PIPELINE 3.2M FINISHED SUCCESSFULLY IN {time.time() - start_total:.2f}s!")
