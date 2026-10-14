@@ -28,3 +28,6 @@ Thumbs.db
 .ipynb_checkpoints/
 notebooks/
 
+# Local Project Documentation and Drafts
+Docs/
+
