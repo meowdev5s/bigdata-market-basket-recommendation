@@ -1,181 +1,2349 @@
 {
-  "total_itemsets": 82,
+  "total_itemsets": 350,
+  "total_1_itemsets": 251,
+  "total_multi_itemsets": 99,
+  "min_support": 0.00726,
   "itemsets_1": [
     {
       "items": [
         "Banana"
       ],
       "k": 1,
-      "frequency": 472565,
-      "support": 0.2287
+      "frequency": 435332,
+      "support": 0.2107,
+      "_id": "6acf15d6b1da22dcc55b747a"
     },
     {
       "items": [
         "Bag of Organic Bananas"
       ],
       "k": 1,
-      "frequency": 379450,
-      "support": 0.1836
+      "frequency": 351381,
+      "support": 0.17,
+      "_id": "6acf15d6b1da22dcc55b747b"
     },
     {
       "items": [
         "Organic Strawberries"
       ],
       "k": 1,
-      "frequency": 264683,
-      "support": 0.1281
+      "frequency": 254363,
+      "support": 0.1231,
+      "_id": "6acf15d6b1da22dcc55b747c"
     },
     {
       "items": [
         "Organic Baby Spinach"
       ],
       "k": 1,
-      "frequency": 241921,
-      "support": 0.1171
+      "frequency": 232825,
+      "support": 0.1127,
+      "_id": "6acf15d6b1da22dcc55b747d"
     },
     {
       "items": [
         "Organic Hass Avocado"
       ],
       "k": 1,
-      "frequency": 213584,
-      "support": 0.1034
+      "frequency": 207015,
+      "support": 0.1002,
+      "_id": "6acf15d6b1da22dcc55b747e"
     },
     {
       "items": [
         "Organic Avocado"
       ],
       "k": 1,
-      "frequency": 176815,
-      "support": 0.0856
+      "frequency": 170906,
+      "support": 0.0827,
+      "_id": "6acf15d6b1da22dcc55b747f"
     },
     {
       "items": [
         "Large Lemon"
       ],
       "k": 1,
-      "frequency": 152657,
-      "support": 0.0739
-    },
-    {
-      "items": [
-        "Strawberries"
-      ],
-      "k": 1,
-      "frequency": 142951,
-      "support": 0.0692
+      "frequency": 147434,
+      "support": 0.0713,
+      "_id": "6acf15d6b1da22dcc55b7480"
     },
     {
       "items": [
         "Limes"
       ],
       "k": 1,
-      "frequency": 140627,
-      "support": 0.068
-    },
-    {
-      "items": [
-        "Organic Whole Milk"
-      ],
-      "k": 1,
-      "frequency": 137905,
-      "support": 0.0667
+      "frequency": 136407,
+      "support": 0.066,
+      "_id": "6acf15d6b1da22dcc55b7481"
     },
     {
       "items": [
         "Organic Raspberries"
       ],
       "k": 1,
-      "frequency": 137057,
-      "support": 0.0663
+      "frequency": 132497,
+      "support": 0.0641,
+      "_id": "6acf15d6b1da22dcc55b7482"
+    },
+    {
+      "items": [
+        "Strawberries"
+      ],
+      "k": 1,
+      "frequency": 130855,
+      "support": 0.0633,
+      "_id": "6acf15d6b1da22dcc55b7483"
+    },
+    {
+      "items": [
+        "Organic Whole Milk"
+      ],
+      "k": 1,
+      "frequency": 130324,
+      "support": 0.0631,
+      "_id": "6acf15d6b1da22dcc55b7484"
     },
     {
       "items": [
         "Organic Yellow Onion"
       ],
       "k": 1,
-      "frequency": 113426,
-      "support": 0.0549
+      "frequency": 111067,
+      "support": 0.0537,
+      "_id": "6acf15d6b1da22dcc55b7485"
     },
     {
       "items": [
         "Organic Garlic"
       ],
       "k": 1,
-      "frequency": 109778,
-      "support": 0.0531
+      "frequency": 108125,
+      "support": 0.0523,
+      "_id": "6acf15d6b1da22dcc55b7486"
     },
     {
       "items": [
         "Organic Zucchini"
       ],
       "k": 1,
-      "frequency": 104823,
-      "support": 0.0507
+      "frequency": 102606,
+      "support": 0.0497,
+      "_id": "6acf15d6b1da22dcc55b7487"
     },
     {
       "items": [
         "Organic Blueberries"
       ],
       "k": 1,
-      "frequency": 100060,
-      "support": 0.0484
+      "frequency": 94874,
+      "support": 0.0459,
+      "_id": "6acf15d6b1da22dcc55b7488"
+    },
+    {
+      "items": [
+        "Cucumber Kirby"
+      ],
+      "k": 1,
+      "frequency": 94789,
+      "support": 0.0459,
+      "_id": "6acf15d6b1da22dcc55b7489"
+    },
+    {
+      "items": [
+        "Organic Fuji Apple"
+      ],
+      "k": 1,
+      "frequency": 85846,
+      "support": 0.0415,
+      "_id": "6acf15d6b1da22dcc55b748a"
+    },
+    {
+      "items": [
+        "Organic Lemon"
+      ],
+      "k": 1,
+      "frequency": 85410,
+      "support": 0.0413,
+      "_id": "6acf15d6b1da22dcc55b748b"
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic"
+      ],
+      "k": 1,
+      "frequency": 82892,
+      "support": 0.0401,
+      "_id": "6acf15d6b1da22dcc55b748c"
+    },
+    {
+      "items": [
+        "Organic Grape Tomatoes"
+      ],
+      "k": 1,
+      "frequency": 82612,
+      "support": 0.04,
+      "_id": "6acf15d6b1da22dcc55b748d"
+    },
+    {
+      "items": [
+        "Organic Cucumber"
+      ],
+      "k": 1,
+      "frequency": 78983,
+      "support": 0.0382,
+      "_id": "6acf15d6b1da22dcc55b748e"
+    },
+    {
+      "items": [
+        "Seedless Red Grapes"
+      ],
+      "k": 1,
+      "frequency": 78307,
+      "support": 0.0379,
+      "_id": "6acf15d6b1da22dcc55b748f"
+    },
+    {
+      "items": [
+        "Honeycrisp Apple"
+      ],
+      "k": 1,
+      "frequency": 77359,
+      "support": 0.0374,
+      "_id": "6acf15d6b1da22dcc55b7490"
+    },
+    {
+      "items": [
+        "Organic Baby Carrots"
+      ],
+      "k": 1,
+      "frequency": 73636,
+      "support": 0.0356,
+      "_id": "6acf15d6b1da22dcc55b7491"
+    },
+    {
+      "items": [
+        "Organic Large Extra Fancy Fuji Apple"
+      ],
+      "k": 1,
+      "frequency": 72956,
+      "support": 0.0353,
+      "_id": "6acf15d6b1da22dcc55b7492"
+    },
+    {
+      "items": [
+        "Carrots"
+      ],
+      "k": 1,
+      "frequency": 71403,
+      "support": 0.0346,
+      "_id": "6acf15d6b1da22dcc55b7493"
+    },
+    {
+      "items": [
+        "Sparkling Water Grapefruit"
+      ],
+      "k": 1,
+      "frequency": 71374,
+      "support": 0.0345,
+      "_id": "6acf15d6b1da22dcc55b7494"
+    },
+    {
+      "items": [
+        "Organic Gala Apples"
+      ],
+      "k": 1,
+      "frequency": 71092,
+      "support": 0.0344,
+      "_id": "6acf15d6b1da22dcc55b7495"
+    },
+    {
+      "items": [
+        "Organic Baby Arugula"
+      ],
+      "k": 1,
+      "frequency": 70602,
+      "support": 0.0342,
+      "_id": "6acf15d6b1da22dcc55b7496"
+    },
+    {
+      "items": [
+        "Yellow Onions"
+      ],
+      "k": 1,
+      "frequency": 70559,
+      "support": 0.0341,
+      "_id": "6acf15d6b1da22dcc55b7497"
+    },
+    {
+      "items": [
+        "Fresh Cauliflower"
+      ],
+      "k": 1,
+      "frequency": 69925,
+      "support": 0.0338,
+      "_id": "6acf15d6b1da22dcc55b7498"
+    },
+    {
+      "items": [
+        "Original Hummus"
+      ],
+      "k": 1,
+      "frequency": 69331,
+      "support": 0.0335,
+      "_id": "6acf15d6b1da22dcc55b7499"
+    },
+    {
+      "items": [
+        "Organic Half & Half"
+      ],
+      "k": 1,
+      "frequency": 68326,
+      "support": 0.0331,
+      "_id": "6acf15d6b1da22dcc55b749a"
+    },
+    {
+      "items": [
+        "Organic Cilantro"
+      ],
+      "k": 1,
+      "frequency": 68032,
+      "support": 0.0329,
+      "_id": "6acf15d6b1da22dcc55b749b"
+    },
+    {
+      "items": [
+        "Organic Small Bunch Celery"
+      ],
+      "k": 1,
+      "frequency": 66823,
+      "support": 0.0323,
+      "_id": "6acf15d6b1da22dcc55b749c"
+    },
+    {
+      "items": [
+        "Organic Red Onion"
+      ],
+      "k": 1,
+      "frequency": 65969,
+      "support": 0.0319,
+      "_id": "6acf15d6b1da22dcc55b749d"
+    },
+    {
+      "items": [
+        "Michigan Organic Kale"
+      ],
+      "k": 1,
+      "frequency": 65932,
+      "support": 0.0319,
+      "_id": "6acf15d6b1da22dcc55b749e"
+    },
+    {
+      "items": [
+        "Asparagus"
+      ],
+      "k": 1,
+      "frequency": 64922,
+      "support": 0.0314,
+      "_id": "6acf15d6b1da22dcc55b749f"
+    },
+    {
+      "items": [
+        "Half & Half"
+      ],
+      "k": 1,
+      "frequency": 64460,
+      "support": 0.0312,
+      "_id": "6acf15d6b1da22dcc55b74a0"
+    },
+    {
+      "items": [
+        "Organic Tomato Cluster"
+      ],
+      "k": 1,
+      "frequency": 62632,
+      "support": 0.0303,
+      "_id": "6acf15d6b1da22dcc55b74a1"
+    },
+    {
+      "items": [
+        "Organic Italian Parsley Bunch"
+      ],
+      "k": 1,
+      "frequency": 59492,
+      "support": 0.0288,
+      "_id": "6acf15d6b1da22dcc55b74a4"
+    },
+    {
+      "items": [
+        "Organic Blackberries"
+      ],
+      "k": 1,
+      "frequency": 59454,
+      "support": 0.0288,
+      "_id": "6acf15d6b1da22dcc55b74a5"
+    },
+    {
+      "items": [
+        "Organic Whole String Cheese"
+      ],
+      "k": 1,
+      "frequency": 58297,
+      "support": 0.0282,
+      "_id": "6acf15d6b1da22dcc55b74a6"
+    },
+    {
+      "items": [
+        "Organic Granny Smith Apple"
+      ],
+      "k": 1,
+      "frequency": 57308,
+      "support": 0.0277,
+      "_id": "6acf15d6b1da22dcc55b74a7"
+    },
+    {
+      "items": [
+        "Organic Red Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 56747,
+      "support": 0.0275,
+      "_id": "6acf15d6b1da22dcc55b74a8"
+    },
+    {
+      "items": [
+        "100% Whole Wheat Bread"
+      ],
+      "k": 1,
+      "frequency": 55431,
+      "support": 0.0268,
+      "_id": "6acf15d6b1da22dcc55b74aa"
+    },
+    {
+      "items": [
+        "Organic Unsweetened Almond Milk"
+      ],
+      "k": 1,
+      "frequency": 54887,
+      "support": 0.0266,
+      "_id": "6acf15d6b1da22dcc55b74ab"
+    },
+    {
+      "items": [
+        "Green Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 54485,
+      "support": 0.0264,
+      "_id": "6acf15d6b1da22dcc55b74ac"
+    },
+    {
+      "items": [
+        "Red Peppers"
+      ],
+      "k": 1,
+      "frequency": 54242,
+      "support": 0.0262,
+      "_id": "6acf15d6b1da22dcc55b74ad"
+    },
+    {
+      "items": [
+        "Organic Peeled Whole Baby Carrots"
+      ],
+      "k": 1,
+      "frequency": 53709,
+      "support": 0.026,
+      "_id": "6acf15d6b1da22dcc55b74ae"
+    },
+    {
+      "items": [
+        "Blueberries"
+      ],
+      "k": 1,
+      "frequency": 52580,
+      "support": 0.0254,
+      "_id": "6acf15d6b1da22dcc55b74b0"
+    },
+    {
+      "items": [
+        "Red Vine Tomato"
+      ],
+      "k": 1,
+      "frequency": 52560,
+      "support": 0.0254,
+      "_id": "6acf15d6b1da22dcc55b74b1"
+    },
+    {
+      "items": [
+        "Raspberries"
+      ],
+      "k": 1,
+      "frequency": 52224,
+      "support": 0.0253,
+      "_id": "6acf15d6b1da22dcc55b74b2"
+    },
+    {
+      "items": [
+        "Organic Garnet Sweet Potato (Yam)"
+      ],
+      "k": 1,
+      "frequency": 51121,
+      "support": 0.0247,
+      "_id": "6acf15d6b1da22dcc55b74b4"
+    },
+    {
+      "items": [
+        "Organic Ginger Root"
+      ],
+      "k": 1,
+      "frequency": 50865,
+      "support": 0.0246,
+      "_id": "6acf15d6b1da22dcc55b74b5"
+    },
+    {
+      "items": [
+        "Organic Kiwi"
+      ],
+      "k": 1,
+      "frequency": 49281,
+      "support": 0.0238,
+      "_id": "6acf15d6b1da22dcc55b74b7"
+    },
+    {
+      "items": [
+        "Boneless Skinless Chicken Breasts"
+      ],
+      "k": 1,
+      "frequency": 48299,
+      "support": 0.0234,
+      "_id": "6acf15d6b1da22dcc55b74b8"
+    },
+    {
+      "items": [
+        "Organic D'Anjou Pears"
+      ],
+      "k": 1,
+      "frequency": 48226,
+      "support": 0.0233,
+      "_id": "6acf15d6b1da22dcc55b74b9"
+    },
+    {
+      "items": [
+        "Small Hass Avocado"
+      ],
+      "k": 1,
+      "frequency": 46925,
+      "support": 0.0227,
+      "_id": "6acf15d6b1da22dcc55b74ba"
+    },
+    {
+      "items": [
+        "Spring Water"
+      ],
+      "k": 1,
+      "frequency": 46395,
+      "support": 0.0225,
+      "_id": "6acf15d6b1da22dcc55b74bb"
+    },
+    {
+      "items": [
+        "Unsweetened Almondmilk"
+      ],
+      "k": 1,
+      "frequency": 46321,
+      "support": 0.0224,
+      "_id": "6acf15d6b1da22dcc55b74bc"
+    },
+    {
+      "items": [
+        "Extra Virgin Olive Oil"
+      ],
+      "k": 1,
+      "frequency": 46227,
+      "support": 0.0224,
+      "_id": "6acf15d6b1da22dcc55b74bd"
+    },
+    {
+      "items": [
+        "Organic Reduced Fat 2% Milk"
+      ],
+      "k": 1,
+      "frequency": 45055,
+      "support": 0.0218,
+      "_id": "6acf15d6b1da22dcc55b74be"
+    },
+    {
+      "items": [
+        "Lime Sparkling Water"
+      ],
+      "k": 1,
+      "frequency": 44199,
+      "support": 0.0214,
+      "_id": "6acf15d6b1da22dcc55b74bf"
+    },
+    {
+      "items": [
+        "Grated Parmesan"
+      ],
+      "k": 1,
+      "frequency": 44129,
+      "support": 0.0214,
+      "_id": "6acf15d6b1da22dcc55b74c0"
+    },
+    {
+      "items": [
+        "Bunched Cilantro"
+      ],
+      "k": 1,
+      "frequency": 43927,
+      "support": 0.0213,
+      "_id": "6acf15d6b1da22dcc55b74c1"
+    },
+    {
+      "items": [
+        "Hass Avocados"
+      ],
+      "k": 1,
+      "frequency": 43325,
+      "support": 0.021,
+      "_id": "6acf15d6b1da22dcc55b74c2"
+    },
+    {
+      "items": [
+        "Organic Lacinato (Dinosaur) Kale"
+      ],
+      "k": 1,
+      "frequency": 42292,
+      "support": 0.0205,
+      "_id": "6acf15d6b1da22dcc55b74c3"
+    },
+    {
+      "items": [
+        "Organic Navel Orange"
+      ],
+      "k": 1,
+      "frequency": 41696,
+      "support": 0.0202,
+      "_id": "6acf15d6b1da22dcc55b74c4"
+    },
+    {
+      "items": [
+        "Jalapeno Peppers"
+      ],
+      "k": 1,
+      "frequency": 41418,
+      "support": 0.02,
+      "_id": "6acf15d6b1da22dcc55b74c5"
+    },
+    {
+      "items": [
+        "Red Onion"
+      ],
+      "k": 1,
+      "frequency": 41066,
+      "support": 0.0199,
+      "_id": "6acf15d6b1da22dcc55b74c7"
+    },
+    {
+      "items": [
+        "Broccoli Crown"
+      ],
+      "k": 1,
+      "frequency": 40710,
+      "support": 0.0197,
+      "_id": "6acf15d6b1da22dcc55b74ca"
+    },
+    {
+      "items": [
+        "Uncured Genoa Salami"
+      ],
+      "k": 1,
+      "frequency": 39091,
+      "support": 0.0189,
+      "_id": "6acf15d6b1da22dcc55b74cc"
+    },
+    {
+      "items": [
+        "Organic Grade A Free Range Large Brown Eggs"
+      ],
+      "k": 1,
+      "frequency": 38859,
+      "support": 0.0188,
+      "_id": "6acf15d6b1da22dcc55b74cd"
+    },
+    {
+      "items": [
+        "Large Alfresco Eggs"
+      ],
+      "k": 1,
+      "frequency": 38613,
+      "support": 0.0187,
+      "_id": "6acf15d6b1da22dcc55b74ce"
+    },
+    {
+      "items": [
+        "Orange Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 38368,
+      "support": 0.0186,
+      "_id": "6acf15d6b1da22dcc55b74cf"
+    },
+    {
+      "items": [
+        "Grape White/Green Seedless"
+      ],
+      "k": 1,
+      "frequency": 37921,
+      "support": 0.0183,
+      "_id": "6acf15d6b1da22dcc55b74d1"
+    },
+    {
+      "items": [
+        "Roma Tomato"
+      ],
+      "k": 1,
+      "frequency": 37610,
+      "support": 0.0182,
+      "_id": "6acf15d6b1da22dcc55b74d2"
+    },
+    {
+      "items": [
+        "Organic Broccoli"
+      ],
+      "k": 1,
+      "frequency": 37570,
+      "support": 0.0182,
+      "_id": "6acf15d6b1da22dcc55b74d3"
+    },
+    {
+      "items": [
+        "Organic Bartlett Pear"
+      ],
+      "k": 1,
+      "frequency": 37123,
+      "support": 0.018,
+      "_id": "6acf15d6b1da22dcc55b74d4"
+    },
+    {
+      "items": [
+        "Organic Black Beans"
+      ],
+      "k": 1,
+      "frequency": 36904,
+      "support": 0.0179,
+      "_id": "6acf15d6b1da22dcc55b74d5"
+    },
+    {
+      "items": [
+        "Clementines, Bag"
+      ],
+      "k": 1,
+      "frequency": 36698,
+      "support": 0.0178,
+      "_id": "6acf15d6b1da22dcc55b74d6"
+    },
+    {
+      "items": [
+        "Sparkling Natural Mineral Water"
+      ],
+      "k": 1,
+      "frequency": 36574,
+      "support": 0.0177,
+      "_id": "6acf15d6b1da22dcc55b74d7"
+    },
+    {
+      "items": [
+        "Shredded Parmesan"
+      ],
+      "k": 1,
+      "frequency": 35549,
+      "support": 0.0172,
+      "_id": "6acf15d6b1da22dcc55b74d8"
+    },
+    {
+      "items": [
+        "Garlic"
+      ],
+      "k": 1,
+      "frequency": 35464,
+      "support": 0.0172,
+      "_id": "6acf15d6b1da22dcc55b74d9"
+    },
+    {
+      "items": [
+        "Organic Carrot Bunch"
+      ],
+      "k": 1,
+      "frequency": 34948,
+      "support": 0.0169,
+      "_id": "6acf15d6b1da22dcc55b74da"
+    },
+    {
+      "items": [
+        "100% Raw Coconut Water"
+      ],
+      "k": 1,
+      "frequency": 34535,
+      "support": 0.0167,
+      "_id": "6acf15d6b1da22dcc55b74dc"
+    },
+    {
+      "items": [
+        "Organic Reduced Fat Milk"
+      ],
+      "k": 1,
+      "frequency": 34237,
+      "support": 0.0166,
+      "_id": "6acf15d6b1da22dcc55b74dd"
+    },
+    {
+      "items": [
+        "Organic Romaine Lettuce"
+      ],
+      "k": 1,
+      "frequency": 34026,
+      "support": 0.0165,
+      "_id": "6acf15d6b1da22dcc55b74de"
+    },
+    {
+      "items": [
+        "Bartlett Pears"
+      ],
+      "k": 1,
+      "frequency": 33968,
+      "support": 0.0164,
+      "_id": "6acf15d6b1da22dcc55b74df"
+    },
+    {
+      "items": [
+        "Unsalted Butter"
+      ],
+      "k": 1,
+      "frequency": 33702,
+      "support": 0.0163,
+      "_id": "6acf15d6b1da22dcc55b74e2"
+    },
+    {
+      "items": [
+        "Granny Smith Apples"
+      ],
+      "k": 1,
+      "frequency": 33053,
+      "support": 0.016,
+      "_id": "6acf15d6b1da22dcc55b74e3"
+    },
+    {
+      "items": [
+        "Organic Sticks Low Moisture Part Skim Mozzarella String Cheese"
+      ],
+      "k": 1,
+      "frequency": 32679,
+      "support": 0.0158,
+      "_id": "6acf15d6b1da22dcc55b74e4"
+    },
+    {
+      "items": [
+        "Feta Cheese Crumbles"
+      ],
+      "k": 1,
+      "frequency": 31850,
+      "support": 0.0154,
+      "_id": "6acf15d6b1da22dcc55b74e6"
+    },
+    {
+      "items": [
+        "Organic Russet Potato"
+      ],
+      "k": 1,
+      "frequency": 31648,
+      "support": 0.0153,
+      "_id": "6acf15d6b1da22dcc55b74e8"
+    },
+    {
+      "items": [
+        "Unsweetened Original Almond Breeze Almond Milk"
+      ],
+      "k": 1,
+      "frequency": 31639,
+      "support": 0.0153,
+      "_id": "6acf15d6b1da22dcc55b74ea"
+    },
+    {
+      "items": [
+        "Organic Broccoli Florets"
+      ],
+      "k": 1,
+      "frequency": 31219,
+      "support": 0.0151,
+      "_id": "6acf15d6b1da22dcc55b74ec"
+    },
+    {
+      "items": [
+        "Sparkling Lemon Water"
+      ],
+      "k": 1,
+      "frequency": 30951,
+      "support": 0.015,
+      "_id": "6acf15d6b1da22dcc55b74ed"
+    },
+    {
+      "items": [
+        "Organic Baby Broccoli"
+      ],
+      "k": 1,
+      "frequency": 30875,
+      "support": 0.0149,
+      "_id": "6acf15d6b1da22dcc55b74ef"
+    },
+    {
+      "items": [
+        "Organic Whole Strawberries"
+      ],
+      "k": 1,
+      "frequency": 30812,
+      "support": 0.0149,
+      "_id": "6acf15d6b1da22dcc55b74f0"
+    },
+    {
+      "items": [
+        "Organic Large Brown Grade AA Cage Free Eggs"
+      ],
+      "k": 1,
+      "frequency": 30466,
+      "support": 0.0147,
+      "_id": "6acf15d6b1da22dcc55b74f1"
+    },
+    {
+      "items": [
+        "Pure Irish Butter"
+      ],
+      "k": 1,
+      "frequency": 30365,
+      "support": 0.0147,
+      "_id": "6acf15d6b1da22dcc55b74f2"
+    },
+    {
+      "items": [
+        "Whipped Cream Cheese"
+      ],
+      "k": 1,
+      "frequency": 30227,
+      "support": 0.0146,
+      "_id": "6acf15d6b1da22dcc55b74f3"
+    },
+    {
+      "items": [
+        "Organic Spring Mix"
+      ],
+      "k": 1,
+      "frequency": 29454,
+      "support": 0.0143,
+      "_id": "6acf15d6b1da22dcc55b74f4"
+    },
+    {
+      "items": [
+        "Whole Milk"
+      ],
+      "k": 1,
+      "frequency": 29403,
+      "support": 0.0142,
+      "_id": "6acf15d6b1da22dcc55b74f5"
+    },
+    {
+      "items": [
+        "Frozen Organic Wild Blueberries"
+      ],
+      "k": 1,
+      "frequency": 29363,
+      "support": 0.0142,
+      "_id": "6acf15d6b1da22dcc55b74f6"
+    },
+    {
+      "items": [
+        "Organic Garbanzo Beans"
+      ],
+      "k": 1,
+      "frequency": 29278,
+      "support": 0.0142,
+      "_id": "6acf15d6b1da22dcc55b74f7"
+    },
+    {
+      "items": [
+        "Total 2% with Strawberry Lowfat Greek Strained Yogurt"
+      ],
+      "k": 1,
+      "frequency": 29240,
+      "support": 0.0141,
+      "_id": "6acf15d6b1da22dcc55b74f8"
+    },
+    {
+      "items": [
+        "Italian Sparkling Mineral Water"
+      ],
+      "k": 1,
+      "frequency": 28995,
+      "support": 0.014,
+      "_id": "6acf15d6b1da22dcc55b74f9"
+    },
+    {
+      "items": [
+        "2% Reduced Fat Milk"
+      ],
+      "k": 1,
+      "frequency": 28855,
+      "support": 0.014,
+      "_id": "6acf15d6b1da22dcc55b74fa"
+    },
+    {
+      "items": [
+        "Organic Roma Tomato"
+      ],
+      "k": 1,
+      "frequency": 28656,
+      "support": 0.0139,
+      "_id": "6acf15d6b1da22dcc55b74fb"
+    },
+    {
+      "items": [
+        "Sharp Cheddar Cheese"
+      ],
+      "k": 1,
+      "frequency": 28555,
+      "support": 0.0138,
+      "_id": "6acf15d6b1da22dcc55b74fc"
+    },
+    {
+      "items": [
+        "Vanilla Almond Breeze Almond Milk"
+      ],
+      "k": 1,
+      "frequency": 28227,
+      "support": 0.0137,
+      "_id": "6acf15d6b1da22dcc55b74fe"
+    },
+    {
+      "items": [
+        "Organic Extra Firm Tofu"
+      ],
+      "k": 1,
+      "frequency": 28194,
+      "support": 0.0136,
+      "_id": "6acf15d6b1da22dcc55b74ff"
+    },
+    {
+      "items": [
+        "Green Beans"
+      ],
+      "k": 1,
+      "frequency": 28022,
+      "support": 0.0136,
+      "_id": "6acf15d6b1da22dcc55b7500"
+    },
+    {
+      "items": [
+        "Russet Potato"
+      ],
+      "k": 1,
+      "frequency": 27743,
+      "support": 0.0134,
+      "_id": "6acf15d6b1da22dcc55b7501"
+    },
+    {
+      "items": [
+        "No Salt Added Black Beans"
+      ],
+      "k": 1,
+      "frequency": 27497,
+      "support": 0.0133,
+      "_id": "6acf15d6b1da22dcc55b7502"
+    },
+    {
+      "items": [
+        "Organic Roasted Turkey Breast"
+      ],
+      "k": 1,
+      "frequency": 27434,
+      "support": 0.0133,
+      "_id": "6acf15d6b1da22dcc55b7503"
+    },
+    {
+      "items": [
+        "Pure Sparkling Water"
+      ],
+      "k": 1,
+      "frequency": 26921,
+      "support": 0.013,
+      "_id": "6acf15d6b1da22dcc55b7505"
+    },
+    {
+      "items": [
+        "Organic Red Radish, Bunch"
+      ],
+      "k": 1,
+      "frequency": 26798,
+      "support": 0.013,
+      "_id": "6acf15d6b1da22dcc55b7506"
+    },
+    {
+      "items": [
+        "Organic Coconut Milk"
+      ],
+      "k": 1,
+      "frequency": 26484,
+      "support": 0.0128,
+      "_id": "6acf15d6b1da22dcc55b7507"
+    },
+    {
+      "items": [
+        "Organic Milk"
+      ],
+      "k": 1,
+      "frequency": 26201,
+      "support": 0.0127,
+      "_id": "6acf15d6b1da22dcc55b7509"
+    },
+    {
+      "items": [
+        "100% Recycled Paper Towels"
+      ],
+      "k": 1,
+      "frequency": 26190,
+      "support": 0.0127,
+      "_id": "6acf15d6b1da22dcc55b750a"
+    },
+    {
+      "items": [
+        "Ground Turkey Breast"
+      ],
+      "k": 1,
+      "frequency": 26107,
+      "support": 0.0126,
+      "_id": "6acf15d6b1da22dcc55b750b"
+    },
+    {
+      "items": [
+        "Organic Basil"
+      ],
+      "k": 1,
+      "frequency": 25782,
+      "support": 0.0125,
+      "_id": "6acf15d6b1da22dcc55b750d"
+    },
+    {
+      "items": [
+        "Organic Sour Cream"
+      ],
+      "k": 1,
+      "frequency": 25763,
+      "support": 0.0125,
+      "_id": "6acf15d6b1da22dcc55b750e"
+    },
+    {
+      "items": [
+        "Shredded Mild Cheddar Cheese"
+      ],
+      "k": 1,
+      "frequency": 25632,
+      "support": 0.0124,
+      "_id": "6acf15d6b1da22dcc55b750f"
+    },
+    {
+      "items": [
+        "Total Greek Strained Yogurt"
+      ],
+      "k": 1,
+      "frequency": 25389,
+      "support": 0.0123,
+      "_id": "6acf15d6b1da22dcc55b7510"
+    },
+    {
+      "items": [
+        "Red Raspberries"
+      ],
+      "k": 1,
+      "frequency": 25388,
+      "support": 0.0123,
+      "_id": "6acf15d6b1da22dcc55b7511"
+    },
+    {
+      "items": [
+        "Total 0% Nonfat Greek Yogurt"
+      ],
+      "k": 1,
+      "frequency": 25360,
+      "support": 0.0123,
+      "_id": "6acf15d6b1da22dcc55b7512"
+    },
+    {
+      "items": [
+        "Yellow Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 25199,
+      "support": 0.0122,
+      "_id": "6acf15d6b1da22dcc55b7513"
+    },
+    {
+      "items": [
+        "Organic Fat Free Milk"
+      ],
+      "k": 1,
+      "frequency": 25114,
+      "support": 0.0122,
+      "_id": "6acf15d6b1da22dcc55b7514"
+    },
+    {
+      "items": [
+        "Fat Free Milk"
+      ],
+      "k": 1,
+      "frequency": 24975,
+      "support": 0.0121,
+      "_id": "6acf15d6b1da22dcc55b7515"
+    },
+    {
+      "items": [
+        "Green Onions"
+      ],
+      "k": 1,
+      "frequency": 24964,
+      "support": 0.0121,
+      "_id": "6acf15d6b1da22dcc55b7516"
+    },
+    {
+      "items": [
+        "Total 0% Greek Yogurt"
+      ],
+      "k": 1,
+      "frequency": 24582,
+      "support": 0.0119,
+      "_id": "6acf15d6b1da22dcc55b7518"
+    },
+    {
+      "items": [
+        "Organic Large Grade AA Brown Eggs"
+      ],
+      "k": 1,
+      "frequency": 24403,
+      "support": 0.0118,
+      "_id": "6acf15d6b1da22dcc55b751b"
+    },
+    {
+      "items": [
+        "Honey Nut Cheerios"
+      ],
+      "k": 1,
+      "frequency": 24246,
+      "support": 0.0117,
+      "_id": "6acf15d6b1da22dcc55b751c"
+    },
+    {
+      "items": [
+        "Unsweetened Vanilla Almond Milk"
+      ],
+      "k": 1,
+      "frequency": 23971,
+      "support": 0.0116,
+      "_id": "6acf15d6b1da22dcc55b751e"
+    },
+    {
+      "items": [
+        "Pineapple Chunks"
+      ],
+      "k": 1,
+      "frequency": 23761,
+      "support": 0.0115,
+      "_id": "6acf15d6b1da22dcc55b7520"
+    },
+    {
+      "items": [
+        "Lightly Salted Baked Snap Pea Crisps"
+      ],
+      "k": 1,
+      "frequency": 23452,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7523"
+    },
+    {
+      "items": [
+        "Organic Heavy Whipping Cream"
+      ],
+      "k": 1,
+      "frequency": 23422,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7524"
+    },
+    {
+      "items": [
+        "Organic Hothouse Cucumbers"
+      ],
+      "k": 1,
+      "frequency": 23418,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7525"
+    },
+    {
+      "items": [
+        "Romaine Hearts"
+      ],
+      "k": 1,
+      "frequency": 23343,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7527"
+    },
+    {
+      "items": [
+        "Organic Celery Hearts"
+      ],
+      "k": 1,
+      "frequency": 23301,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7528"
+    },
+    {
+      "items": [
+        "Fresh Ginger Root"
+      ],
+      "k": 1,
+      "frequency": 23236,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b7529"
+    },
+    {
+      "items": [
+        "Watermelon Chunks"
+      ],
+      "k": 1,
+      "frequency": 23221,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b752a"
+    },
+    {
+      "items": [
+        "Organic White Onions"
+      ],
+      "k": 1,
+      "frequency": 23214,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b752b"
+    },
+    {
+      "items": [
+        "Cantaloupe"
+      ],
+      "k": 1,
+      "frequency": 23205,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b752c"
+    },
+    {
+      "items": [
+        "Organic Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 23125,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b752d"
+    },
+    {
+      "items": [
+        "Clementines"
+      ],
+      "k": 1,
+      "frequency": 22998,
+      "support": 0.0111,
+      "_id": "6acf15d6b1da22dcc55b752e"
+    },
+    {
+      "items": [
+        "Organic Romaine"
+      ],
+      "k": 1,
+      "frequency": 22997,
+      "support": 0.0111,
+      "_id": "6acf15d6b1da22dcc55b752f"
+    },
+    {
+      "items": [
+        "Gala Apples"
+      ],
+      "k": 1,
+      "frequency": 22440,
+      "support": 0.0109,
+      "_id": "6acf15d6b1da22dcc55b7534"
+    },
+    {
+      "items": [
+        "Total 2% All Natural Greek Strained Yogurt with Honey"
+      ],
+      "k": 1,
+      "frequency": 22104,
+      "support": 0.0107,
+      "_id": "6acf15d6b1da22dcc55b7536"
+    },
+    {
+      "items": [
+        "Baby Spinach"
+      ],
+      "k": 1,
+      "frequency": 21966,
+      "support": 0.0106,
+      "_id": "6acf15d6b1da22dcc55b7539"
+    },
+    {
+      "items": [
+        "Organic Bread with 21 Whole Grains"
+      ],
+      "k": 1,
+      "frequency": 21916,
+      "support": 0.0106,
+      "_id": "6acf15d6b1da22dcc55b753a"
+    },
+    {
+      "items": [
+        "Original Orange Juice"
+      ],
+      "k": 1,
+      "frequency": 21888,
+      "support": 0.0106,
+      "_id": "6acf15d6b1da22dcc55b753b"
+    },
+    {
+      "items": [
+        "Shredded Mozzarella"
+      ],
+      "k": 1,
+      "frequency": 21429,
+      "support": 0.0104,
+      "_id": "6acf15d6b1da22dcc55b753e"
+    },
+    {
+      "items": [
+        "Boneless Skinless Chicken Breast"
+      ],
+      "k": 1,
+      "frequency": 21330,
+      "support": 0.0103,
+      "_id": "6acf15d6b1da22dcc55b753f"
+    },
+    {
+      "items": [
+        "Organic Bosc Pear"
+      ],
+      "k": 1,
+      "frequency": 21086,
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7543"
+    },
+    {
+      "items": [
+        "Organic Green Seedless Grapes"
+      ],
+      "k": 1,
+      "frequency": 21047,
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7544"
+    },
+    {
+      "items": [
+        "Blackberries"
+      ],
+      "k": 1,
+      "frequency": 20976,
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7546"
+    },
+    {
+      "items": [
+        "Organic Diced Tomatoes"
+      ],
+      "k": 1,
+      "frequency": 20972,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b7547"
+    },
+    {
+      "items": [
+        "Organic Spring Mix Salad"
+      ],
+      "k": 1,
+      "frequency": 20856,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b7549"
+    },
+    {
+      "items": [
+        "Organic Yellow Peaches"
+      ],
+      "k": 1,
+      "frequency": 20851,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b754a"
+    },
+    {
+      "items": [
+        "Organic Green Cabbage"
+      ],
+      "k": 1,
+      "frequency": 20782,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b754b"
+    },
+    {
+      "items": [
+        "Brussels Sprouts"
+      ],
+      "k": 1,
+      "frequency": 20755,
+      "support": 0.01,
+      "_id": "6acf15d6b1da22dcc55b754d"
+    },
+    {
+      "items": [
+        "Large Grapefruit"
+      ],
+      "k": 1,
+      "frequency": 20714,
+      "support": 0.01,
+      "_id": "6acf15d6b1da22dcc55b754e"
+    },
+    {
+      "items": [
+        "Organic Unsalted Butter"
+      ],
+      "k": 1,
+      "frequency": 20494,
+      "support": 0.0099,
+      "_id": "6acf15d6b1da22dcc55b754f"
+    },
+    {
+      "items": [
+        "Total 2% Lowfat Greek Strained Yogurt With Blueberry"
+      ],
+      "k": 1,
+      "frequency": 20385,
+      "support": 0.0099,
+      "_id": "6acf15d6b1da22dcc55b7551"
+    },
+    {
+      "items": [
+        "Peach Pear Flavored Sparkling Water"
+      ],
+      "k": 1,
+      "frequency": 20134,
+      "support": 0.0097,
+      "_id": "6acf15d6b1da22dcc55b7552"
+    },
+    {
+      "items": [
+        "Organic Jalapeno Pepper"
+      ],
+      "k": 1,
+      "frequency": 19944,
+      "support": 0.0097,
+      "_id": "6acf15d6b1da22dcc55b7554"
+    },
+    {
+      "items": [
+        "Organic 2% Reduced Fat Milk"
+      ],
+      "k": 1,
+      "frequency": 19814,
+      "support": 0.0096,
+      "_id": "6acf15d6b1da22dcc55b7556"
+    },
+    {
+      "items": [
+        "Organic Shredded Carrots"
+      ],
+      "k": 1,
+      "frequency": 19753,
+      "support": 0.0096,
+      "_id": "6acf15d6b1da22dcc55b7557"
+    },
+    {
+      "items": [
+        "Cherubs Heavenly Salad Tomatoes"
+      ],
+      "k": 1,
+      "frequency": 19720,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b7558"
+    },
+    {
+      "items": [
+        "Uncured Hickory Smoked Sunday Bacon"
+      ],
+      "k": 1,
+      "frequency": 19666,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b755a"
+    },
+    {
+      "items": [
+        "Organic Frozen Peas"
+      ],
+      "k": 1,
+      "frequency": 19655,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b755b"
+    },
+    {
+      "items": [
+        "Total 2% Lowfat Greek Strained Yogurt with Peach"
+      ],
+      "k": 1,
+      "frequency": 19569,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b755c"
+    },
+    {
+      "items": [
+        "Organic Yams"
+      ],
+      "k": 1,
+      "frequency": 19549,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b755d"
+    },
+    {
+      "items": [
+        "Organic Old Fashioned Rolled Oats"
+      ],
+      "k": 1,
+      "frequency": 19521,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b755e"
+    },
+    {
+      "items": [
+        "Creamy Almond Butter"
+      ],
+      "k": 1,
+      "frequency": 19439,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b755f"
+    },
+    {
+      "items": [
+        "Organic Butternut Squash"
+      ],
+      "k": 1,
+      "frequency": 19331,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b7561"
+    },
+    {
+      "items": [
+        "Organic Leek"
+      ],
+      "k": 1,
+      "frequency": 19329,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b7562"
+    },
+    {
+      "items": [
+        "Organic Mint"
+      ],
+      "k": 1,
+      "frequency": 19212,
+      "support": 0.0093,
+      "_id": "6acf15d6b1da22dcc55b7564"
+    },
+    {
+      "items": [
+        "Organic Raw Kombucha Gingerade"
+      ],
+      "k": 1,
+      "frequency": 19178,
+      "support": 0.0093,
+      "_id": "6acf15d6b1da22dcc55b7565"
+    },
+    {
+      "items": [
+        "Sour Cream"
+      ],
+      "k": 1,
+      "frequency": 19079,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b7567"
+    },
+    {
+      "items": [
+        "Organic Thyme"
+      ],
+      "k": 1,
+      "frequency": 19041,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b7568"
+    },
+    {
+      "items": [
+        "Organic Baby Rainbow Carrots"
+      ],
+      "k": 1,
+      "frequency": 18822,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b756c"
+    },
+    {
+      "items": [
+        "Organic Large Green Asparagus"
+      ],
+      "k": 1,
+      "frequency": 18815,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b756d"
+    },
+    {
+      "items": [
+        "Marinara Sauce"
+      ],
+      "k": 1,
+      "frequency": 18811,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b756e"
+    },
+    {
+      "items": [
+        "YoKids Squeezers Organic Low-Fat Yogurt, Strawberry"
+      ],
+      "k": 1,
+      "frequency": 18734,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b756f"
+    },
+    {
+      "items": [
+        "Sweet Onion"
+      ],
+      "k": 1,
+      "frequency": 18714,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b7571"
+    },
+    {
+      "items": [
+        "Icelandic Style Skyr Blueberry Non-fat Yogurt"
+      ],
+      "k": 1,
+      "frequency": 18712,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b7572"
+    },
+    {
+      "items": [
+        "Milk, Organic, Vitamin D"
+      ],
+      "k": 1,
+      "frequency": 18703,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b7573"
+    },
+    {
+      "items": [
+        "Unsalted Pure Irish Butter"
+      ],
+      "k": 1,
+      "frequency": 18691,
+      "support": 0.009,
+      "_id": "6acf15d6b1da22dcc55b7574"
+    },
+    {
+      "items": [
+        "Heavy Whipping Cream"
+      ],
+      "k": 1,
+      "frequency": 18650,
+      "support": 0.009,
+      "_id": "6acf15d6b1da22dcc55b7575"
+    },
+    {
+      "items": [
+        "Organic Egg Whites"
+      ],
+      "k": 1,
+      "frequency": 18622,
+      "support": 0.009,
+      "_id": "6acf15d6b1da22dcc55b7576"
+    },
+    {
+      "items": [
+        "Soda"
+      ],
+      "k": 1,
+      "frequency": 18459,
+      "support": 0.0089,
+      "_id": "6acf15d6b1da22dcc55b7577"
+    },
+    {
+      "items": [
+        "Salted Butter"
+      ],
+      "k": 1,
+      "frequency": 18351,
+      "support": 0.0089,
+      "_id": "6acf15d6b1da22dcc55b7578"
+    },
+    {
+      "items": [
+        "White Corn"
+      ],
+      "k": 1,
+      "frequency": 18266,
+      "support": 0.0088,
+      "_id": "6acf15d6b1da22dcc55b7579"
+    },
+    {
+      "items": [
+        "Oven Roasted Turkey Breast"
+      ],
+      "k": 1,
+      "frequency": 18178,
+      "support": 0.0088,
+      "_id": "6acf15d6b1da22dcc55b757b"
+    },
+    {
+      "items": [
+        "Organic Broccoli Crowns"
+      ],
+      "k": 1,
+      "frequency": 17996,
+      "support": 0.0087,
+      "_id": "6acf15d6b1da22dcc55b757d"
+    },
+    {
+      "items": [
+        "Electrolyte Enhanced Water"
+      ],
+      "k": 1,
+      "frequency": 17936,
+      "support": 0.0087,
+      "_id": "6acf15d6b1da22dcc55b757e"
+    },
+    {
+      "items": [
+        "Organic Shredded Mozzarella"
+      ],
+      "k": 1,
+      "frequency": 17915,
+      "support": 0.0087,
+      "_id": "6acf15d6b1da22dcc55b757f"
+    },
+    {
+      "items": [
+        "Organic Baby Kale"
+      ],
+      "k": 1,
+      "frequency": 17853,
+      "support": 0.0086,
+      "_id": "6acf15d6b1da22dcc55b7580"
+    },
+    {
+      "items": [
+        "European Cucumber"
+      ],
+      "k": 1,
+      "frequency": 17779,
+      "support": 0.0086,
+      "_id": "6acf15d6b1da22dcc55b7581"
+    },
+    {
+      "items": [
+        "Organic Banana"
+      ],
+      "k": 1,
+      "frequency": 17667,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7583"
+    },
+    {
+      "items": [
+        "Vanilla Skyr Nonfat Yogurt"
+      ],
+      "k": 1,
+      "frequency": 17644,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7584"
+    },
+    {
+      "items": [
+        "Organic Mexican Blend Finely Shredded Cheese"
+      ],
+      "k": 1,
+      "frequency": 17495,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7587"
+    },
+    {
+      "items": [
+        "Chicken & Maple Breakfast Sausage"
+      ],
+      "k": 1,
+      "frequency": 17491,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7588"
+    },
+    {
+      "items": [
+        "Total 2% Greek Strained Yogurt with Cherry 5.3 oz"
+      ],
+      "k": 1,
+      "frequency": 17485,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7589"
+    },
+    {
+      "items": [
+        "Organic Creamy Peanut Butter"
+      ],
+      "k": 1,
+      "frequency": 17448,
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758b"
+    },
+    {
+      "items": [
+        "Organic Low Sodium Chicken Broth"
+      ],
+      "k": 1,
+      "frequency": 17375,
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758d"
+    },
+    {
+      "items": [
+        "Sustainably Soft Bath Tissue"
+      ],
+      "k": 1,
+      "frequency": 17263,
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758e"
+    },
+    {
+      "items": [
+        "Mango Chunks"
+      ],
+      "k": 1,
+      "frequency": 17249,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b758f"
+    },
+    {
+      "items": [
+        "Organic Tomato Paste"
+      ],
+      "k": 1,
+      "frequency": 17196,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7590"
+    },
+    {
+      "items": [
+        "Organic Baby Spinach Salad"
+      ],
+      "k": 1,
+      "frequency": 17174,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7591"
+    },
+    {
+      "items": [
+        "Organic American Cheese Singles"
+      ],
+      "k": 1,
+      "frequency": 17140,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7592"
+    },
+    {
+      "items": [
+        "Original No Pulp 100% Florida Orange Juice"
+      ],
+      "k": 1,
+      "frequency": 17130,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7593"
+    },
+    {
+      "items": [
+        "Organic Snipped Green Beans"
+      ],
+      "k": 1,
+      "frequency": 17058,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7594"
+    },
+    {
+      "items": [
+        "Ezekiel 4:9 Bread Organic Sprouted Whole Grain"
+      ],
+      "k": 1,
+      "frequency": 17040,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7595"
+    },
+    {
+      "items": [
+        "Globe Eggplant"
+      ],
+      "k": 1,
+      "frequency": 17030,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7596"
+    },
+    {
+      "items": [
+        "Shallot"
+      ],
+      "k": 1,
+      "frequency": 16928,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7599"
+    },
+    {
+      "items": [
+        "Lemonade"
+      ],
+      "k": 1,
+      "frequency": 16770,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759a"
+    },
+    {
+      "items": [
+        "Guacamole"
+      ],
+      "k": 1,
+      "frequency": 16718,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759c"
+    },
+    {
+      "items": [
+        "Sparkling Water Berry"
+      ],
+      "k": 1,
+      "frequency": 16637,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b75a0"
+    },
+    {
+      "items": [
+        "Pure Coconut Water"
+      ],
+      "k": 1,
+      "frequency": 16572,
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a1"
+    },
+    {
+      "items": [
+        "Roasted Turkey Breast"
+      ],
+      "k": 1,
+      "frequency": 16545,
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a3"
+    },
+    {
+      "items": [
+        "Organic Beef Hot Dogs"
+      ],
+      "k": 1,
+      "frequency": 16441,
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a5"
+    },
+    {
+      "items": [
+        "Air Chilled Organic Boneless Skinless Chicken Breasts"
+      ],
+      "k": 1,
+      "frequency": 16378,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75a6"
+    },
+    {
+      "items": [
+        "Organic Tomato Basil Pasta Sauce"
+      ],
+      "k": 1,
+      "frequency": 16363,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75a7"
+    },
+    {
+      "items": [
+        "Original Veggie Straws"
+      ],
+      "k": 1,
+      "frequency": 16283,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75aa"
+    },
+    {
+      "items": [
+        "Hass Avocado"
+      ],
+      "k": 1,
+      "frequency": 16262,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75ab"
+    },
+    {
+      "items": [
+        "Lemon Hummus"
+      ],
+      "k": 1,
+      "frequency": 16030,
+      "support": 0.0078,
+      "_id": "6acf15d6b1da22dcc55b75ac"
+    },
+    {
+      "items": [
+        "Non Fat Raspberry Yogurt"
+      ],
+      "k": 1,
+      "frequency": 16015,
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75ad"
+    },
+    {
+      "items": [
+        "Sea Salt Pita Chips"
+      ],
+      "k": 1,
+      "frequency": 16004,
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75ae"
+    },
+    {
+      "items": [
+        "Total 2% All Natural Plain Greek Yogurt"
+      ],
+      "k": 1,
+      "frequency": 15767,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b5"
+    },
+    {
+      "items": [
+        "Creamy Peanut Butter"
+      ],
+      "k": 1,
+      "frequency": 15751,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b6"
+    },
+    {
+      "items": [
+        "Asparation/Broccolini/Baby Broccoli"
+      ],
+      "k": 1,
+      "frequency": 15708,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b8"
+    },
+    {
+      "items": [
+        "Organic AppleApple"
+      ],
+      "k": 1,
+      "frequency": 15697,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b9"
+    },
+    {
+      "items": [
+        "Macaroni & Cheese"
+      ],
+      "k": 1,
+      "frequency": 15668,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75ba"
+    },
+    {
+      "items": [
+        "Roasted Red Pepper Hummus"
+      ],
+      "k": 1,
+      "frequency": 15630,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75bb"
+    },
+    {
+      "items": [
+        "Organic Dill"
+      ],
+      "k": 1,
+      "frequency": 15619,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75bd"
+    },
+    {
+      "items": [
+        "Sourdough Bread"
+      ],
+      "k": 1,
+      "frequency": 15615,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75be"
+    },
+    {
+      "items": [
+        "Total 2% Lowfat Plain Greek Yogurt"
+      ],
+      "k": 1,
+      "frequency": 15578,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75bf"
+    },
+    {
+      "items": [
+        "Trilogy Kombucha Drink"
+      ],
+      "k": 1,
+      "frequency": 15440,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c5"
+    },
+    {
+      "items": [
+        "Orange Juice"
+      ],
+      "k": 1,
+      "frequency": 15348,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75c8"
+    },
+    {
+      "items": [
+        "White Onion"
+      ],
+      "k": 1,
+      "frequency": 15205,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75cd"
+    },
+    {
+      "items": [
+        "Spaghetti"
+      ],
+      "k": 1,
+      "frequency": 15186,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75ce"
+    },
+    {
+      "items": [
+        "Spinach"
+      ],
+      "k": 1,
+      "frequency": 15126,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d0"
+    },
+    {
+      "items": [
+        "Basil Pesto"
+      ],
+      "k": 1,
+      "frequency": 15017,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d5"
+    },
+    {
+      "items": [
+        "2% Reduced Fat Organic Milk"
+      ],
+      "k": 1,
+      "frequency": 15009,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d6"
     }
   ],
   "itemsets_multi": [
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Hass Avocado"
+        "Organic Hass Avocado",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 62341,
-      "support": 0.0302
+      "support": 0.0302,
+      "_id": "6acf15d6b1da22dcc55b74a2"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Strawberries"
+        "Organic Strawberries",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 61628,
-      "support": 0.0298
+      "support": 0.0298,
+      "_id": "6acf15d6b1da22dcc55b74a3"
     },
     {
       "items": [
-        "Banana",
-        "Organic Avocado"
+        "Organic Strawberries",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 56156,
+      "support": 0.0272,
+      "_id": "6acf15d6b1da22dcc55b74a9"
+    },
+    {
+      "items": [
+        "Organic Avocado",
+        "Banana"
       ],
       "k": 2,
       "frequency": 53395,
-      "support": 0.0258
+      "support": 0.0258,
+      "_id": "6acf15d6b1da22dcc55b74af"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Baby Spinach"
+        "Organic Baby Spinach",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 51395,
+      "support": 0.0249,
+      "_id": "6acf15d6b1da22dcc55b74b3"
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 50372,
-      "support": 0.0244
+      "support": 0.0244,
+      "_id": "6acf15d6b1da22dcc55b74b6"
     },
     {
       "items": [
-        "Banana",
-        "Strawberries"
+        "Strawberries",
+        "Banana"
       ],
       "k": 2,
       "frequency": 41232,
-      "support": 0.02
+      "support": 0.02,
+      "_id": "6acf15d6b1da22dcc55b74c6"
     },
     {
       "items": [
-        "Banana",
-        "Large Lemon"
+        "Large Lemon",
+        "Banana"
       ],
       "k": 2,
       "frequency": 40880,
-      "support": 0.0198
+      "support": 0.0198,
+      "_id": "6acf15d6b1da22dcc55b74c8"
     },
     {
       "items": [
@@ -184,16 +2352,18 @@
       ],
       "k": 2,
       "frequency": 40794,
-      "support": 0.0197
+      "support": 0.0197,
+      "_id": "6acf15d6b1da22dcc55b74c9"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Raspberries"
+        "Organic Raspberries",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 40503,
-      "support": 0.0196
+      "support": 0.0196,
+      "_id": "6acf15d6b1da22dcc55b74cb"
     },
     {
       "items": [
@@ -202,16 +2372,28 @@
       ],
       "k": 2,
       "frequency": 38134,
-      "support": 0.0185
+      "support": 0.0185,
+      "_id": "6acf15d6b1da22dcc55b74d0"
     },
     {
       "items": [
-        "Organic Baby Spinach",
-        "Organic Hass Avocado"
+        "Organic Hass Avocado",
+        "Organic Baby Spinach"
       ],
       "k": 2,
       "frequency": 34901,
-      "support": 0.0169
+      "support": 0.0169,
+      "_id": "6acf15d6b1da22dcc55b74db"
+    },
+    {
+      "items": [
+        "Organic Fuji Apple",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 33943,
+      "support": 0.0164,
+      "_id": "6acf15d6b1da22dcc55b74e0"
     },
     {
       "items": [
@@ -220,25 +2402,48 @@
       ],
       "k": 2,
       "frequency": 33863,
-      "support": 0.0164
+      "support": 0.0164,
+      "_id": "6acf15d6b1da22dcc55b74e1"
     },
     {
       "items": [
-        "Banana",
-        "Organic Fuji Apple"
-      ],
-      "k": 2,
-      "frequency": 33943,
-      "support": 0.0164
-    },
-    {
-      "items": [
-        "Banana",
-        "Cucumber Kirby"
+        "Cucumber Kirby",
+        "Banana"
       ],
       "k": 2,
       "frequency": 32097,
-      "support": 0.0155
+      "support": 0.0155,
+      "_id": "6acf15d6b1da22dcc55b74e5"
+    },
+    {
+      "items": [
+        "Limes",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 31772,
+      "support": 0.0154,
+      "_id": "6acf15d6b1da22dcc55b74e7"
+    },
+    {
+      "items": [
+        "Organic Whole Milk",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 31641,
+      "support": 0.0153,
+      "_id": "6acf15d6b1da22dcc55b74e9"
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 31222,
+      "support": 0.0151,
+      "_id": "6acf15d6b1da22dcc55b74eb"
     },
     {
       "items": [
@@ -247,52 +2452,68 @@
       ],
       "k": 2,
       "frequency": 30889,
-      "support": 0.0149
+      "support": 0.0149,
+      "_id": "6acf15d6b1da22dcc55b74ee"
     },
     {
       "items": [
-        "Banana",
-        "Honeycrisp Apple"
+        "Honeycrisp Apple",
+        "Banana"
       ],
       "k": 2,
       "frequency": 28408,
-      "support": 0.0137
+      "support": 0.0137,
+      "_id": "6acf15d6b1da22dcc55b74fd"
     },
     {
       "items": [
-        "Large Lemon",
-        "Limes"
+        "Limes",
+        "Large Lemon"
       ],
       "k": 2,
       "frequency": 27403,
-      "support": 0.0133
+      "support": 0.0133,
+      "_id": "6acf15d6b1da22dcc55b7504"
     },
     {
       "items": [
-        "Organic Hass Avocado",
-        "Organic Raspberries"
+        "Organic Whole Milk",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 26481,
+      "support": 0.0128,
+      "_id": "6acf15d6b1da22dcc55b7508"
+    },
+    {
+      "items": [
+        "Organic Raspberries",
+        "Organic Hass Avocado"
       ],
       "k": 2,
       "frequency": 25793,
-      "support": 0.0125
+      "support": 0.0125,
+      "_id": "6acf15d6b1da22dcc55b750c"
     },
     {
       "items": [
-        "Banana",
-        "Seedless Red Grapes"
+        "Seedless Red Grapes",
+        "Banana"
       ],
       "k": 2,
       "frequency": 24594,
-      "support": 0.0119
+      "support": 0.0119,
+      "_id": "6acf15d6b1da22dcc55b7517"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Yellow Onion"
+        "Organic Yellow Onion",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 24574,
-      "support": 0.0119
+      "support": 0.0119,
+      "_id": "6acf15d6b1da22dcc55b7519"
     },
     {
       "items": [
@@ -301,7 +2522,28 @@
       ],
       "k": 2,
       "frequency": 24417,
-      "support": 0.0118
+      "support": 0.0118,
+      "_id": "6acf15d6b1da22dcc55b751a"
+    },
+    {
+      "items": [
+        "Organic Avocado",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 23984,
+      "support": 0.0116,
+      "_id": "6acf15d6b1da22dcc55b751d"
+    },
+    {
+      "items": [
+        "Organic Whole Milk",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 23813,
+      "support": 0.0115,
+      "_id": "6acf15d6b1da22dcc55b751f"
     },
     {
       "items": [
@@ -310,7 +2552,8 @@
       ],
       "k": 2,
       "frequency": 23756,
-      "support": 0.0115
+      "support": 0.0115,
+      "_id": "6acf15d6b1da22dcc55b7521"
     },
     {
       "items": [
@@ -319,25 +2562,38 @@
       ],
       "k": 2,
       "frequency": 23696,
-      "support": 0.0115
+      "support": 0.0115,
+      "_id": "6acf15d6b1da22dcc55b7522"
     },
     {
       "items": [
-        "Organic Strawberries",
-        "Organic Whole Milk"
-      ],
-      "k": 2,
-      "frequency": 23813,
-      "support": 0.0115
-    },
-    {
-      "items": [
-        "Bag of Organic Bananas",
-        "Organic Large Extra Fancy Fuji Apple"
+        "Organic Large Extra Fancy Fuji Apple",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 23364,
-      "support": 0.0113
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7526"
+    },
+    {
+      "items": [
+        "Organic Raspberries",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 22892,
+      "support": 0.0111,
+      "_id": "6acf15d6b1da22dcc55b7530"
+    },
+    {
+      "items": [
+        "Organic Avocado",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 22891,
+      "support": 0.0111,
+      "_id": "6acf15d6b1da22dcc55b7531"
     },
     {
       "items": [
@@ -346,25 +2602,28 @@
       ],
       "k": 2,
       "frequency": 22808,
-      "support": 0.011
+      "support": 0.011,
+      "_id": "6acf15d6b1da22dcc55b7532"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Zucchini"
+        "Organic Zucchini",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 22632,
-      "support": 0.011
+      "support": 0.011,
+      "_id": "6acf15d6b1da22dcc55b7533"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Lemon"
+        "Organic Lemon",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 22383,
-      "support": 0.0108
+      "support": 0.0108,
+      "_id": "6acf15d6b1da22dcc55b7535"
     },
     {
       "items": [
@@ -373,7 +2632,8 @@
       ],
       "k": 2,
       "frequency": 22073,
-      "support": 0.0107
+      "support": 0.0107,
+      "_id": "6acf15d6b1da22dcc55b7537"
     },
     {
       "items": [
@@ -382,52 +2642,78 @@
       ],
       "k": 2,
       "frequency": 22010,
-      "support": 0.0107
+      "support": 0.0107,
+      "_id": "6acf15d6b1da22dcc55b7538"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Blueberries"
+        "Organic Blueberries",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 21868,
-      "support": 0.0106
+      "support": 0.0106,
+      "_id": "6acf15d6b1da22dcc55b753c"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Cucumber"
+        "Organic Cucumber",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 21534,
-      "support": 0.0104
+      "support": 0.0104,
+      "_id": "6acf15d6b1da22dcc55b753d"
     },
     {
       "items": [
-        "Organic Hass Avocado",
-        "Organic Lemon"
+        "Organic Garlic",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 21318,
+      "support": 0.0103,
+      "_id": "6acf15d6b1da22dcc55b7540"
+    },
+    {
+      "items": [
+        "Organic Lemon",
+        "Organic Hass Avocado"
       ],
       "k": 2,
       "frequency": 21246,
-      "support": 0.0103
+      "support": 0.0103,
+      "_id": "6acf15d6b1da22dcc55b7541"
     },
     {
       "items": [
-        "Organic Baby Spinach",
-        "Organic Garlic"
-      ],
-      "k": 2,
-      "frequency": 20996,
-      "support": 0.0102
-    },
-    {
-      "items": [
-        "Banana",
-        "Yellow Onions"
+        "Yellow Onions",
+        "Banana"
       ],
       "k": 2,
       "frequency": 21168,
-      "support": 0.0102
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7542"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 20996,
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7545"
+    },
+    {
+      "items": [
+        "Limes",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 20881,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b7548"
     },
     {
       "items": [
@@ -436,16 +2722,18 @@
       ],
       "k": 2,
       "frequency": 20776,
-      "support": 0.0101
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b754c"
     },
     {
       "items": [
-        "Organic Baby Spinach",
-        "Organic Zucchini"
+        "Organic Zucchini",
+        "Organic Baby Spinach"
       ],
       "k": 2,
       "frequency": 20415,
-      "support": 0.0099
+      "support": 0.0099,
+      "_id": "6acf15d6b1da22dcc55b7550"
     },
     {
       "items": [
@@ -454,52 +2742,118 @@
       ],
       "k": 2,
       "frequency": 20030,
-      "support": 0.0097
+      "support": 0.0097,
+      "_id": "6acf15d6b1da22dcc55b7553"
     },
     {
       "items": [
-        "Organic Hass Avocado",
-        "Organic Yellow Onion"
+        "Organic Yellow Onion",
+        "Organic Hass Avocado"
       ],
       "k": 2,
       "frequency": 19927,
-      "support": 0.0096
+      "support": 0.0096,
+      "_id": "6acf15d6b1da22dcc55b7555"
     },
     {
       "items": [
-        "Organic Baby Spinach",
-        "Organic Yellow Onion"
+        "Organic Yellow Onion",
+        "Organic Baby Spinach"
       ],
       "k": 2,
       "frequency": 19707,
-      "support": 0.0095
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b7559"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Gala Apples"
+        "Large Lemon",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 19407,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b7560"
+    },
+    {
+      "items": [
+        "Organic Zucchini",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 19318,
+      "support": 0.0093,
+      "_id": "6acf15d6b1da22dcc55b7563"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 19107,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b7566"
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 18999,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b7569"
+    },
+    {
+      "items": [
+        "Organic Blueberries",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 18982,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b756a"
+    },
+    {
+      "items": [
+        "Organic Gala Apples",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 18958,
-      "support": 0.0092
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b756b"
     },
     {
       "items": [
-        "Banana",
-        "Original Hummus"
+        "Organic Grape Tomatoes",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 18720,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b7570"
+    },
+    {
+      "items": [
+        "Original Hummus",
+        "Banana"
       ],
       "k": 2,
       "frequency": 18210,
-      "support": 0.0088
+      "support": 0.0088,
+      "_id": "6acf15d6b1da22dcc55b757a"
     },
     {
       "items": [
-        "Organic Baby Spinach",
-        "Organic Raspberries"
+        "Organic Raspberries",
+        "Organic Baby Spinach"
       ],
       "k": 2,
       "frequency": 18044,
-      "support": 0.0087
+      "support": 0.0087,
+      "_id": "6acf15d6b1da22dcc55b757c"
     },
     {
       "items": [
@@ -508,16 +2862,28 @@
       ],
       "k": 2,
       "frequency": 17697,
-      "support": 0.0086
+      "support": 0.0086,
+      "_id": "6acf15d6b1da22dcc55b7582"
     },
     {
       "items": [
-        "Limes",
-        "Organic Cilantro"
+        "Strawberries",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 17611,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7585"
+    },
+    {
+      "items": [
+        "Organic Cilantro",
+        "Limes"
       ],
       "k": 2,
       "frequency": 17565,
-      "support": 0.0085
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7586"
     },
     {
       "items": [
@@ -526,16 +2892,78 @@
       ],
       "k": 2,
       "frequency": 17456,
-      "support": 0.0084
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758a"
     },
     {
       "items": [
-        "Organic Strawberries",
-        "Organic Yellow Onion"
+        "Apple Honeycrisp Organic",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 17432,
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758c"
+    },
+    {
+      "items": [
+        "Organic Gala Apples",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 16975,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7597"
+    },
+    {
+      "items": [
+        "Organic Whole Milk",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 16944,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7598"
+    },
+    {
+      "items": [
+        "Organic Baby Carrots",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 16754,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759b"
+    },
+    {
+      "items": [
+        "Organic Yellow Onion",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 16695,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759d"
+    },
+    {
+      "items": [
+        "Organic Yellow Onion",
+        "Organic Strawberries"
       ],
       "k": 2,
       "frequency": 16651,
-      "support": 0.0081
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759e"
+    },
+    {
+      "items": [
+        "Organic Grape Tomatoes",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 16650,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759f"
     },
     {
       "items": [
@@ -544,52 +2972,58 @@
       ],
       "k": 2,
       "frequency": 16555,
-      "support": 0.008
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a2"
     },
     {
       "items": [
-        "Organic Hass Avocado",
-        "Organic Zucchini"
+        "Organic Zucchini",
+        "Organic Hass Avocado"
       ],
       "k": 2,
       "frequency": 16464,
-      "support": 0.008
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a4"
     },
     {
       "items": [
-        "Banana",
-        "Blueberries"
+        "Large Lemon",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 16305,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75a8"
+    },
+    {
+      "items": [
+        "Blueberries",
+        "Banana"
       ],
       "k": 2,
       "frequency": 16286,
-      "support": 0.0079
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75a9"
     },
     {
       "items": [
-        "Limes",
-        "Organic Garlic"
+        "Organic Garlic",
+        "Limes"
       ],
       "k": 2,
       "frequency": 15946,
-      "support": 0.0077
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75af"
     },
     {
       "items": [
-        "Organic Baby Spinach",
-        "Organic Cucumber"
-      ],
-      "k": 2,
-      "frequency": 15813,
-      "support": 0.0077
-    },
-    {
-      "items": [
-        "Organic Baby Spinach",
-        "Organic Grape Tomatoes"
+        "Organic Grape Tomatoes",
+        "Organic Baby Spinach"
       ],
       "k": 2,
       "frequency": 15925,
-      "support": 0.0077
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75b0"
     },
     {
       "items": [
@@ -598,7 +3032,18 @@
       ],
       "k": 2,
       "frequency": 15870,
-      "support": 0.0077
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75b1"
+    },
+    {
+      "items": [
+        "Organic Cucumber",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 15813,
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75b2"
     },
     {
       "items": [
@@ -607,34 +3052,38 @@
       ],
       "k": 2,
       "frequency": 15796,
-      "support": 0.0076
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b3"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Baby Carrots"
+        "Sparkling Water Grapefruit",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15789,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b4"
+    },
+    {
+      "items": [
+        "Organic Baby Carrots",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 15713,
-      "support": 0.0076
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b7"
     },
     {
       "items": [
-        "Cucumber Kirby",
-        "Organic Avocado"
+        "Organic Garlic",
+        "Organic Strawberries"
       ],
       "k": 2,
-      "frequency": 15570,
-      "support": 0.0075
-    },
-    {
-      "items": [
-        "Apple Honeycrisp Organic",
-        "Organic Hass Avocado"
-      ],
-      "k": 2,
-      "frequency": 15519,
-      "support": 0.0075
+      "frequency": 15627,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75bc"
     },
     {
       "items": [
@@ -643,62 +3092,108 @@
       ],
       "k": 2,
       "frequency": 15573,
-      "support": 0.0075
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c0"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Small Bunch Celery"
+        "Cucumber Kirby",
+        "Organic Avocado"
+      ],
+      "k": 2,
+      "frequency": 15570,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c1"
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 15519,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c2"
+    },
+    {
+      "items": [
+        "Organic Small Bunch Celery",
+        "Bag of Organic Bananas"
       ],
       "k": 2,
       "frequency": 15507,
-      "support": 0.0075
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c3"
     },
     {
       "items": [
-        "Large Lemon",
-        "Organic Garlic"
+        "Half & Half",
+        "Banana"
       ],
       "k": 2,
-      "frequency": 15318,
-      "support": 0.0074
+      "frequency": 15497,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c4"
     },
     {
       "items": [
-        "Banana",
-        "Red Vine Tomato"
+        "Michigan Organic Kale",
+        "Banana"
       ],
       "k": 2,
-      "frequency": 15279,
-      "support": 0.0074
+      "frequency": 15438,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c6"
     },
     {
       "items": [
-        "Organic Strawberries",
-        "Organic Zucchini"
+        "Carrots",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15421,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c7"
+    },
+    {
+      "items": [
+        "Organic Zucchini",
+        "Organic Strawberries"
       ],
       "k": 2,
       "frequency": 15320,
-      "support": 0.0074
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75c9"
     },
     {
       "items": [
-        "Bag of Organic Bananas",
-        "Organic Hass Avocado",
-        "Organic Strawberries"
-      ],
-      "k": 3,
-      "frequency": 15066,
-      "support": 0.0073
-    },
-    {
-      "items": [
-        "Organic Large Extra Fancy Fuji Apple",
-        "Organic Strawberries"
+        "Organic Garlic",
+        "Large Lemon"
       ],
       "k": 2,
-      "frequency": 15113,
-      "support": 0.0073
+      "frequency": 15318,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75ca"
+    },
+    {
+      "items": [
+        "Red Vine Tomato",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15279,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75cb"
+    },
+    {
+      "items": [
+        "Organic Baby Arugula",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15229,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75cc"
     },
     {
       "items": [
@@ -707,16 +3202,8 @@
       ],
       "k": 2,
       "frequency": 15152,
-      "support": 0.0073
-    },
-    {
-      "items": [
-        "Bag of Organic Bananas",
-        "Organic Tomato Cluster"
-      ],
-      "k": 2,
-      "frequency": 15060,
-      "support": 0.0073
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75cf"
     },
     {
       "items": [
@@ -725,7 +3212,3301 @@
       ],
       "k": 2,
       "frequency": 15118,
-      "support": 0.0073
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d1"
+    },
+    {
+      "items": [
+        "Organic Large Extra Fancy Fuji Apple",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15113,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d2"
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Organic Strawberries",
+        "Bag of Organic Bananas"
+      ],
+      "k": 3,
+      "frequency": 15066,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d3"
+    },
+    {
+      "items": [
+        "Organic Tomato Cluster",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 15060,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d4"
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 15005,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d7"
+    }
+  ],
+  "all_itemsets": [
+    {
+      "items": [
+        "Banana"
+      ],
+      "k": 1,
+      "frequency": 435332,
+      "support": 0.2107,
+      "_id": "6acf15d6b1da22dcc55b747a"
+    },
+    {
+      "items": [
+        "Bag of Organic Bananas"
+      ],
+      "k": 1,
+      "frequency": 351381,
+      "support": 0.17,
+      "_id": "6acf15d6b1da22dcc55b747b"
+    },
+    {
+      "items": [
+        "Organic Strawberries"
+      ],
+      "k": 1,
+      "frequency": 254363,
+      "support": 0.1231,
+      "_id": "6acf15d6b1da22dcc55b747c"
+    },
+    {
+      "items": [
+        "Organic Baby Spinach"
+      ],
+      "k": 1,
+      "frequency": 232825,
+      "support": 0.1127,
+      "_id": "6acf15d6b1da22dcc55b747d"
+    },
+    {
+      "items": [
+        "Organic Hass Avocado"
+      ],
+      "k": 1,
+      "frequency": 207015,
+      "support": 0.1002,
+      "_id": "6acf15d6b1da22dcc55b747e"
+    },
+    {
+      "items": [
+        "Organic Avocado"
+      ],
+      "k": 1,
+      "frequency": 170906,
+      "support": 0.0827,
+      "_id": "6acf15d6b1da22dcc55b747f"
+    },
+    {
+      "items": [
+        "Large Lemon"
+      ],
+      "k": 1,
+      "frequency": 147434,
+      "support": 0.0713,
+      "_id": "6acf15d6b1da22dcc55b7480"
+    },
+    {
+      "items": [
+        "Limes"
+      ],
+      "k": 1,
+      "frequency": 136407,
+      "support": 0.066,
+      "_id": "6acf15d6b1da22dcc55b7481"
+    },
+    {
+      "items": [
+        "Organic Raspberries"
+      ],
+      "k": 1,
+      "frequency": 132497,
+      "support": 0.0641,
+      "_id": "6acf15d6b1da22dcc55b7482"
+    },
+    {
+      "items": [
+        "Strawberries"
+      ],
+      "k": 1,
+      "frequency": 130855,
+      "support": 0.0633,
+      "_id": "6acf15d6b1da22dcc55b7483"
+    },
+    {
+      "items": [
+        "Organic Whole Milk"
+      ],
+      "k": 1,
+      "frequency": 130324,
+      "support": 0.0631,
+      "_id": "6acf15d6b1da22dcc55b7484"
+    },
+    {
+      "items": [
+        "Organic Yellow Onion"
+      ],
+      "k": 1,
+      "frequency": 111067,
+      "support": 0.0537,
+      "_id": "6acf15d6b1da22dcc55b7485"
+    },
+    {
+      "items": [
+        "Organic Garlic"
+      ],
+      "k": 1,
+      "frequency": 108125,
+      "support": 0.0523,
+      "_id": "6acf15d6b1da22dcc55b7486"
+    },
+    {
+      "items": [
+        "Organic Zucchini"
+      ],
+      "k": 1,
+      "frequency": 102606,
+      "support": 0.0497,
+      "_id": "6acf15d6b1da22dcc55b7487"
+    },
+    {
+      "items": [
+        "Organic Blueberries"
+      ],
+      "k": 1,
+      "frequency": 94874,
+      "support": 0.0459,
+      "_id": "6acf15d6b1da22dcc55b7488"
+    },
+    {
+      "items": [
+        "Cucumber Kirby"
+      ],
+      "k": 1,
+      "frequency": 94789,
+      "support": 0.0459,
+      "_id": "6acf15d6b1da22dcc55b7489"
+    },
+    {
+      "items": [
+        "Organic Fuji Apple"
+      ],
+      "k": 1,
+      "frequency": 85846,
+      "support": 0.0415,
+      "_id": "6acf15d6b1da22dcc55b748a"
+    },
+    {
+      "items": [
+        "Organic Lemon"
+      ],
+      "k": 1,
+      "frequency": 85410,
+      "support": 0.0413,
+      "_id": "6acf15d6b1da22dcc55b748b"
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic"
+      ],
+      "k": 1,
+      "frequency": 82892,
+      "support": 0.0401,
+      "_id": "6acf15d6b1da22dcc55b748c"
+    },
+    {
+      "items": [
+        "Organic Grape Tomatoes"
+      ],
+      "k": 1,
+      "frequency": 82612,
+      "support": 0.04,
+      "_id": "6acf15d6b1da22dcc55b748d"
+    },
+    {
+      "items": [
+        "Organic Cucumber"
+      ],
+      "k": 1,
+      "frequency": 78983,
+      "support": 0.0382,
+      "_id": "6acf15d6b1da22dcc55b748e"
+    },
+    {
+      "items": [
+        "Seedless Red Grapes"
+      ],
+      "k": 1,
+      "frequency": 78307,
+      "support": 0.0379,
+      "_id": "6acf15d6b1da22dcc55b748f"
+    },
+    {
+      "items": [
+        "Honeycrisp Apple"
+      ],
+      "k": 1,
+      "frequency": 77359,
+      "support": 0.0374,
+      "_id": "6acf15d6b1da22dcc55b7490"
+    },
+    {
+      "items": [
+        "Organic Baby Carrots"
+      ],
+      "k": 1,
+      "frequency": 73636,
+      "support": 0.0356,
+      "_id": "6acf15d6b1da22dcc55b7491"
+    },
+    {
+      "items": [
+        "Organic Large Extra Fancy Fuji Apple"
+      ],
+      "k": 1,
+      "frequency": 72956,
+      "support": 0.0353,
+      "_id": "6acf15d6b1da22dcc55b7492"
+    },
+    {
+      "items": [
+        "Carrots"
+      ],
+      "k": 1,
+      "frequency": 71403,
+      "support": 0.0346,
+      "_id": "6acf15d6b1da22dcc55b7493"
+    },
+    {
+      "items": [
+        "Sparkling Water Grapefruit"
+      ],
+      "k": 1,
+      "frequency": 71374,
+      "support": 0.0345,
+      "_id": "6acf15d6b1da22dcc55b7494"
+    },
+    {
+      "items": [
+        "Organic Gala Apples"
+      ],
+      "k": 1,
+      "frequency": 71092,
+      "support": 0.0344,
+      "_id": "6acf15d6b1da22dcc55b7495"
+    },
+    {
+      "items": [
+        "Organic Baby Arugula"
+      ],
+      "k": 1,
+      "frequency": 70602,
+      "support": 0.0342,
+      "_id": "6acf15d6b1da22dcc55b7496"
+    },
+    {
+      "items": [
+        "Yellow Onions"
+      ],
+      "k": 1,
+      "frequency": 70559,
+      "support": 0.0341,
+      "_id": "6acf15d6b1da22dcc55b7497"
+    },
+    {
+      "items": [
+        "Fresh Cauliflower"
+      ],
+      "k": 1,
+      "frequency": 69925,
+      "support": 0.0338,
+      "_id": "6acf15d6b1da22dcc55b7498"
+    },
+    {
+      "items": [
+        "Original Hummus"
+      ],
+      "k": 1,
+      "frequency": 69331,
+      "support": 0.0335,
+      "_id": "6acf15d6b1da22dcc55b7499"
+    },
+    {
+      "items": [
+        "Organic Half & Half"
+      ],
+      "k": 1,
+      "frequency": 68326,
+      "support": 0.0331,
+      "_id": "6acf15d6b1da22dcc55b749a"
+    },
+    {
+      "items": [
+        "Organic Cilantro"
+      ],
+      "k": 1,
+      "frequency": 68032,
+      "support": 0.0329,
+      "_id": "6acf15d6b1da22dcc55b749b"
+    },
+    {
+      "items": [
+        "Organic Small Bunch Celery"
+      ],
+      "k": 1,
+      "frequency": 66823,
+      "support": 0.0323,
+      "_id": "6acf15d6b1da22dcc55b749c"
+    },
+    {
+      "items": [
+        "Organic Red Onion"
+      ],
+      "k": 1,
+      "frequency": 65969,
+      "support": 0.0319,
+      "_id": "6acf15d6b1da22dcc55b749d"
+    },
+    {
+      "items": [
+        "Michigan Organic Kale"
+      ],
+      "k": 1,
+      "frequency": 65932,
+      "support": 0.0319,
+      "_id": "6acf15d6b1da22dcc55b749e"
+    },
+    {
+      "items": [
+        "Asparagus"
+      ],
+      "k": 1,
+      "frequency": 64922,
+      "support": 0.0314,
+      "_id": "6acf15d6b1da22dcc55b749f"
+    },
+    {
+      "items": [
+        "Half & Half"
+      ],
+      "k": 1,
+      "frequency": 64460,
+      "support": 0.0312,
+      "_id": "6acf15d6b1da22dcc55b74a0"
+    },
+    {
+      "items": [
+        "Organic Tomato Cluster"
+      ],
+      "k": 1,
+      "frequency": 62632,
+      "support": 0.0303,
+      "_id": "6acf15d6b1da22dcc55b74a1"
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 62341,
+      "support": 0.0302,
+      "_id": "6acf15d6b1da22dcc55b74a2"
+    },
+    {
+      "items": [
+        "Organic Strawberries",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 61628,
+      "support": 0.0298,
+      "_id": "6acf15d6b1da22dcc55b74a3"
+    },
+    {
+      "items": [
+        "Organic Italian Parsley Bunch"
+      ],
+      "k": 1,
+      "frequency": 59492,
+      "support": 0.0288,
+      "_id": "6acf15d6b1da22dcc55b74a4"
+    },
+    {
+      "items": [
+        "Organic Blackberries"
+      ],
+      "k": 1,
+      "frequency": 59454,
+      "support": 0.0288,
+      "_id": "6acf15d6b1da22dcc55b74a5"
+    },
+    {
+      "items": [
+        "Organic Whole String Cheese"
+      ],
+      "k": 1,
+      "frequency": 58297,
+      "support": 0.0282,
+      "_id": "6acf15d6b1da22dcc55b74a6"
+    },
+    {
+      "items": [
+        "Organic Granny Smith Apple"
+      ],
+      "k": 1,
+      "frequency": 57308,
+      "support": 0.0277,
+      "_id": "6acf15d6b1da22dcc55b74a7"
+    },
+    {
+      "items": [
+        "Organic Red Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 56747,
+      "support": 0.0275,
+      "_id": "6acf15d6b1da22dcc55b74a8"
+    },
+    {
+      "items": [
+        "Organic Strawberries",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 56156,
+      "support": 0.0272,
+      "_id": "6acf15d6b1da22dcc55b74a9"
+    },
+    {
+      "items": [
+        "100% Whole Wheat Bread"
+      ],
+      "k": 1,
+      "frequency": 55431,
+      "support": 0.0268,
+      "_id": "6acf15d6b1da22dcc55b74aa"
+    },
+    {
+      "items": [
+        "Organic Unsweetened Almond Milk"
+      ],
+      "k": 1,
+      "frequency": 54887,
+      "support": 0.0266,
+      "_id": "6acf15d6b1da22dcc55b74ab"
+    },
+    {
+      "items": [
+        "Green Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 54485,
+      "support": 0.0264,
+      "_id": "6acf15d6b1da22dcc55b74ac"
+    },
+    {
+      "items": [
+        "Red Peppers"
+      ],
+      "k": 1,
+      "frequency": 54242,
+      "support": 0.0262,
+      "_id": "6acf15d6b1da22dcc55b74ad"
+    },
+    {
+      "items": [
+        "Organic Peeled Whole Baby Carrots"
+      ],
+      "k": 1,
+      "frequency": 53709,
+      "support": 0.026,
+      "_id": "6acf15d6b1da22dcc55b74ae"
+    },
+    {
+      "items": [
+        "Organic Avocado",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 53395,
+      "support": 0.0258,
+      "_id": "6acf15d6b1da22dcc55b74af"
+    },
+    {
+      "items": [
+        "Blueberries"
+      ],
+      "k": 1,
+      "frequency": 52580,
+      "support": 0.0254,
+      "_id": "6acf15d6b1da22dcc55b74b0"
+    },
+    {
+      "items": [
+        "Red Vine Tomato"
+      ],
+      "k": 1,
+      "frequency": 52560,
+      "support": 0.0254,
+      "_id": "6acf15d6b1da22dcc55b74b1"
+    },
+    {
+      "items": [
+        "Raspberries"
+      ],
+      "k": 1,
+      "frequency": 52224,
+      "support": 0.0253,
+      "_id": "6acf15d6b1da22dcc55b74b2"
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 51395,
+      "support": 0.0249,
+      "_id": "6acf15d6b1da22dcc55b74b3"
+    },
+    {
+      "items": [
+        "Organic Garnet Sweet Potato (Yam)"
+      ],
+      "k": 1,
+      "frequency": 51121,
+      "support": 0.0247,
+      "_id": "6acf15d6b1da22dcc55b74b4"
+    },
+    {
+      "items": [
+        "Organic Ginger Root"
+      ],
+      "k": 1,
+      "frequency": 50865,
+      "support": 0.0246,
+      "_id": "6acf15d6b1da22dcc55b74b5"
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 50372,
+      "support": 0.0244,
+      "_id": "6acf15d6b1da22dcc55b74b6"
+    },
+    {
+      "items": [
+        "Organic Kiwi"
+      ],
+      "k": 1,
+      "frequency": 49281,
+      "support": 0.0238,
+      "_id": "6acf15d6b1da22dcc55b74b7"
+    },
+    {
+      "items": [
+        "Boneless Skinless Chicken Breasts"
+      ],
+      "k": 1,
+      "frequency": 48299,
+      "support": 0.0234,
+      "_id": "6acf15d6b1da22dcc55b74b8"
+    },
+    {
+      "items": [
+        "Organic D'Anjou Pears"
+      ],
+      "k": 1,
+      "frequency": 48226,
+      "support": 0.0233,
+      "_id": "6acf15d6b1da22dcc55b74b9"
+    },
+    {
+      "items": [
+        "Small Hass Avocado"
+      ],
+      "k": 1,
+      "frequency": 46925,
+      "support": 0.0227,
+      "_id": "6acf15d6b1da22dcc55b74ba"
+    },
+    {
+      "items": [
+        "Spring Water"
+      ],
+      "k": 1,
+      "frequency": 46395,
+      "support": 0.0225,
+      "_id": "6acf15d6b1da22dcc55b74bb"
+    },
+    {
+      "items": [
+        "Unsweetened Almondmilk"
+      ],
+      "k": 1,
+      "frequency": 46321,
+      "support": 0.0224,
+      "_id": "6acf15d6b1da22dcc55b74bc"
+    },
+    {
+      "items": [
+        "Extra Virgin Olive Oil"
+      ],
+      "k": 1,
+      "frequency": 46227,
+      "support": 0.0224,
+      "_id": "6acf15d6b1da22dcc55b74bd"
+    },
+    {
+      "items": [
+        "Organic Reduced Fat 2% Milk"
+      ],
+      "k": 1,
+      "frequency": 45055,
+      "support": 0.0218,
+      "_id": "6acf15d6b1da22dcc55b74be"
+    },
+    {
+      "items": [
+        "Lime Sparkling Water"
+      ],
+      "k": 1,
+      "frequency": 44199,
+      "support": 0.0214,
+      "_id": "6acf15d6b1da22dcc55b74bf"
+    },
+    {
+      "items": [
+        "Grated Parmesan"
+      ],
+      "k": 1,
+      "frequency": 44129,
+      "support": 0.0214,
+      "_id": "6acf15d6b1da22dcc55b74c0"
+    },
+    {
+      "items": [
+        "Bunched Cilantro"
+      ],
+      "k": 1,
+      "frequency": 43927,
+      "support": 0.0213,
+      "_id": "6acf15d6b1da22dcc55b74c1"
+    },
+    {
+      "items": [
+        "Hass Avocados"
+      ],
+      "k": 1,
+      "frequency": 43325,
+      "support": 0.021,
+      "_id": "6acf15d6b1da22dcc55b74c2"
+    },
+    {
+      "items": [
+        "Organic Lacinato (Dinosaur) Kale"
+      ],
+      "k": 1,
+      "frequency": 42292,
+      "support": 0.0205,
+      "_id": "6acf15d6b1da22dcc55b74c3"
+    },
+    {
+      "items": [
+        "Organic Navel Orange"
+      ],
+      "k": 1,
+      "frequency": 41696,
+      "support": 0.0202,
+      "_id": "6acf15d6b1da22dcc55b74c4"
+    },
+    {
+      "items": [
+        "Jalapeno Peppers"
+      ],
+      "k": 1,
+      "frequency": 41418,
+      "support": 0.02,
+      "_id": "6acf15d6b1da22dcc55b74c5"
+    },
+    {
+      "items": [
+        "Strawberries",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 41232,
+      "support": 0.02,
+      "_id": "6acf15d6b1da22dcc55b74c6"
+    },
+    {
+      "items": [
+        "Red Onion"
+      ],
+      "k": 1,
+      "frequency": 41066,
+      "support": 0.0199,
+      "_id": "6acf15d6b1da22dcc55b74c7"
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 40880,
+      "support": 0.0198,
+      "_id": "6acf15d6b1da22dcc55b74c8"
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 40794,
+      "support": 0.0197,
+      "_id": "6acf15d6b1da22dcc55b74c9"
+    },
+    {
+      "items": [
+        "Broccoli Crown"
+      ],
+      "k": 1,
+      "frequency": 40710,
+      "support": 0.0197,
+      "_id": "6acf15d6b1da22dcc55b74ca"
+    },
+    {
+      "items": [
+        "Organic Raspberries",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 40503,
+      "support": 0.0196,
+      "_id": "6acf15d6b1da22dcc55b74cb"
+    },
+    {
+      "items": [
+        "Uncured Genoa Salami"
+      ],
+      "k": 1,
+      "frequency": 39091,
+      "support": 0.0189,
+      "_id": "6acf15d6b1da22dcc55b74cc"
+    },
+    {
+      "items": [
+        "Organic Grade A Free Range Large Brown Eggs"
+      ],
+      "k": 1,
+      "frequency": 38859,
+      "support": 0.0188,
+      "_id": "6acf15d6b1da22dcc55b74cd"
+    },
+    {
+      "items": [
+        "Large Alfresco Eggs"
+      ],
+      "k": 1,
+      "frequency": 38613,
+      "support": 0.0187,
+      "_id": "6acf15d6b1da22dcc55b74ce"
+    },
+    {
+      "items": [
+        "Orange Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 38368,
+      "support": 0.0186,
+      "_id": "6acf15d6b1da22dcc55b74cf"
+    },
+    {
+      "items": [
+        "Organic Baby Spinach",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 38134,
+      "support": 0.0185,
+      "_id": "6acf15d6b1da22dcc55b74d0"
+    },
+    {
+      "items": [
+        "Grape White/Green Seedless"
+      ],
+      "k": 1,
+      "frequency": 37921,
+      "support": 0.0183,
+      "_id": "6acf15d6b1da22dcc55b74d1"
+    },
+    {
+      "items": [
+        "Roma Tomato"
+      ],
+      "k": 1,
+      "frequency": 37610,
+      "support": 0.0182,
+      "_id": "6acf15d6b1da22dcc55b74d2"
+    },
+    {
+      "items": [
+        "Organic Broccoli"
+      ],
+      "k": 1,
+      "frequency": 37570,
+      "support": 0.0182,
+      "_id": "6acf15d6b1da22dcc55b74d3"
+    },
+    {
+      "items": [
+        "Organic Bartlett Pear"
+      ],
+      "k": 1,
+      "frequency": 37123,
+      "support": 0.018,
+      "_id": "6acf15d6b1da22dcc55b74d4"
+    },
+    {
+      "items": [
+        "Organic Black Beans"
+      ],
+      "k": 1,
+      "frequency": 36904,
+      "support": 0.0179,
+      "_id": "6acf15d6b1da22dcc55b74d5"
+    },
+    {
+      "items": [
+        "Clementines, Bag"
+      ],
+      "k": 1,
+      "frequency": 36698,
+      "support": 0.0178,
+      "_id": "6acf15d6b1da22dcc55b74d6"
+    },
+    {
+      "items": [
+        "Sparkling Natural Mineral Water"
+      ],
+      "k": 1,
+      "frequency": 36574,
+      "support": 0.0177,
+      "_id": "6acf15d6b1da22dcc55b74d7"
+    },
+    {
+      "items": [
+        "Shredded Parmesan"
+      ],
+      "k": 1,
+      "frequency": 35549,
+      "support": 0.0172,
+      "_id": "6acf15d6b1da22dcc55b74d8"
+    },
+    {
+      "items": [
+        "Garlic"
+      ],
+      "k": 1,
+      "frequency": 35464,
+      "support": 0.0172,
+      "_id": "6acf15d6b1da22dcc55b74d9"
+    },
+    {
+      "items": [
+        "Organic Carrot Bunch"
+      ],
+      "k": 1,
+      "frequency": 34948,
+      "support": 0.0169,
+      "_id": "6acf15d6b1da22dcc55b74da"
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 34901,
+      "support": 0.0169,
+      "_id": "6acf15d6b1da22dcc55b74db"
+    },
+    {
+      "items": [
+        "100% Raw Coconut Water"
+      ],
+      "k": 1,
+      "frequency": 34535,
+      "support": 0.0167,
+      "_id": "6acf15d6b1da22dcc55b74dc"
+    },
+    {
+      "items": [
+        "Organic Reduced Fat Milk"
+      ],
+      "k": 1,
+      "frequency": 34237,
+      "support": 0.0166,
+      "_id": "6acf15d6b1da22dcc55b74dd"
+    },
+    {
+      "items": [
+        "Organic Romaine Lettuce"
+      ],
+      "k": 1,
+      "frequency": 34026,
+      "support": 0.0165,
+      "_id": "6acf15d6b1da22dcc55b74de"
+    },
+    {
+      "items": [
+        "Bartlett Pears"
+      ],
+      "k": 1,
+      "frequency": 33968,
+      "support": 0.0164,
+      "_id": "6acf15d6b1da22dcc55b74df"
+    },
+    {
+      "items": [
+        "Organic Fuji Apple",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 33943,
+      "support": 0.0164,
+      "_id": "6acf15d6b1da22dcc55b74e0"
+    },
+    {
+      "items": [
+        "Organic Raspberries",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 33863,
+      "support": 0.0164,
+      "_id": "6acf15d6b1da22dcc55b74e1"
+    },
+    {
+      "items": [
+        "Unsalted Butter"
+      ],
+      "k": 1,
+      "frequency": 33702,
+      "support": 0.0163,
+      "_id": "6acf15d6b1da22dcc55b74e2"
+    },
+    {
+      "items": [
+        "Granny Smith Apples"
+      ],
+      "k": 1,
+      "frequency": 33053,
+      "support": 0.016,
+      "_id": "6acf15d6b1da22dcc55b74e3"
+    },
+    {
+      "items": [
+        "Organic Sticks Low Moisture Part Skim Mozzarella String Cheese"
+      ],
+      "k": 1,
+      "frequency": 32679,
+      "support": 0.0158,
+      "_id": "6acf15d6b1da22dcc55b74e4"
+    },
+    {
+      "items": [
+        "Cucumber Kirby",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 32097,
+      "support": 0.0155,
+      "_id": "6acf15d6b1da22dcc55b74e5"
+    },
+    {
+      "items": [
+        "Feta Cheese Crumbles"
+      ],
+      "k": 1,
+      "frequency": 31850,
+      "support": 0.0154,
+      "_id": "6acf15d6b1da22dcc55b74e6"
+    },
+    {
+      "items": [
+        "Limes",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 31772,
+      "support": 0.0154,
+      "_id": "6acf15d6b1da22dcc55b74e7"
+    },
+    {
+      "items": [
+        "Organic Russet Potato"
+      ],
+      "k": 1,
+      "frequency": 31648,
+      "support": 0.0153,
+      "_id": "6acf15d6b1da22dcc55b74e8"
+    },
+    {
+      "items": [
+        "Organic Whole Milk",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 31641,
+      "support": 0.0153,
+      "_id": "6acf15d6b1da22dcc55b74e9"
+    },
+    {
+      "items": [
+        "Unsweetened Original Almond Breeze Almond Milk"
+      ],
+      "k": 1,
+      "frequency": 31639,
+      "support": 0.0153,
+      "_id": "6acf15d6b1da22dcc55b74ea"
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 31222,
+      "support": 0.0151,
+      "_id": "6acf15d6b1da22dcc55b74eb"
+    },
+    {
+      "items": [
+        "Organic Broccoli Florets"
+      ],
+      "k": 1,
+      "frequency": 31219,
+      "support": 0.0151,
+      "_id": "6acf15d6b1da22dcc55b74ec"
+    },
+    {
+      "items": [
+        "Sparkling Lemon Water"
+      ],
+      "k": 1,
+      "frequency": 30951,
+      "support": 0.015,
+      "_id": "6acf15d6b1da22dcc55b74ed"
+    },
+    {
+      "items": [
+        "Organic Avocado",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 30889,
+      "support": 0.0149,
+      "_id": "6acf15d6b1da22dcc55b74ee"
+    },
+    {
+      "items": [
+        "Organic Baby Broccoli"
+      ],
+      "k": 1,
+      "frequency": 30875,
+      "support": 0.0149,
+      "_id": "6acf15d6b1da22dcc55b74ef"
+    },
+    {
+      "items": [
+        "Organic Whole Strawberries"
+      ],
+      "k": 1,
+      "frequency": 30812,
+      "support": 0.0149,
+      "_id": "6acf15d6b1da22dcc55b74f0"
+    },
+    {
+      "items": [
+        "Organic Large Brown Grade AA Cage Free Eggs"
+      ],
+      "k": 1,
+      "frequency": 30466,
+      "support": 0.0147,
+      "_id": "6acf15d6b1da22dcc55b74f1"
+    },
+    {
+      "items": [
+        "Pure Irish Butter"
+      ],
+      "k": 1,
+      "frequency": 30365,
+      "support": 0.0147,
+      "_id": "6acf15d6b1da22dcc55b74f2"
+    },
+    {
+      "items": [
+        "Whipped Cream Cheese"
+      ],
+      "k": 1,
+      "frequency": 30227,
+      "support": 0.0146,
+      "_id": "6acf15d6b1da22dcc55b74f3"
+    },
+    {
+      "items": [
+        "Organic Spring Mix"
+      ],
+      "k": 1,
+      "frequency": 29454,
+      "support": 0.0143,
+      "_id": "6acf15d6b1da22dcc55b74f4"
+    },
+    {
+      "items": [
+        "Whole Milk"
+      ],
+      "k": 1,
+      "frequency": 29403,
+      "support": 0.0142,
+      "_id": "6acf15d6b1da22dcc55b74f5"
+    },
+    {
+      "items": [
+        "Frozen Organic Wild Blueberries"
+      ],
+      "k": 1,
+      "frequency": 29363,
+      "support": 0.0142,
+      "_id": "6acf15d6b1da22dcc55b74f6"
+    },
+    {
+      "items": [
+        "Organic Garbanzo Beans"
+      ],
+      "k": 1,
+      "frequency": 29278,
+      "support": 0.0142,
+      "_id": "6acf15d6b1da22dcc55b74f7"
+    },
+    {
+      "items": [
+        "Total 2% with Strawberry Lowfat Greek Strained Yogurt"
+      ],
+      "k": 1,
+      "frequency": 29240,
+      "support": 0.0141,
+      "_id": "6acf15d6b1da22dcc55b74f8"
+    },
+    {
+      "items": [
+        "Italian Sparkling Mineral Water"
+      ],
+      "k": 1,
+      "frequency": 28995,
+      "support": 0.014,
+      "_id": "6acf15d6b1da22dcc55b74f9"
+    },
+    {
+      "items": [
+        "2% Reduced Fat Milk"
+      ],
+      "k": 1,
+      "frequency": 28855,
+      "support": 0.014,
+      "_id": "6acf15d6b1da22dcc55b74fa"
+    },
+    {
+      "items": [
+        "Organic Roma Tomato"
+      ],
+      "k": 1,
+      "frequency": 28656,
+      "support": 0.0139,
+      "_id": "6acf15d6b1da22dcc55b74fb"
+    },
+    {
+      "items": [
+        "Sharp Cheddar Cheese"
+      ],
+      "k": 1,
+      "frequency": 28555,
+      "support": 0.0138,
+      "_id": "6acf15d6b1da22dcc55b74fc"
+    },
+    {
+      "items": [
+        "Honeycrisp Apple",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 28408,
+      "support": 0.0137,
+      "_id": "6acf15d6b1da22dcc55b74fd"
+    },
+    {
+      "items": [
+        "Vanilla Almond Breeze Almond Milk"
+      ],
+      "k": 1,
+      "frequency": 28227,
+      "support": 0.0137,
+      "_id": "6acf15d6b1da22dcc55b74fe"
+    },
+    {
+      "items": [
+        "Organic Extra Firm Tofu"
+      ],
+      "k": 1,
+      "frequency": 28194,
+      "support": 0.0136,
+      "_id": "6acf15d6b1da22dcc55b74ff"
+    },
+    {
+      "items": [
+        "Green Beans"
+      ],
+      "k": 1,
+      "frequency": 28022,
+      "support": 0.0136,
+      "_id": "6acf15d6b1da22dcc55b7500"
+    },
+    {
+      "items": [
+        "Russet Potato"
+      ],
+      "k": 1,
+      "frequency": 27743,
+      "support": 0.0134,
+      "_id": "6acf15d6b1da22dcc55b7501"
+    },
+    {
+      "items": [
+        "No Salt Added Black Beans"
+      ],
+      "k": 1,
+      "frequency": 27497,
+      "support": 0.0133,
+      "_id": "6acf15d6b1da22dcc55b7502"
+    },
+    {
+      "items": [
+        "Organic Roasted Turkey Breast"
+      ],
+      "k": 1,
+      "frequency": 27434,
+      "support": 0.0133,
+      "_id": "6acf15d6b1da22dcc55b7503"
+    },
+    {
+      "items": [
+        "Limes",
+        "Large Lemon"
+      ],
+      "k": 2,
+      "frequency": 27403,
+      "support": 0.0133,
+      "_id": "6acf15d6b1da22dcc55b7504"
+    },
+    {
+      "items": [
+        "Pure Sparkling Water"
+      ],
+      "k": 1,
+      "frequency": 26921,
+      "support": 0.013,
+      "_id": "6acf15d6b1da22dcc55b7505"
+    },
+    {
+      "items": [
+        "Organic Red Radish, Bunch"
+      ],
+      "k": 1,
+      "frequency": 26798,
+      "support": 0.013,
+      "_id": "6acf15d6b1da22dcc55b7506"
+    },
+    {
+      "items": [
+        "Organic Coconut Milk"
+      ],
+      "k": 1,
+      "frequency": 26484,
+      "support": 0.0128,
+      "_id": "6acf15d6b1da22dcc55b7507"
+    },
+    {
+      "items": [
+        "Organic Whole Milk",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 26481,
+      "support": 0.0128,
+      "_id": "6acf15d6b1da22dcc55b7508"
+    },
+    {
+      "items": [
+        "Organic Milk"
+      ],
+      "k": 1,
+      "frequency": 26201,
+      "support": 0.0127,
+      "_id": "6acf15d6b1da22dcc55b7509"
+    },
+    {
+      "items": [
+        "100% Recycled Paper Towels"
+      ],
+      "k": 1,
+      "frequency": 26190,
+      "support": 0.0127,
+      "_id": "6acf15d6b1da22dcc55b750a"
+    },
+    {
+      "items": [
+        "Ground Turkey Breast"
+      ],
+      "k": 1,
+      "frequency": 26107,
+      "support": 0.0126,
+      "_id": "6acf15d6b1da22dcc55b750b"
+    },
+    {
+      "items": [
+        "Organic Raspberries",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 25793,
+      "support": 0.0125,
+      "_id": "6acf15d6b1da22dcc55b750c"
+    },
+    {
+      "items": [
+        "Organic Basil"
+      ],
+      "k": 1,
+      "frequency": 25782,
+      "support": 0.0125,
+      "_id": "6acf15d6b1da22dcc55b750d"
+    },
+    {
+      "items": [
+        "Organic Sour Cream"
+      ],
+      "k": 1,
+      "frequency": 25763,
+      "support": 0.0125,
+      "_id": "6acf15d6b1da22dcc55b750e"
+    },
+    {
+      "items": [
+        "Shredded Mild Cheddar Cheese"
+      ],
+      "k": 1,
+      "frequency": 25632,
+      "support": 0.0124,
+      "_id": "6acf15d6b1da22dcc55b750f"
+    },
+    {
+      "items": [
+        "Total Greek Strained Yogurt"
+      ],
+      "k": 1,
+      "frequency": 25389,
+      "support": 0.0123,
+      "_id": "6acf15d6b1da22dcc55b7510"
+    },
+    {
+      "items": [
+        "Red Raspberries"
+      ],
+      "k": 1,
+      "frequency": 25388,
+      "support": 0.0123,
+      "_id": "6acf15d6b1da22dcc55b7511"
+    },
+    {
+      "items": [
+        "Total 0% Nonfat Greek Yogurt"
+      ],
+      "k": 1,
+      "frequency": 25360,
+      "support": 0.0123,
+      "_id": "6acf15d6b1da22dcc55b7512"
+    },
+    {
+      "items": [
+        "Yellow Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 25199,
+      "support": 0.0122,
+      "_id": "6acf15d6b1da22dcc55b7513"
+    },
+    {
+      "items": [
+        "Organic Fat Free Milk"
+      ],
+      "k": 1,
+      "frequency": 25114,
+      "support": 0.0122,
+      "_id": "6acf15d6b1da22dcc55b7514"
+    },
+    {
+      "items": [
+        "Fat Free Milk"
+      ],
+      "k": 1,
+      "frequency": 24975,
+      "support": 0.0121,
+      "_id": "6acf15d6b1da22dcc55b7515"
+    },
+    {
+      "items": [
+        "Green Onions"
+      ],
+      "k": 1,
+      "frequency": 24964,
+      "support": 0.0121,
+      "_id": "6acf15d6b1da22dcc55b7516"
+    },
+    {
+      "items": [
+        "Seedless Red Grapes",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 24594,
+      "support": 0.0119,
+      "_id": "6acf15d6b1da22dcc55b7517"
+    },
+    {
+      "items": [
+        "Total 0% Greek Yogurt"
+      ],
+      "k": 1,
+      "frequency": 24582,
+      "support": 0.0119,
+      "_id": "6acf15d6b1da22dcc55b7518"
+    },
+    {
+      "items": [
+        "Organic Yellow Onion",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 24574,
+      "support": 0.0119,
+      "_id": "6acf15d6b1da22dcc55b7519"
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Organic Avocado"
+      ],
+      "k": 2,
+      "frequency": 24417,
+      "support": 0.0118,
+      "_id": "6acf15d6b1da22dcc55b751a"
+    },
+    {
+      "items": [
+        "Organic Large Grade AA Brown Eggs"
+      ],
+      "k": 1,
+      "frequency": 24403,
+      "support": 0.0118,
+      "_id": "6acf15d6b1da22dcc55b751b"
+    },
+    {
+      "items": [
+        "Honey Nut Cheerios"
+      ],
+      "k": 1,
+      "frequency": 24246,
+      "support": 0.0117,
+      "_id": "6acf15d6b1da22dcc55b751c"
+    },
+    {
+      "items": [
+        "Organic Avocado",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 23984,
+      "support": 0.0116,
+      "_id": "6acf15d6b1da22dcc55b751d"
+    },
+    {
+      "items": [
+        "Unsweetened Vanilla Almond Milk"
+      ],
+      "k": 1,
+      "frequency": 23971,
+      "support": 0.0116,
+      "_id": "6acf15d6b1da22dcc55b751e"
+    },
+    {
+      "items": [
+        "Organic Whole Milk",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 23813,
+      "support": 0.0115,
+      "_id": "6acf15d6b1da22dcc55b751f"
+    },
+    {
+      "items": [
+        "Pineapple Chunks"
+      ],
+      "k": 1,
+      "frequency": 23761,
+      "support": 0.0115,
+      "_id": "6acf15d6b1da22dcc55b7520"
+    },
+    {
+      "items": [
+        "Organic Blueberries",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 23756,
+      "support": 0.0115,
+      "_id": "6acf15d6b1da22dcc55b7521"
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 23696,
+      "support": 0.0115,
+      "_id": "6acf15d6b1da22dcc55b7522"
+    },
+    {
+      "items": [
+        "Lightly Salted Baked Snap Pea Crisps"
+      ],
+      "k": 1,
+      "frequency": 23452,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7523"
+    },
+    {
+      "items": [
+        "Organic Heavy Whipping Cream"
+      ],
+      "k": 1,
+      "frequency": 23422,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7524"
+    },
+    {
+      "items": [
+        "Organic Hothouse Cucumbers"
+      ],
+      "k": 1,
+      "frequency": 23418,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7525"
+    },
+    {
+      "items": [
+        "Organic Large Extra Fancy Fuji Apple",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 23364,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7526"
+    },
+    {
+      "items": [
+        "Romaine Hearts"
+      ],
+      "k": 1,
+      "frequency": 23343,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7527"
+    },
+    {
+      "items": [
+        "Organic Celery Hearts"
+      ],
+      "k": 1,
+      "frequency": 23301,
+      "support": 0.0113,
+      "_id": "6acf15d6b1da22dcc55b7528"
+    },
+    {
+      "items": [
+        "Fresh Ginger Root"
+      ],
+      "k": 1,
+      "frequency": 23236,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b7529"
+    },
+    {
+      "items": [
+        "Watermelon Chunks"
+      ],
+      "k": 1,
+      "frequency": 23221,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b752a"
+    },
+    {
+      "items": [
+        "Organic White Onions"
+      ],
+      "k": 1,
+      "frequency": 23214,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b752b"
+    },
+    {
+      "items": [
+        "Cantaloupe"
+      ],
+      "k": 1,
+      "frequency": 23205,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b752c"
+    },
+    {
+      "items": [
+        "Organic Bell Pepper"
+      ],
+      "k": 1,
+      "frequency": 23125,
+      "support": 0.0112,
+      "_id": "6acf15d6b1da22dcc55b752d"
+    },
+    {
+      "items": [
+        "Clementines"
+      ],
+      "k": 1,
+      "frequency": 22998,
+      "support": 0.0111,
+      "_id": "6acf15d6b1da22dcc55b752e"
+    },
+    {
+      "items": [
+        "Organic Romaine"
+      ],
+      "k": 1,
+      "frequency": 22997,
+      "support": 0.0111,
+      "_id": "6acf15d6b1da22dcc55b752f"
+    },
+    {
+      "items": [
+        "Organic Raspberries",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 22892,
+      "support": 0.0111,
+      "_id": "6acf15d6b1da22dcc55b7530"
+    },
+    {
+      "items": [
+        "Organic Avocado",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 22891,
+      "support": 0.0111,
+      "_id": "6acf15d6b1da22dcc55b7531"
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 22808,
+      "support": 0.011,
+      "_id": "6acf15d6b1da22dcc55b7532"
+    },
+    {
+      "items": [
+        "Organic Zucchini",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 22632,
+      "support": 0.011,
+      "_id": "6acf15d6b1da22dcc55b7533"
+    },
+    {
+      "items": [
+        "Gala Apples"
+      ],
+      "k": 1,
+      "frequency": 22440,
+      "support": 0.0109,
+      "_id": "6acf15d6b1da22dcc55b7534"
+    },
+    {
+      "items": [
+        "Organic Lemon",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 22383,
+      "support": 0.0108,
+      "_id": "6acf15d6b1da22dcc55b7535"
+    },
+    {
+      "items": [
+        "Total 2% All Natural Greek Strained Yogurt with Honey"
+      ],
+      "k": 1,
+      "frequency": 22104,
+      "support": 0.0107,
+      "_id": "6acf15d6b1da22dcc55b7536"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Organic Yellow Onion"
+      ],
+      "k": 2,
+      "frequency": 22073,
+      "support": 0.0107,
+      "_id": "6acf15d6b1da22dcc55b7537"
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Avocado"
+      ],
+      "k": 2,
+      "frequency": 22010,
+      "support": 0.0107,
+      "_id": "6acf15d6b1da22dcc55b7538"
+    },
+    {
+      "items": [
+        "Baby Spinach"
+      ],
+      "k": 1,
+      "frequency": 21966,
+      "support": 0.0106,
+      "_id": "6acf15d6b1da22dcc55b7539"
+    },
+    {
+      "items": [
+        "Organic Bread with 21 Whole Grains"
+      ],
+      "k": 1,
+      "frequency": 21916,
+      "support": 0.0106,
+      "_id": "6acf15d6b1da22dcc55b753a"
+    },
+    {
+      "items": [
+        "Original Orange Juice"
+      ],
+      "k": 1,
+      "frequency": 21888,
+      "support": 0.0106,
+      "_id": "6acf15d6b1da22dcc55b753b"
+    },
+    {
+      "items": [
+        "Organic Blueberries",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 21868,
+      "support": 0.0106,
+      "_id": "6acf15d6b1da22dcc55b753c"
+    },
+    {
+      "items": [
+        "Organic Cucumber",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 21534,
+      "support": 0.0104,
+      "_id": "6acf15d6b1da22dcc55b753d"
+    },
+    {
+      "items": [
+        "Shredded Mozzarella"
+      ],
+      "k": 1,
+      "frequency": 21429,
+      "support": 0.0104,
+      "_id": "6acf15d6b1da22dcc55b753e"
+    },
+    {
+      "items": [
+        "Boneless Skinless Chicken Breast"
+      ],
+      "k": 1,
+      "frequency": 21330,
+      "support": 0.0103,
+      "_id": "6acf15d6b1da22dcc55b753f"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 21318,
+      "support": 0.0103,
+      "_id": "6acf15d6b1da22dcc55b7540"
+    },
+    {
+      "items": [
+        "Organic Lemon",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 21246,
+      "support": 0.0103,
+      "_id": "6acf15d6b1da22dcc55b7541"
+    },
+    {
+      "items": [
+        "Yellow Onions",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 21168,
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7542"
+    },
+    {
+      "items": [
+        "Organic Bosc Pear"
+      ],
+      "k": 1,
+      "frequency": 21086,
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7543"
+    },
+    {
+      "items": [
+        "Organic Green Seedless Grapes"
+      ],
+      "k": 1,
+      "frequency": 21047,
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7544"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 20996,
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7545"
+    },
+    {
+      "items": [
+        "Blackberries"
+      ],
+      "k": 1,
+      "frequency": 20976,
+      "support": 0.0102,
+      "_id": "6acf15d6b1da22dcc55b7546"
+    },
+    {
+      "items": [
+        "Organic Diced Tomatoes"
+      ],
+      "k": 1,
+      "frequency": 20972,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b7547"
+    },
+    {
+      "items": [
+        "Limes",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 20881,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b7548"
+    },
+    {
+      "items": [
+        "Organic Spring Mix Salad"
+      ],
+      "k": 1,
+      "frequency": 20856,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b7549"
+    },
+    {
+      "items": [
+        "Organic Yellow Peaches"
+      ],
+      "k": 1,
+      "frequency": 20851,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b754a"
+    },
+    {
+      "items": [
+        "Organic Green Cabbage"
+      ],
+      "k": 1,
+      "frequency": 20782,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b754b"
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 20776,
+      "support": 0.0101,
+      "_id": "6acf15d6b1da22dcc55b754c"
+    },
+    {
+      "items": [
+        "Brussels Sprouts"
+      ],
+      "k": 1,
+      "frequency": 20755,
+      "support": 0.01,
+      "_id": "6acf15d6b1da22dcc55b754d"
+    },
+    {
+      "items": [
+        "Large Grapefruit"
+      ],
+      "k": 1,
+      "frequency": 20714,
+      "support": 0.01,
+      "_id": "6acf15d6b1da22dcc55b754e"
+    },
+    {
+      "items": [
+        "Organic Unsalted Butter"
+      ],
+      "k": 1,
+      "frequency": 20494,
+      "support": 0.0099,
+      "_id": "6acf15d6b1da22dcc55b754f"
+    },
+    {
+      "items": [
+        "Organic Zucchini",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 20415,
+      "support": 0.0099,
+      "_id": "6acf15d6b1da22dcc55b7550"
+    },
+    {
+      "items": [
+        "Total 2% Lowfat Greek Strained Yogurt With Blueberry"
+      ],
+      "k": 1,
+      "frequency": 20385,
+      "support": 0.0099,
+      "_id": "6acf15d6b1da22dcc55b7551"
+    },
+    {
+      "items": [
+        "Peach Pear Flavored Sparkling Water"
+      ],
+      "k": 1,
+      "frequency": 20134,
+      "support": 0.0097,
+      "_id": "6acf15d6b1da22dcc55b7552"
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 20030,
+      "support": 0.0097,
+      "_id": "6acf15d6b1da22dcc55b7553"
+    },
+    {
+      "items": [
+        "Organic Jalapeno Pepper"
+      ],
+      "k": 1,
+      "frequency": 19944,
+      "support": 0.0097,
+      "_id": "6acf15d6b1da22dcc55b7554"
+    },
+    {
+      "items": [
+        "Organic Yellow Onion",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 19927,
+      "support": 0.0096,
+      "_id": "6acf15d6b1da22dcc55b7555"
+    },
+    {
+      "items": [
+        "Organic 2% Reduced Fat Milk"
+      ],
+      "k": 1,
+      "frequency": 19814,
+      "support": 0.0096,
+      "_id": "6acf15d6b1da22dcc55b7556"
+    },
+    {
+      "items": [
+        "Organic Shredded Carrots"
+      ],
+      "k": 1,
+      "frequency": 19753,
+      "support": 0.0096,
+      "_id": "6acf15d6b1da22dcc55b7557"
+    },
+    {
+      "items": [
+        "Cherubs Heavenly Salad Tomatoes"
+      ],
+      "k": 1,
+      "frequency": 19720,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b7558"
+    },
+    {
+      "items": [
+        "Organic Yellow Onion",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 19707,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b7559"
+    },
+    {
+      "items": [
+        "Uncured Hickory Smoked Sunday Bacon"
+      ],
+      "k": 1,
+      "frequency": 19666,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b755a"
+    },
+    {
+      "items": [
+        "Organic Frozen Peas"
+      ],
+      "k": 1,
+      "frequency": 19655,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b755b"
+    },
+    {
+      "items": [
+        "Total 2% Lowfat Greek Strained Yogurt with Peach"
+      ],
+      "k": 1,
+      "frequency": 19569,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b755c"
+    },
+    {
+      "items": [
+        "Organic Yams"
+      ],
+      "k": 1,
+      "frequency": 19549,
+      "support": 0.0095,
+      "_id": "6acf15d6b1da22dcc55b755d"
+    },
+    {
+      "items": [
+        "Organic Old Fashioned Rolled Oats"
+      ],
+      "k": 1,
+      "frequency": 19521,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b755e"
+    },
+    {
+      "items": [
+        "Creamy Almond Butter"
+      ],
+      "k": 1,
+      "frequency": 19439,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b755f"
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 19407,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b7560"
+    },
+    {
+      "items": [
+        "Organic Butternut Squash"
+      ],
+      "k": 1,
+      "frequency": 19331,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b7561"
+    },
+    {
+      "items": [
+        "Organic Leek"
+      ],
+      "k": 1,
+      "frequency": 19329,
+      "support": 0.0094,
+      "_id": "6acf15d6b1da22dcc55b7562"
+    },
+    {
+      "items": [
+        "Organic Zucchini",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 19318,
+      "support": 0.0093,
+      "_id": "6acf15d6b1da22dcc55b7563"
+    },
+    {
+      "items": [
+        "Organic Mint"
+      ],
+      "k": 1,
+      "frequency": 19212,
+      "support": 0.0093,
+      "_id": "6acf15d6b1da22dcc55b7564"
+    },
+    {
+      "items": [
+        "Organic Raw Kombucha Gingerade"
+      ],
+      "k": 1,
+      "frequency": 19178,
+      "support": 0.0093,
+      "_id": "6acf15d6b1da22dcc55b7565"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 19107,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b7566"
+    },
+    {
+      "items": [
+        "Sour Cream"
+      ],
+      "k": 1,
+      "frequency": 19079,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b7567"
+    },
+    {
+      "items": [
+        "Organic Thyme"
+      ],
+      "k": 1,
+      "frequency": 19041,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b7568"
+    },
+    {
+      "items": [
+        "Limes",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 18999,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b7569"
+    },
+    {
+      "items": [
+        "Organic Blueberries",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 18982,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b756a"
+    },
+    {
+      "items": [
+        "Organic Gala Apples",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 18958,
+      "support": 0.0092,
+      "_id": "6acf15d6b1da22dcc55b756b"
+    },
+    {
+      "items": [
+        "Organic Baby Rainbow Carrots"
+      ],
+      "k": 1,
+      "frequency": 18822,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b756c"
+    },
+    {
+      "items": [
+        "Organic Large Green Asparagus"
+      ],
+      "k": 1,
+      "frequency": 18815,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b756d"
+    },
+    {
+      "items": [
+        "Marinara Sauce"
+      ],
+      "k": 1,
+      "frequency": 18811,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b756e"
+    },
+    {
+      "items": [
+        "YoKids Squeezers Organic Low-Fat Yogurt, Strawberry"
+      ],
+      "k": 1,
+      "frequency": 18734,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b756f"
+    },
+    {
+      "items": [
+        "Organic Grape Tomatoes",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 18720,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b7570"
+    },
+    {
+      "items": [
+        "Sweet Onion"
+      ],
+      "k": 1,
+      "frequency": 18714,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b7571"
+    },
+    {
+      "items": [
+        "Icelandic Style Skyr Blueberry Non-fat Yogurt"
+      ],
+      "k": 1,
+      "frequency": 18712,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b7572"
+    },
+    {
+      "items": [
+        "Milk, Organic, Vitamin D"
+      ],
+      "k": 1,
+      "frequency": 18703,
+      "support": 0.0091,
+      "_id": "6acf15d6b1da22dcc55b7573"
+    },
+    {
+      "items": [
+        "Unsalted Pure Irish Butter"
+      ],
+      "k": 1,
+      "frequency": 18691,
+      "support": 0.009,
+      "_id": "6acf15d6b1da22dcc55b7574"
+    },
+    {
+      "items": [
+        "Heavy Whipping Cream"
+      ],
+      "k": 1,
+      "frequency": 18650,
+      "support": 0.009,
+      "_id": "6acf15d6b1da22dcc55b7575"
+    },
+    {
+      "items": [
+        "Organic Egg Whites"
+      ],
+      "k": 1,
+      "frequency": 18622,
+      "support": 0.009,
+      "_id": "6acf15d6b1da22dcc55b7576"
+    },
+    {
+      "items": [
+        "Soda"
+      ],
+      "k": 1,
+      "frequency": 18459,
+      "support": 0.0089,
+      "_id": "6acf15d6b1da22dcc55b7577"
+    },
+    {
+      "items": [
+        "Salted Butter"
+      ],
+      "k": 1,
+      "frequency": 18351,
+      "support": 0.0089,
+      "_id": "6acf15d6b1da22dcc55b7578"
+    },
+    {
+      "items": [
+        "White Corn"
+      ],
+      "k": 1,
+      "frequency": 18266,
+      "support": 0.0088,
+      "_id": "6acf15d6b1da22dcc55b7579"
+    },
+    {
+      "items": [
+        "Original Hummus",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 18210,
+      "support": 0.0088,
+      "_id": "6acf15d6b1da22dcc55b757a"
+    },
+    {
+      "items": [
+        "Oven Roasted Turkey Breast"
+      ],
+      "k": 1,
+      "frequency": 18178,
+      "support": 0.0088,
+      "_id": "6acf15d6b1da22dcc55b757b"
+    },
+    {
+      "items": [
+        "Organic Raspberries",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 18044,
+      "support": 0.0087,
+      "_id": "6acf15d6b1da22dcc55b757c"
+    },
+    {
+      "items": [
+        "Organic Broccoli Crowns"
+      ],
+      "k": 1,
+      "frequency": 17996,
+      "support": 0.0087,
+      "_id": "6acf15d6b1da22dcc55b757d"
+    },
+    {
+      "items": [
+        "Electrolyte Enhanced Water"
+      ],
+      "k": 1,
+      "frequency": 17936,
+      "support": 0.0087,
+      "_id": "6acf15d6b1da22dcc55b757e"
+    },
+    {
+      "items": [
+        "Organic Shredded Mozzarella"
+      ],
+      "k": 1,
+      "frequency": 17915,
+      "support": 0.0087,
+      "_id": "6acf15d6b1da22dcc55b757f"
+    },
+    {
+      "items": [
+        "Organic Baby Kale"
+      ],
+      "k": 1,
+      "frequency": 17853,
+      "support": 0.0086,
+      "_id": "6acf15d6b1da22dcc55b7580"
+    },
+    {
+      "items": [
+        "European Cucumber"
+      ],
+      "k": 1,
+      "frequency": 17779,
+      "support": 0.0086,
+      "_id": "6acf15d6b1da22dcc55b7581"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 17697,
+      "support": 0.0086,
+      "_id": "6acf15d6b1da22dcc55b7582"
+    },
+    {
+      "items": [
+        "Organic Banana"
+      ],
+      "k": 1,
+      "frequency": 17667,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7583"
+    },
+    {
+      "items": [
+        "Vanilla Skyr Nonfat Yogurt"
+      ],
+      "k": 1,
+      "frequency": 17644,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7584"
+    },
+    {
+      "items": [
+        "Strawberries",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 17611,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7585"
+    },
+    {
+      "items": [
+        "Organic Cilantro",
+        "Limes"
+      ],
+      "k": 2,
+      "frequency": 17565,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7586"
+    },
+    {
+      "items": [
+        "Organic Mexican Blend Finely Shredded Cheese"
+      ],
+      "k": 1,
+      "frequency": 17495,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7587"
+    },
+    {
+      "items": [
+        "Chicken & Maple Breakfast Sausage"
+      ],
+      "k": 1,
+      "frequency": 17491,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7588"
+    },
+    {
+      "items": [
+        "Total 2% Greek Strained Yogurt with Cherry 5.3 oz"
+      ],
+      "k": 1,
+      "frequency": 17485,
+      "support": 0.0085,
+      "_id": "6acf15d6b1da22dcc55b7589"
+    },
+    {
+      "items": [
+        "Organic Cucumber",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 17456,
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758a"
+    },
+    {
+      "items": [
+        "Organic Creamy Peanut Butter"
+      ],
+      "k": 1,
+      "frequency": 17448,
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758b"
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 17432,
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758c"
+    },
+    {
+      "items": [
+        "Organic Low Sodium Chicken Broth"
+      ],
+      "k": 1,
+      "frequency": 17375,
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758d"
+    },
+    {
+      "items": [
+        "Sustainably Soft Bath Tissue"
+      ],
+      "k": 1,
+      "frequency": 17263,
+      "support": 0.0084,
+      "_id": "6acf15d6b1da22dcc55b758e"
+    },
+    {
+      "items": [
+        "Mango Chunks"
+      ],
+      "k": 1,
+      "frequency": 17249,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b758f"
+    },
+    {
+      "items": [
+        "Organic Tomato Paste"
+      ],
+      "k": 1,
+      "frequency": 17196,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7590"
+    },
+    {
+      "items": [
+        "Organic Baby Spinach Salad"
+      ],
+      "k": 1,
+      "frequency": 17174,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7591"
+    },
+    {
+      "items": [
+        "Organic American Cheese Singles"
+      ],
+      "k": 1,
+      "frequency": 17140,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7592"
+    },
+    {
+      "items": [
+        "Original No Pulp 100% Florida Orange Juice"
+      ],
+      "k": 1,
+      "frequency": 17130,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7593"
+    },
+    {
+      "items": [
+        "Organic Snipped Green Beans"
+      ],
+      "k": 1,
+      "frequency": 17058,
+      "support": 0.0083,
+      "_id": "6acf15d6b1da22dcc55b7594"
+    },
+    {
+      "items": [
+        "Ezekiel 4:9 Bread Organic Sprouted Whole Grain"
+      ],
+      "k": 1,
+      "frequency": 17040,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7595"
+    },
+    {
+      "items": [
+        "Globe Eggplant"
+      ],
+      "k": 1,
+      "frequency": 17030,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7596"
+    },
+    {
+      "items": [
+        "Organic Gala Apples",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 16975,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7597"
+    },
+    {
+      "items": [
+        "Organic Whole Milk",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 16944,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7598"
+    },
+    {
+      "items": [
+        "Shallot"
+      ],
+      "k": 1,
+      "frequency": 16928,
+      "support": 0.0082,
+      "_id": "6acf15d6b1da22dcc55b7599"
+    },
+    {
+      "items": [
+        "Lemonade"
+      ],
+      "k": 1,
+      "frequency": 16770,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759a"
+    },
+    {
+      "items": [
+        "Organic Baby Carrots",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 16754,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759b"
+    },
+    {
+      "items": [
+        "Guacamole"
+      ],
+      "k": 1,
+      "frequency": 16718,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759c"
+    },
+    {
+      "items": [
+        "Organic Yellow Onion",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 16695,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759d"
+    },
+    {
+      "items": [
+        "Organic Yellow Onion",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 16651,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759e"
+    },
+    {
+      "items": [
+        "Organic Grape Tomatoes",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 16650,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b759f"
+    },
+    {
+      "items": [
+        "Sparkling Water Berry"
+      ],
+      "k": 1,
+      "frequency": 16637,
+      "support": 0.0081,
+      "_id": "6acf15d6b1da22dcc55b75a0"
+    },
+    {
+      "items": [
+        "Pure Coconut Water"
+      ],
+      "k": 1,
+      "frequency": 16572,
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a1"
+    },
+    {
+      "items": [
+        "Organic Cucumber",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 16555,
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a2"
+    },
+    {
+      "items": [
+        "Roasted Turkey Breast"
+      ],
+      "k": 1,
+      "frequency": 16545,
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a3"
+    },
+    {
+      "items": [
+        "Organic Zucchini",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 16464,
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a4"
+    },
+    {
+      "items": [
+        "Organic Beef Hot Dogs"
+      ],
+      "k": 1,
+      "frequency": 16441,
+      "support": 0.008,
+      "_id": "6acf15d6b1da22dcc55b75a5"
+    },
+    {
+      "items": [
+        "Air Chilled Organic Boneless Skinless Chicken Breasts"
+      ],
+      "k": 1,
+      "frequency": 16378,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75a6"
+    },
+    {
+      "items": [
+        "Organic Tomato Basil Pasta Sauce"
+      ],
+      "k": 1,
+      "frequency": 16363,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75a7"
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 16305,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75a8"
+    },
+    {
+      "items": [
+        "Blueberries",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 16286,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75a9"
+    },
+    {
+      "items": [
+        "Original Veggie Straws"
+      ],
+      "k": 1,
+      "frequency": 16283,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75aa"
+    },
+    {
+      "items": [
+        "Hass Avocado"
+      ],
+      "k": 1,
+      "frequency": 16262,
+      "support": 0.0079,
+      "_id": "6acf15d6b1da22dcc55b75ab"
+    },
+    {
+      "items": [
+        "Lemon Hummus"
+      ],
+      "k": 1,
+      "frequency": 16030,
+      "support": 0.0078,
+      "_id": "6acf15d6b1da22dcc55b75ac"
+    },
+    {
+      "items": [
+        "Non Fat Raspberry Yogurt"
+      ],
+      "k": 1,
+      "frequency": 16015,
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75ad"
+    },
+    {
+      "items": [
+        "Sea Salt Pita Chips"
+      ],
+      "k": 1,
+      "frequency": 16004,
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75ae"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Limes"
+      ],
+      "k": 2,
+      "frequency": 15946,
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75af"
+    },
+    {
+      "items": [
+        "Organic Grape Tomatoes",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 15925,
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75b0"
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15870,
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75b1"
+    },
+    {
+      "items": [
+        "Organic Cucumber",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 15813,
+      "support": 0.0077,
+      "_id": "6acf15d6b1da22dcc55b75b2"
+    },
+    {
+      "items": [
+        "Cucumber Kirby",
+        "Organic Baby Spinach"
+      ],
+      "k": 2,
+      "frequency": 15796,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b3"
+    },
+    {
+      "items": [
+        "Sparkling Water Grapefruit",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15789,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b4"
+    },
+    {
+      "items": [
+        "Total 2% All Natural Plain Greek Yogurt"
+      ],
+      "k": 1,
+      "frequency": 15767,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b5"
+    },
+    {
+      "items": [
+        "Creamy Peanut Butter"
+      ],
+      "k": 1,
+      "frequency": 15751,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b6"
+    },
+    {
+      "items": [
+        "Organic Baby Carrots",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 15713,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b7"
+    },
+    {
+      "items": [
+        "Asparation/Broccolini/Baby Broccoli"
+      ],
+      "k": 1,
+      "frequency": 15708,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b8"
+    },
+    {
+      "items": [
+        "Organic AppleApple"
+      ],
+      "k": 1,
+      "frequency": 15697,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75b9"
+    },
+    {
+      "items": [
+        "Macaroni & Cheese"
+      ],
+      "k": 1,
+      "frequency": 15668,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75ba"
+    },
+    {
+      "items": [
+        "Roasted Red Pepper Hummus"
+      ],
+      "k": 1,
+      "frequency": 15630,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75bb"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15627,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75bc"
+    },
+    {
+      "items": [
+        "Organic Dill"
+      ],
+      "k": 1,
+      "frequency": 15619,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75bd"
+    },
+    {
+      "items": [
+        "Sourdough Bread"
+      ],
+      "k": 1,
+      "frequency": 15615,
+      "support": 0.0076,
+      "_id": "6acf15d6b1da22dcc55b75be"
+    },
+    {
+      "items": [
+        "Total 2% Lowfat Plain Greek Yogurt"
+      ],
+      "k": 1,
+      "frequency": 15578,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75bf"
+    },
+    {
+      "items": [
+        "Organic Grape Tomatoes",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15573,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c0"
+    },
+    {
+      "items": [
+        "Cucumber Kirby",
+        "Organic Avocado"
+      ],
+      "k": 2,
+      "frequency": 15570,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c1"
+    },
+    {
+      "items": [
+        "Apple Honeycrisp Organic",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 15519,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c2"
+    },
+    {
+      "items": [
+        "Organic Small Bunch Celery",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 15507,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c3"
+    },
+    {
+      "items": [
+        "Half & Half",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15497,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c4"
+    },
+    {
+      "items": [
+        "Trilogy Kombucha Drink"
+      ],
+      "k": 1,
+      "frequency": 15440,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c5"
+    },
+    {
+      "items": [
+        "Michigan Organic Kale",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15438,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c6"
+    },
+    {
+      "items": [
+        "Carrots",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15421,
+      "support": 0.0075,
+      "_id": "6acf15d6b1da22dcc55b75c7"
+    },
+    {
+      "items": [
+        "Orange Juice"
+      ],
+      "k": 1,
+      "frequency": 15348,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75c8"
+    },
+    {
+      "items": [
+        "Organic Zucchini",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15320,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75c9"
+    },
+    {
+      "items": [
+        "Organic Garlic",
+        "Large Lemon"
+      ],
+      "k": 2,
+      "frequency": 15318,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75ca"
+    },
+    {
+      "items": [
+        "Red Vine Tomato",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15279,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75cb"
+    },
+    {
+      "items": [
+        "Organic Baby Arugula",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15229,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75cc"
+    },
+    {
+      "items": [
+        "White Onion"
+      ],
+      "k": 1,
+      "frequency": 15205,
+      "support": 0.0074,
+      "_id": "6acf15d6b1da22dcc55b75cd"
+    },
+    {
+      "items": [
+        "Spaghetti"
+      ],
+      "k": 1,
+      "frequency": 15186,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75ce"
+    },
+    {
+      "items": [
+        "Organic Lemon",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15152,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75cf"
+    },
+    {
+      "items": [
+        "Spinach"
+      ],
+      "k": 1,
+      "frequency": 15126,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d0"
+    },
+    {
+      "items": [
+        "100% Whole Wheat Bread",
+        "Banana"
+      ],
+      "k": 2,
+      "frequency": 15118,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d1"
+    },
+    {
+      "items": [
+        "Organic Large Extra Fancy Fuji Apple",
+        "Organic Strawberries"
+      ],
+      "k": 2,
+      "frequency": 15113,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d2"
+    },
+    {
+      "items": [
+        "Organic Hass Avocado",
+        "Organic Strawberries",
+        "Bag of Organic Bananas"
+      ],
+      "k": 3,
+      "frequency": 15066,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d3"
+    },
+    {
+      "items": [
+        "Organic Tomato Cluster",
+        "Bag of Organic Bananas"
+      ],
+      "k": 2,
+      "frequency": 15060,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d4"
+    },
+    {
+      "items": [
+        "Basil Pesto"
+      ],
+      "k": 1,
+      "frequency": 15017,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d5"
+    },
+    {
+      "items": [
+        "2% Reduced Fat Organic Milk"
+      ],
+      "k": 1,
+      "frequency": 15009,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d6"
+    },
+    {
+      "items": [
+        "Large Lemon",
+        "Organic Hass Avocado"
+      ],
+      "k": 2,
+      "frequency": 15005,
+      "support": 0.0073,
+      "_id": "6acf15d6b1da22dcc55b75d7"
     }
   ]
 }

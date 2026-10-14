@@ -211,7 +211,7 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
         "all_itemsets": all_itemsets_docs
     }
     with open(out_itemsets_path, "w", encoding="utf-8") as f:
-        json.dump(itemsets_payload, f, ensure_ascii=False, indent=2)
+        json.dump(itemsets_payload, f, ensure_ascii=False, indent=2, default=str)
     print(f"    [+] Saved frequent itemsets file: {out_itemsets_path}")
     
     # 6.2 Save and index recommendation_rules_prior
@@ -247,10 +247,13 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
         if len(batch) >= batch_size:
             col_orders_prior.insert_many(batch, ordered=False)
             inserted_orders += len(batch)
+            if inserted_orders % 100000 == 0:
+                print(f"      --> Streamed {inserted_orders:,} / {total_baskets:,} baskets ({inserted_orders/total_baskets*100:.1f}%)...")
             batch = []
     if batch:
         col_orders_prior.insert_many(batch, ordered=False)
         inserted_orders += len(batch)
+        print(f"      --> Streamed {inserted_orders:,} / {total_baskets:,} baskets (100.0%)...")
         
     print(f"    [+] Successfully inserted {inserted_orders:,} full baskets into MongoDB 'orders_prior' ({time.time() - t_mongo_orders:.1f}s)!")
     print(f"    [*] Creating Multikey and Compound Indexes on 'orders_prior'...")

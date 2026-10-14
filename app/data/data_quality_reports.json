@@ -1,6 +1,6 @@
 {
   "run_id": "RUN-SPARK-BIGDATA-PROD",
-  "timestamp": "2026-10-14 01:23:02",
+  "timestamp": "2026-10-14 12:43:29",
   "audit_status": "Đã kiểm định tự động từ pipeline và tệp dữ liệu thực tế",
   "parameters": {
     "min_item_freq": 15000,
@@ -120,115 +120,110 @@
   ],
   "sample_records": [
     {
-      "order_id": 2,
-      "raw_items_count": 9,
+      "order_id": 22,
+      "raw_items_count": 4,
       "cleaned_items": [
+        "Vine Ripe Tomatoes",
+        "Banana",
+        "2% Reduced Fat Milk",
+        "Asparagus"
+      ]
+    },
+    {
+      "order_id": 26,
+      "raw_items_count": 6,
+      "cleaned_items": [
+        "Organic Baby Spinach",
+        "Organic Unsweetened Almond Milk",
+        "Boneless Skinless Chicken Breasts",
         "Organic Egg Whites",
-        "Michigan Organic Kale",
-        "Garlic Powder",
-        "Coconut Butter",
-        "Natural Sweetener",
+        "Organic Avocado",
+        "Banana"
+      ]
+    },
+    {
+      "order_id": 27,
+      "raw_items_count": 12,
+      "cleaned_items": [
+        "No Salt Added Black Beans",
+        "Organic Whole Strawberries",
+        "Feta Cheese Crumbles",
+        "Lemon Hummus",
+        "Green Bell Pepper",
         "Carrots"
       ]
     },
     {
-      "order_id": 3,
-      "raw_items_count": 8,
+      "order_id": 28,
+      "raw_items_count": 6,
       "cleaned_items": [
-        "Total 2% with Strawberry Lowfat Greek Strained Yogurt",
-        "Unsweetened Almondmilk",
-        "Lemons",
+        "Air Chilled Organic Boneless Skinless Chicken Breasts",
+        "Organic Heavy Whipping Cream",
+        "Large Lemon",
+        "Organic D'Anjou Pears",
+        "Organic Hass Avocado",
+        "Salted Butter"
+      ]
+    },
+    {
+      "order_id": 31,
+      "raw_items_count": 4,
+      "cleaned_items": [
+        "Organic Cilantro",
         "Organic Baby Spinach",
-        "Unsweetened Chocolate Almond Breeze Almond Milk",
-        "Organic Ginger Root"
+        "Organic Yellow Onion",
+        "Seedless Red Grapes"
       ]
     },
     {
-      "order_id": 4,
-      "raw_items_count": 13,
-      "cleaned_items": [
-        "Plain Pre-Sliced Bagels",
-        "Honey/Lemon Cough Drops",
-        "Chewy 25% Low Sugar Chocolate Chip Granola",
-        "Oats & Chocolate Chewy Bars",
-        "Kellogg's Nutri-Grain Apple Cinnamon Cereal",
-        "Nutri-Grain Soft Baked Strawberry Cereal Breakfast Bars"
-      ]
-    },
-    {
-      "order_id": 5,
-      "raw_items_count": 26,
-      "cleaned_items": [
-        "Bag of Organic Bananas",
-        "Just Crisp, Parmesan",
-        "Fresh Fruit Salad",
-        "Organic Raspberries",
-        "2% Reduced Fat Milk",
-        "Sensitive Toilet Paper"
-      ]
-    },
-    {
-      "order_id": 6,
+      "order_id": 47,
       "raw_items_count": 3,
       "cleaned_items": [
-        "Cleanse",
-        "Dryer Sheets Geranium Scent",
-        "Clean Day Lavender Scent Room Freshener Spray"
+        "Raspberries",
+        "Organic Blueberries",
+        "Strawberries"
       ]
     },
     {
-      "order_id": 7,
+      "order_id": 53,
+      "raw_items_count": 8,
+      "cleaned_items": [
+        "Large Lemon",
+        "Organic Gala Apples",
+        "Original Veggie Straws",
+        "Organic Grape Tomatoes",
+        "Organic Blueberries",
+        "Organic Hass Avocado"
+      ]
+    },
+    {
+      "order_id": 81,
+      "raw_items_count": 6,
+      "cleaned_items": [
+        "Unsweetened Almondmilk",
+        "Organic Baby Spinach Salad",
+        "Brussels Sprouts",
+        "Organic Strawberries",
+        "Organic Hass Avocado",
+        "Organic Kiwi"
+      ]
+    },
+    {
+      "order_id": 93,
+      "raw_items_count": 4,
+      "cleaned_items": [
+        "Roma Tomato",
+        "Gala Apples",
+        "2% Reduced Fat Milk",
+        "Bag of Organic Bananas"
+      ]
+    },
+    {
+      "order_id": 101,
       "raw_items_count": 2,
       "cleaned_items": [
-        "Orange Juice",
-        "Pineapple Chunks"
-      ]
-    },
-    {
-      "order_id": 9,
-      "raw_items_count": 15,
-      "cleaned_items": [
-        "Organic Red Radish, Bunch",
-        "Whole White Mushrooms",
-        "Baby Spinach",
-        "Low Fat Kefir Cultured Milk Smoothie Lowfat Probiotic Blueberry",
-        "Snak-Saks Crackers",
-        "Natural Applesauce Snack & Go Pouches"
-      ]
-    },
-    {
-      "order_id": 10,
-      "raw_items_count": 15,
-      "cleaned_items": [
-        "Banana",
-        "Baby Portabella Mushrooms",
-        "Organic Cilantro",
-        "Organic Avocado",
-        "Yellow Onions",
-        "Parsley, Italian (Flat), New England Grown"
-      ]
-    },
-    {
-      "order_id": 11,
-      "raw_items_count": 5,
-      "cleaned_items": [
-        "Teriyaki & Pineapple Chicken Meatballs",
-        "Mango Pineapple Salsa",
-        "Traditional Refried Beans",
-        "Tortilla Strips Restaurant Style",
-        "Extra Virgin Olive Oil"
-      ]
-    },
-    {
-      "order_id": 12,
-      "raw_items_count": 15,
-      "cleaned_items": [
-        "French Vanilla Coffee Creamer",
-        "2% Milk",
-        "Cherubs Heavenly Salad Tomatoes",
-        "Extra Creamy Dairy Whipped Topping",
-        "100% Cranberry Juice",
-        "Ruby Red Grapefruit Juice"
+        "Organic Baby Arugula",
+        "Large Lemon"
       ]
     }
   ]
