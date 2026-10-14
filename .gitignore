@@ -24,5 +24,7 @@ baskets*.jsonl
 .DS_Store
 Thumbs.db
 
-# Jupyter Notebook Checkpoints
+# Jupyter Notebook Checkpoints and local notebooks
 .ipynb_checkpoints/
+notebooks/
+
