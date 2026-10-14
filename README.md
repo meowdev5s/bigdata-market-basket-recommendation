@@ -269,12 +269,6 @@ Truy cập giao diện tại: `http://localhost:8501`.
 
 ---
 
-### 7.5. Tài Liệu Hướng Dẫn Sử Dụng, Kịch Bản Demo & Câu Hỏi Phản Biện
-Để phục vụ quá trình bảo vệ đồ án và chấm điểm, dự án cung cấp tài liệu hướng dẫn toàn diện:
-* **Hướng dẫn sử dụng chi tiết, thao tác demo 6 phân hệ & 12 câu hỏi phản biện Hội đồng:** [`Docs/HuongDanSuDungVaDemo.md`](file:///e:/SEM7/bigData/Docs/HuongDanSuDungVaDemo.md).
-
----
-
 ## 8. Bảng Nghiệm Thu Theo Mục 10 (Checklist & Evidence)
 
 | STT | Tiêu chí nghiệm thu theo Mục 10 | Trạng thái | Minh chứng cụ thể trong dự án |
@@ -290,4 +284,4 @@ Truy cập giao diện tại: `http://localhost:8501`.
 | **9** | Dashboard tương tác 6 phân hệ, số liệu thật | **ĐẠT** | Ứng dụng Streamlit `app/app.py` với 6 phân hệ chuyên sâu, dẫn dắt câu hỏi, số liệu nguồn thật. |
 | **10**| Benchmark truy vấn & hướng dẫn chạy lại | **ĐẠT** | Phân hệ 6 (Tab 3); `explain("executionStats")` IXSCAN (1.15ms) vs COLLSCAN (4.8ms); Hướng dẫn chạy lại 7 bước Mục 7. |
 | **11**| Test cơ bản, requirements, README, .env.example | **ĐẠT** | Thư mục `tests/` (12 tests PASS), `requirements.txt` (có `pyspark>=3.5.0`), `.env.example`, `run_app.bat`. |
-| **12**| Kịch bản demo và câu hỏi phản biện Hội đồng | **ĐẠT** | Tệp [`Docs/HuongDanSuDungVaDemo.md`](file:///e:/SEM7/bigData/Docs/HuongDanSuDungVaDemo.md) (Hướng dẫn demo 6 phân hệ & 12 câu hỏi phản biện). |
+| **12**| Kịch bản demo và câu hỏi phản biện Hội đồng | **ĐẠT** | Thao tác demo trực tiếp 6 phân hệ trên Web App và bộ câu hỏi phản biện trong Báo cáo Đồ án. |
