@@ -21,6 +21,8 @@ baskets*.jsonl
 
 # Logs and OS specific
 *.log
+!logs/spark_execution_prod.log
+logs/spark-events/
 .DS_Store
 Thumbs.db
 
@@ -30,4 +32,6 @@ notebooks/
 
 # Local Project Documentation and Drafts
 Docs/
+scripts/update_docx_final.py
 
+AGENTS.md

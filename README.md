@@ -138,7 +138,7 @@ Trong kiến trúc xử lý dữ liệu lớn của đề tài:
 | **`products`** | **49.688** docs | `{ _id: int, product_id: int, product_name: str, aisle: str, department: str }` | `_id_`, `product_name_1` |
 | **`orders_prior`** | **2.066.543** docs | `{ _id: int, order_id: int, user_id: int, order_dow: int, order_hour_of_day: int, items_count: int, items: [str] }` | `_id_`, `order_id_1`, `order_dow_1_order_hour_of_day_1`, `items_1` |
 | **`recommendation_rules_prior`** | **102** docs | `{ _id: ObjectId, antecedent: [str], consequent: [str], confidence: float, lift: float, support: float }` | `_id_`, `antecedent_1`, `lift_-1`, `confidence_-1` |
-| **`frequent_itemsets`** | **82** docs | `{ _id: ObjectId, items: [str], k: int, frequency: int, support: float }` | `_id_`, `k_1`, `support_-1` |
+| **`frequent_itemsets`** | **350** docs | `{ _id: ObjectId, items: [str], k: int, frequency: int, support: float }` | `_id_`, `k_1`, `support_-1`, `items_1` |
 | **`dashboard_cache_prior`** | **1** doc | `{ total_orders: 3214874, total_transactions: 32434489, top_products: [...], hourly_data: [...], heat_data: [...] }` | `_id_` |
 
 ---
@@ -149,21 +149,22 @@ Trong kiến trúc xử lý dữ liệu lớn của đề tài:
 $$\text{Giỏ hàng } T_k (\ge 2 \text{ món}) \xrightarrow{\text{Pha 1: Cây FP-Tree}} \text{Frequent Itemsets } (k \ge 1) \xrightarrow{\text{Pha 2: Logic Partition}} \text{Association Rules } (A \rightarrow B) \xrightarrow{\text{MongoDB Serving}} \text{Gợi ý Real-time } (< 2\text{ms})$$
 
 ### 6.2. Ví Dụ Minh Họa Bước-Theo-Bước Với Số Liệu Thực Tế
-* **Bước 1 (Giỏ hàng mẫu):** Đơn hàng thực tế gồm 4 món: `[Limes, Large Lemon, Organic Yellow Onion, Organic Garlic]`.
+* **Bước 1 (Giỏ hàng mẫu):** Đơn hàng thực tế gồm các sản phẩm: `[Limes, Large Lemon, Organic Yellow Onion, Organic Garlic]`.
 * **Bước 2 (Tập mục phổ biến):** Cây FP-Tree nén $N = 2.066.543$ giỏ hàng hợp lệ và đệ quy tìm ra tập 2-itemset:
-  $$I = \{\text{Limes}, \text{Large Lemon}\} \quad (\text{Frequency} = 40.880 \text{ giỏ}, \ \text{Support} = 1.98\%)$$
+  $$I = \{\text{Limes}, \text{Large Lemon}\} \quad (\text{Frequency} = 27.403 \text{ giỏ}, \ \text{Support} = 1.33\%)$$
 * **Bước 3 (Sinh luật kết hợp):** Phân hoạch $I$ thành luật có hướng $\{\text{Limes}\} \rightarrow \{\text{Large Lemon}\}$:
-  * Số giỏ chứa $\{\text{Limes}\}$: $141.380$ giỏ ($\text{Support} = 6.84\%$).
-  * Số giỏ chứa $\{\text{Large Lemon}\}$: $152.618$ giỏ ($\text{Support} = 7.39\%$).
-  * **Confidence:** $\frac{40.880}{141.380} = 28.92\%$ *(Trong 100 khách mua Limes, có gần 29 khách mua thêm Large Lemon)*.
-  * **Lift:** $\frac{28.92\%}{7.39\%} = 3.91$ *(Tần suất mua chanh vàng khi đã mua chanh xanh cao gấp 3.91 lần so với mua độc lập ngẫu nhiên)*.
+  * Số giỏ chứa $\{\text{Limes}\}$: $136.407$ giỏ ($\text{Support} = 6.60\%$).
+  * Số giỏ chứa $\{\text{Large Lemon}\}$: $147.434$ giỏ ($\text{Support} = 7.13\%$).
+  * **Confidence:** $\frac{27.403}{136.407} = 20.09\%$ *(Trong 100 khách mua Limes, có hơn 20 khách mua thêm Large Lemon)*.
+  * **Lift:** $\frac{20.09\%}{7.13\%} = 2.82$ *(Tần suất mua Large Lemon khi đã mua Limes cao gấp 2.82 lần so với mua độc lập ngẫu nhiên)*.
+  * *(Tương tự, luật có Lift cao nhất trong tập luật là $\{\text{Limes}\} \rightarrow \{\text{Organic Cilantro}\}$ với $\text{Lift} = 3.9115$ và $\text{Confidence} = 12.88\%$)*.
 
 ### 6.3. Bảng Chuẩn Hóa Công Thức Toán Học & Mẫu Số Sử Dụng Cụ Thể
 
 | Chỉ số đo lường | Công thức toán học | Mẫu số sử dụng cụ thể trong dự án | Ý nghĩa & Bản chất xác suất |
 | :--- | :--- | :--- | :--- |
 | **Support** $\{A, B\}$ | $\frac{\|\{T \in \mathcal{D} \mid A \cup B \subseteq T\}\|}{\|\mathcal{D}\|}$ | $\|\mathcal{D}\| = \mathbf{2.066.543}$ giỏ hàng hợp lệ (đã lọc tần suất $\ge 2$ món) | Xác suất biên $P(A \cap B)$: Tỷ lệ giỏ hàng ngẫu nhiên chứa cả $A$ và $B$. |
-| **Confidence** $A \rightarrow B$ | $\frac{\text{Support}(A \cup B)}{\text{Support}(A)} = P(B \mid A)$ | $\text{Support}(A)$ hoặc Số đơn chứa tiền đề $A$ (Ví dụ: Limes có 141.380 giỏ) | Xác suất có điều kiện $P(B \mid A)$: Tỷ lệ khách mua $B$ khi đã chọn $A$. |
+| **Confidence** $A \rightarrow B$ | $\frac{\text{Support}(A \cup B)}{\text{Support}(A)} = P(B \mid A)$ | $\text{Support}(A)$ hoặc Số đơn chứa tiền đề $A$ (Ví dụ: Limes có 136.407 giỏ) | Xác suất có điều kiện $P(B \mid A)$: Tỷ lệ khách mua $B$ khi đã chọn $A$. |
 | **Lift** $A \rightarrow B$ | $\frac{\text{Confidence}(A \rightarrow B)}{\text{Support}(B)} = \frac{P(A \cap B)}{P(A) \cdot P(B)}$ | $\text{Support}(A) \times \text{Support}(B)$ (Tần suất kỳ vọng nếu $A, B$ độc lập) | Độ nâng tương quan: Đo lường mức độ phụ thuộc thống kê đồng thời so với ngẫu nhiên. |
 
 ### 6.4. Cảnh Báo Phương Pháp Luận: Tương Quan Không Phải Nhân Quả (Correlation $\neq$ Causation)
@@ -228,13 +229,13 @@ python scripts/import_to_mongodb.py
 ```powershell
 python scripts/train_fpgrowth_prior_3m.py
 ```
-*Pipeline Apache Spark sẽ thực thi 6 bước nghiệp vụ tuần tự (~91.66 giây): đọc 32.4 triệu dòng giao dịch, khử trùng lặp `collect_set`, lọc 2.066.543 giỏ hàng hợp lệ, nén cây FP-Tree, khai phá 82 frequent itemsets & 102 association rules, sinh `data_quality_reports.json` và đồng bộ vào MongoDB.*
+*Pipeline Apache Spark sẽ thực thi 6 bước nghiệp vụ tuần tự: đọc 32.4 triệu dòng giao dịch, khử trùng lặp `collect_set`, lọc 2.066.543 giỏ hàng hợp lệ, nén cây FP-Tree, khai phá 350 frequent itemsets & 102 association rules, sinh `data_quality_reports.json` và đồng bộ vào MongoDB.*
 
 #### Bước 6: Sinh báo cáo thực nghiệm, Offline Evaluation & Benchmark
 ```powershell
 python scripts/generate_metrics_and_evaluation.py
 ```
-*Tự động đo đạc và sinh 4 artifacts: `experiment_results.json` (5 cấu hình EXP-01 đến EXP-05), `evaluation_results.json` (Leave-k-out trên 5000 giỏ test), `mongodb_benchmark.json` (IXSCAN vs COLLSCAN), và `pipeline_runs.json`.*
+*Tự động đo đạc và sinh 4 artifacts: `experiment_results.json` (5 cấu hình EXP-01 đến EXP-05), `evaluation_results.json` (Leave-k-out trên 1.000 giỏ test thực tế), `mongodb_benchmark.json` (IXSCAN vs COLLSCAN trên 2.06M bản ghi), và `pipeline_runs.json`.*
 
 #### Bước 7: Khởi chạy Ứng dụng Web Dashboard Streamlit
 ```powershell
@@ -282,6 +283,6 @@ Truy cập giao diện tại: `http://localhost:8501`.
 | **7** | Gợi ý mua kèm có giải thích & fallback minh bạch | **ĐẠT** | Phân hệ 5; giải thích luật kích hoạt + fallback Top Popular có dán nhãn minh bạch. |
 | **8** | Đánh giá offline so với baseline & nhận xét | **ĐẠT** | Phân hệ 6 (Tab 2); Precision@K, Recall@K, HitRate@K, Coverage@K vs Baseline; nhận xét hạn chế. |
 | **9** | Dashboard tương tác 6 phân hệ, số liệu thật | **ĐẠT** | Ứng dụng Streamlit `app/app.py` với 6 phân hệ chuyên sâu, dẫn dắt câu hỏi, số liệu nguồn thật. |
-| **10**| Benchmark truy vấn & hướng dẫn chạy lại | **ĐẠT** | Phân hệ 6 (Tab 3); `explain("executionStats")` IXSCAN (1.15ms) vs COLLSCAN (4.8ms); Hướng dẫn chạy lại 7 bước Mục 7. |
+| **10**| Benchmark truy vấn & hướng dẫn chạy lại | **ĐẠT** | Phân hệ 6 (Tab 3); `explain("executionStats")` IXSCAN (<1ms) vs COLLSCAN (~2.48s); Hướng dẫn chạy lại 7 bước Mục 7. |
 | **11**| Test cơ bản, requirements, README, .env.example | **ĐẠT** | Thư mục `tests/` (12 tests PASS), `requirements.txt` (có `pyspark>=3.5.0`), `.env.example`, `run_app.bat`. |
 | **12**| Kịch bản demo và câu hỏi phản biện Hội đồng | **ĐẠT** | Thao tác demo trực tiếp 6 phân hệ trên Web App và bộ câu hỏi phản biện trong Báo cáo Đồ án. |

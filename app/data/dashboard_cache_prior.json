@@ -6,7 +6,7 @@
   "total_rules": 102,
   "min_support_percent": 0.726,
   "min_confidence_percent": 8.0,
-  "training_time_seconds": 82.69,
+  "training_time_seconds": 62.6,
   "top_products": [
     {
       "_id": "Banana",

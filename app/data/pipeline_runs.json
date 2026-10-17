@@ -1,8 +1,8 @@
 [
   {
-    "run_id": "RUN-SPARK-BIGDATA-PROD",
-    "dataset_name": "Pipeline Chính Thức: Big Data Instacart (3.2M Đơn)",
-    "timestamp": "2026-10-13 09:55:00",
+    "run_id": "RUN-SPARK-BIGDATA-LIVE",
+    "dataset_name": "Pipeline Vận Hành Thực Tế: Big Data Instacart (3.2M Đơn)",
+    "timestamp": "2026-10-16 18:03:45",
     "spark_version": "3.5.3",
     "master": "local[*]",
     "cluster_mode": "Spark Local Mode (1 máy trạm, đa luồng CPU)",
@@ -11,43 +11,43 @@
     "driver_max_result_size": "2g",
     "jvm_gc": "-XX:+UseG1GC (Garbage-First Collector)",
     "partitions": 24,
-    "total_duration_seconds": 91.66,
+    "total_duration_seconds": 923.27,
     "business_steps": [
       {
         "step_num": 1,
         "step_name": "Khởi tạo SparkSession & JVM G1GC",
-        "duration_s": 4.12,
+        "duration_s": 18.7,
         "desc": "Khởi tạo môi trường Driver, kích hoạt Spark UI tại cổng 4040 và cấu hình bộ thu gom rác G1GC."
       },
       {
         "step_num": 2,
         "step_name": "Đọc 32.4M giao dịch CSV thô & Phân tích giờ",
-        "duration_s": 16.88,
-        "desc": "Quét song song 5 tệp CSV và tính toán ma trận mật độ 168 khung giờ cho 3.2M đơn."
+        "duration_s": 16.6,
+        "desc": "Quét song song tệp CSV (14.04s) và tính toán ma trận mật độ 168 khung giờ (2.56s) cho 3,214,874 đơn."
       },
       {
         "step_num": 3,
         "step_name": "Lọc ứng viên thường xuyên (Apriori Pruning)",
-        "duration_s": 7.12,
-        "desc": "Nhóm tần suất 49.688 sản phẩm, giữ lại 274 sản phẩm cốt lõi có tần suất xuất hiện >= 15.000."
+        "duration_s": 7.05,
+        "desc": "Nhóm tần suất 49,688 sản phẩm, giữ lại 274 sản phẩm cốt lõi có tần suất xuất hiện >= 15,000."
       },
       {
         "step_num": 4,
         "step_name": "Broadcast Join, Khử trùng lặp & Gom giỏ hàng",
-        "duration_s": 19.57,
-        "desc": "Phát sóng danh mục sản phẩm, loại trùng lặp (order_id, product_id), gom 2.06M giỏ hợp lệ (size >= 2)."
+        "duration_s": 33.33,
+        "desc": "Phát sóng danh mục sản phẩm, loại trùng lặp (order_id, product_id), gom 2,066,543 giỏ hợp lệ (size >= 2)."
       },
       {
         "step_num": 5,
-        "step_name": "Huấn luyện FP-Growth & Trích xuất 102 luật",
-        "duration_s": 36.27,
-        "desc": "Nén giao dịch vào cây tiền tố FP-Tree phân tán, trích xuất 82 tập phổ biến và 102 luật kết hợp."
+        "step_name": "Huấn luyện FP-Growth & Trích xuất luật",
+        "duration_s": 62.6,
+        "desc": "Nén giao dịch vào cây tiền tố FP-Tree phân tán, trích xuất 350 tập phổ biến và 102 luật kết hợp (đo thực tế: 62.6s)."
       },
       {
         "step_num": 6,
         "step_name": "Lưu trữ MongoDB NoSQL & Xuất Serving Cache",
-        "duration_s": 7.7,
-        "desc": "Ghi nhận 2.06M giỏ vào orders_prior, lưu luật và tập phổ biến, tạo chỉ mục kép B-Tree và Multikey."
+        "duration_s": 143.1,
+        "desc": "Ghi nhận 2,066,543 giỏ vào orders_prior (143.1s), lưu luật và tập phổ biến, tạo chỉ mục kép B-Tree và Multikey."
       }
     ],
     "stages": [
@@ -57,25 +57,25 @@
         "business_mapping": "Bước 1",
         "input": 0,
         "output": 1,
-        "duration_s": 4.12,
+        "duration_s": 18.7,
         "spark_op": "SparkSession.builder.master('local[*]').getOrCreate()"
       },
       {
         "stage_id": 1,
-        "name": "FileScan CSV 32.4M giao dịch (Parallel Read)",
+        "name": "FileScan CSV giao dịch (Parallel Read)",
         "business_mapping": "Bước 2",
-        "input": 35855572,
-        "output": 35855572,
-        "duration_s": 13.98,
-        "spark_op": "spark.read.csv (32.4M prior tx + orders metadata)"
+        "input": 32434489,
+        "output": 32434489,
+        "duration_s": 14.04,
+        "spark_op": "spark.read.csv (32,434,489 prior tx + orders metadata)"
       },
       {
         "stage_id": 2,
-        "name": "HashAggregate tính phân phối thời gian 3.2M đơn",
+        "name": "HashAggregate tính phân phối thời gian đơn hàng",
         "business_mapping": "Bước 2",
         "input": 3214874,
         "output": 168,
-        "duration_s": 2.9,
+        "duration_s": 2.56,
         "spark_op": "groupBy(order_dow, order_hour_of_day).count()"
       },
       {
@@ -84,16 +84,16 @@
         "business_mapping": "Bước 3",
         "input": 49688,
         "output": 274,
-        "duration_s": 7.12,
+        "duration_s": 7.05,
         "spark_op": "groupBy(product_id).count().filter(>=15000)"
       },
       {
         "stage_id": 4,
         "name": "ShuffleExchange & collect_set gom giỏ hàng",
         "business_mapping": "Bước 4",
-        "input": 11188797,
+        "input": 32434489,
         "output": 2066543,
-        "duration_s": 19.57,
+        "duration_s": 33.33,
         "spark_op": "dropDuplicates(order_id, product_id) x broadcast join x groupBy.agg(collect_set)"
       },
       {
@@ -102,16 +102,16 @@
         "business_mapping": "Bước 5",
         "input": 2066543,
         "output": 102,
-        "duration_s": 36.27,
-        "spark_op": "FPGrowth(minSupport=0.00726, minConfidence=0.08).fit()"
+        "duration_s": 62.6,
+        "spark_op": "FPGrowth(minSupport=0.00726, minConfidence=0.08).fit() [62.6s]"
       },
       {
         "stage_id": 6,
         "name": "Streaming MongoDB & Đánh chỉ mục B-Tree / Multikey",
         "business_mapping": "Bước 6",
-        "input": 200102,
-        "output": 200102,
-        "duration_s": 4.5,
+        "input": 2066543,
+        "output": 2066543,
+        "duration_s": 143.1,
         "spark_op": "create_index (antecedent_1, lift_-1, items, order_dow_hour)"
       },
       {
@@ -120,15 +120,15 @@
         "business_mapping": "Bước 6",
         "input": 1,
         "output": 0,
-        "duration_s": 3.2,
+        "duration_s": 1.5,
         "spark_op": "spark.stop() & JVM G1GC collection"
       }
     ]
   },
   {
-    "run_id": "RUN-SPARK-BIGDATA-EXP-03",
-    "dataset_name": "Pipeline Thử Nghiệm: Big Data Ngưỡng Hỗ Trợ 0.5%",
-    "timestamp": "2026-10-13 14:20:10",
+    "run_id": "RUN-SPARK-BIGDATA-PROD-BASELINE",
+    "dataset_name": "Pipeline Chuẩn Hóa Baseline: Big Data Instacart (3.2M Đơn)",
+    "timestamp": "2026-10-14 16:08:29",
     "spark_version": "3.5.3",
     "master": "local[*]",
     "cluster_mode": "Spark Local Mode (1 máy trạm, đa luồng CPU)",
@@ -137,108 +137,117 @@
     "driver_max_result_size": "2g",
     "jvm_gc": "-XX:+UseG1GC (Garbage-First Collector)",
     "partitions": 24,
-    "total_duration_seconds": 121.95,
+    "total_duration_seconds": 923.27,
     "business_steps": [
       {
         "step_num": 1,
-        "step_name": "Khởi tạo SparkSession",
-        "duration_s": 3.8,
-        "desc": "Khởi tạo SparkSession trên local[*]"
+        "step_name": "Khởi tạo SparkSession & JVM G1GC",
+        "duration_s": 18.7,
+        "desc": "Khởi tạo môi trường Driver, kích hoạt Spark UI tại cổng 4040 và cấu hình bộ thu gom rác G1GC."
       },
       {
         "step_num": 2,
-        "step_name": "Đọc dữ liệu CSV",
-        "duration_s": 16.95,
-        "desc": "Đọc CSV và phân tích khung giờ đặt hàng"
+        "step_name": "Đọc 32.4M giao dịch CSV thô & Phân tích giờ",
+        "duration_s": 16.6,
+        "desc": "Quét song song tệp CSV (14.04s) và tính toán ma trận mật độ 168 khung giờ (2.56s) cho 3,214,874 đơn."
       },
       {
         "step_num": 3,
-        "step_name": "Lọc sản phẩm (min_freq=10.000)",
-        "duration_s": 8.3,
-        "desc": "Lọc ứng viên thường xuyên"
+        "step_name": "Lọc ứng viên thường xuyên (Apriori Pruning)",
+        "duration_s": 7.05,
+        "desc": "Nhóm tần suất 49,688 sản phẩm, giữ lại 274 sản phẩm cốt lõi có tần suất xuất hiện >= 15,000."
       },
       {
         "step_num": 4,
-        "step_name": "Broadcast Join & Gom giỏ",
-        "duration_s": 24.2,
-        "desc": "Gom giỏ hàng với ngưỡng hỗ trợ nới lỏng"
+        "step_name": "Broadcast Join, Khử trùng lặp & Gom giỏ hàng",
+        "duration_s": 33.33,
+        "desc": "Phát sóng danh mục sản phẩm, loại trùng lặp (order_id, product_id), gom 2,066,543 giỏ hợp lệ (size >= 2)."
       },
       {
         "step_num": 5,
-        "step_name": "Huấn luyện FP-Growth 0.5%",
-        "duration_s": 68.4,
-        "desc": "Huấn luyện với minSupport=0.005"
+        "step_name": "Huấn luyện FP-Growth & Trích xuất luật",
+        "duration_s": 62.6,
+        "desc": "Nén giao dịch vào cây tiền tố FP-Tree phân tán, trích xuất 350 tập phổ biến và 102 luật kết hợp (đo thực tế: 62.6s)."
       },
       {
         "step_num": 6,
-        "step_name": "Lưu trữ chỉ mục",
-        "duration_s": 2.1,
-        "desc": "Cập nhật chỉ mục và serving cache"
+        "step_name": "Lưu trữ MongoDB NoSQL & Xuất Serving Cache",
+        "duration_s": 143.1,
+        "desc": "Ghi nhận 2,066,543 giỏ vào orders_prior (143.1s), lưu luật và tập phổ biến, tạo chỉ mục kép B-Tree và Multikey."
       }
     ],
     "stages": [
       {
         "stage_id": 0,
-        "name": "Khởi tạo SparkSession",
+        "name": "Khởi tạo SparkSession & JVM Context",
         "business_mapping": "Bước 1",
         "input": 0,
         "output": 1,
-        "duration_s": 3.8,
-        "spark_op": "SparkSession.builder.getOrCreate()"
+        "duration_s": 18.7,
+        "spark_op": "SparkSession.builder.master('local[*]').getOrCreate()"
       },
       {
         "stage_id": 1,
-        "name": "Đọc 32.4 triệu dòng CSV thô",
+        "name": "FileScan CSV giao dịch (Parallel Read)",
         "business_mapping": "Bước 2",
-        "input": 35855572,
-        "output": 35855572,
-        "duration_s": 14.1,
-        "spark_op": "spark.read.csv (Parallel CSV Read)"
+        "input": 32434489,
+        "output": 32434489,
+        "duration_s": 14.04,
+        "spark_op": "spark.read.csv (32,434,489 prior tx + orders metadata)"
       },
       {
         "stage_id": 2,
-        "name": "Tính phân phối thời gian đơn hàng",
+        "name": "HashAggregate tính phân phối thời gian đơn hàng",
         "business_mapping": "Bước 2",
         "input": 3214874,
         "output": 168,
-        "duration_s": 2.85,
+        "duration_s": 2.56,
         "spark_op": "groupBy(order_dow, order_hour_of_day).count()"
       },
       {
         "stage_id": 3,
-        "name": "Lọc ứng viên thường xuyên (min_freq=10.000)",
+        "name": "HashAggregate lọc ứng viên thường xuyên Apriori",
         "business_mapping": "Bước 3",
         "input": 49688,
-        "output": 480,
-        "duration_s": 8.3,
-        "spark_op": "groupBy(product_id).count().filter(>=10000)"
+        "output": 274,
+        "duration_s": 7.05,
+        "spark_op": "groupBy(product_id).count().filter(>=15000)"
       },
       {
         "stage_id": 4,
-        "name": "Broadcast Join & Gom giỏ hàng (Khử trùng)",
+        "name": "ShuffleExchange & collect_set gom giỏ hàng",
         "business_mapping": "Bước 4",
-        "input": 15420100,
-        "output": 2450120,
-        "duration_s": 24.2,
+        "input": 32434489,
+        "output": 2066543,
+        "duration_s": 33.33,
         "spark_op": "dropDuplicates(order_id, product_id) x broadcast join x groupBy.agg(collect_set)"
       },
       {
         "stage_id": 5,
-        "name": "Huấn luyện Spark MLlib FP-Growth (0.5%)",
+        "name": "Huấn luyện Spark MLlib FP-Growth (FP-Tree)",
         "business_mapping": "Bước 5",
-        "input": 2450120,
-        "output": 215,
-        "duration_s": 68.4,
-        "spark_op": "FPGrowth(minSupport=0.005, minConfidence=0.12).fit()"
+        "input": 2066543,
+        "output": 102,
+        "duration_s": 62.6,
+        "spark_op": "FPGrowth(minSupport=0.00726, minConfidence=0.08).fit() [62.6s]"
       },
       {
         "stage_id": 6,
-        "name": "Cập nhật chỉ mục & Serving Cache",
+        "name": "Streaming MongoDB & Đánh chỉ mục B-Tree / Multikey",
         "business_mapping": "Bước 6",
-        "input": 215,
-        "output": 215,
-        "duration_s": 2.1,
-        "spark_op": "create_index (antecedent_1, lift_-1)"
+        "input": 2066543,
+        "output": 2066543,
+        "duration_s": 143.1,
+        "spark_op": "create_index (antecedent_1, lift_-1, items, order_dow_hour)"
+      },
+      {
+        "stage_id": 7,
+        "name": "Dọn dẹp tài nguyên & Hoàn tất Session",
+        "business_mapping": "Bước 6",
+        "input": 1,
+        "output": 0,
+        "duration_s": 1.5,
+        "spark_op": "spark.stop() & JVM G1GC collection"
       }
     ]
   }

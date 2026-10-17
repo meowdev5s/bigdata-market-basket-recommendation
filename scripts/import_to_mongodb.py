@@ -9,8 +9,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data", "InstacartMarketBasketAnalysis")
 
 # MongoDB connection
-MONGO_URI = "mongodb://localhost:27017/"
-DB_NAME = "instacart_bigdata"
+MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
+DB_NAME = os.getenv("DB_NAME", "instacart_bigdata")
 
 def get_mongo_db():
     print(f"[*] Connecting to MongoDB at {MONGO_URI}...")
@@ -101,6 +101,10 @@ def import_orders(db, max_orders=None):
     print(f"Total unique orders (baskets) assembled: {len(baskets):,}")
     
     col_orders = db["orders_prior"]
+    existing_cnt = col_orders.count_documents({})
+    if existing_cnt >= 2000000:
+        print(f"[*] Collection 'orders_prior' already contains {existing_cnt:,} full baskets indexed by Spark. Skipping overwrite.")
+        return
     col_orders.drop()  # reset collection
     
     batch = []

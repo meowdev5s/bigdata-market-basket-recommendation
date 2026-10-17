@@ -42,5 +42,11 @@ class TestRecommendationEngine(unittest.TestCase):
         recs = self.recommend(cart)
         self.assertEqual(len(recs), 0)
 
+    def test_fallback_unmatched_cart_trigger(self):
+        """Kiểm tra khi giỏ hàng có món không khớp luật thì không sinh gợi ý luật giả để tầng giao diện chuyển Fallback"""
+        cart = ["Cold Brew Coffee Tahitian Vanilla"]
+        recs = self.recommend(cart)
+        self.assertEqual(len(recs), 0, "Món không khớp luật không được kích hoạt luật cá nhân hóa!")
+
 if __name__ == "__main__":
     unittest.main()

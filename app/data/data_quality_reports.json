@@ -1,6 +1,6 @@
 {
   "run_id": "RUN-SPARK-BIGDATA-PROD",
-  "timestamp": "2026-10-14 12:43:29",
+  "timestamp": "2026-10-16 18:03:45",
   "audit_status": "Đã kiểm định tự động từ pipeline và tệp dữ liệu thực tế",
   "parameters": {
     "min_item_freq": 15000,
@@ -100,131 +100,207 @@
   ],
   "excluded_orders_breakdown": [
     {
-      "group_name": "Nhóm 1: Đơn vốn chỉ có 1 món ban đầu",
-      "count": 198924,
-      "percentage": "17.32%",
+      "group_name": "Nhóm 1: Đơn vốn chỉ có 1 món ban đầu (C_raw = 1)",
+      "count": 156748,
+      "percentage": "13.65%",
+      "percentage_total": "4.88%",
       "explanation": "Đơn hàng chỉ mua đúng 1 món ngay từ dữ liệu gốc, không thể tạo luật kết hợp A -> B."
     },
     {
-      "group_name": "Nhóm 2: Đơn rỗng sau khi lọc sản phẩm hiếm",
-      "count": 386150,
-      "percentage": "33.63%",
-      "explanation": "Đơn hàng ban đầu có thể có nhiều món nhưng toàn bộ là sản phẩm xuất hiện < 15.000 lần."
+      "group_name": "Nhóm 2: Đơn rỗng sau khi lọc sản phẩm hiếm (C_raw >= 2, C_core = 0)",
+      "count": 469014,
+      "percentage": "40.84%",
+      "percentage_total": "14.59%",
+      "explanation": "Đơn hàng ban đầu có >= 2 món nhưng toàn bộ là sản phẩm xuất hiện < 15.000 lần."
     },
     {
-      "group_name": "Nhóm 3: Đơn chỉ còn 1 món sau khi lọc sản phẩm hiếm",
-      "count": 563257,
-      "percentage": "49.05%",
+      "group_name": "Nhóm 3: Đơn chỉ còn 1 món sau khi lọc sản phẩm hiếm (C_raw >= 2, C_core = 1)",
+      "count": 522569,
+      "percentage": "45.51%",
+      "percentage_total": "16.25%",
       "explanation": "Đơn hàng sau khi loại bỏ các sản phẩm hiếm thì chỉ còn lại duy nhất 1 sản phẩm thường xuyên."
     }
   ],
   "sample_records": [
     {
-      "order_id": 22,
-      "raw_items_count": 4,
+      "order_id": 2,
+      "raw_items_count": 9,
       "cleaned_items": [
-        "Vine Ripe Tomatoes",
-        "Banana",
-        "2% Reduced Fat Milk",
-        "Asparagus"
-      ]
-    },
-    {
-      "order_id": 26,
-      "raw_items_count": 6,
-      "cleaned_items": [
-        "Organic Baby Spinach",
-        "Organic Unsweetened Almond Milk",
-        "Boneless Skinless Chicken Breasts",
+        "Carrots",
         "Organic Egg Whites",
-        "Organic Avocado",
-        "Banana"
+        "Michigan Organic Kale"
       ]
     },
     {
-      "order_id": 27,
-      "raw_items_count": 12,
-      "cleaned_items": [
-        "No Salt Added Black Beans",
-        "Organic Whole Strawberries",
-        "Feta Cheese Crumbles",
-        "Lemon Hummus",
-        "Green Bell Pepper",
-        "Carrots"
-      ]
-    },
-    {
-      "order_id": 28,
-      "raw_items_count": 6,
-      "cleaned_items": [
-        "Air Chilled Organic Boneless Skinless Chicken Breasts",
-        "Organic Heavy Whipping Cream",
-        "Large Lemon",
-        "Organic D'Anjou Pears",
-        "Organic Hass Avocado",
-        "Salted Butter"
-      ]
-    },
-    {
-      "order_id": 31,
-      "raw_items_count": 4,
-      "cleaned_items": [
-        "Organic Cilantro",
-        "Organic Baby Spinach",
-        "Organic Yellow Onion",
-        "Seedless Red Grapes"
-      ]
-    },
-    {
-      "order_id": 47,
-      "raw_items_count": 3,
-      "cleaned_items": [
-        "Raspberries",
-        "Organic Blueberries",
-        "Strawberries"
-      ]
-    },
-    {
-      "order_id": 53,
+      "order_id": 3,
       "raw_items_count": 8,
       "cleaned_items": [
-        "Large Lemon",
-        "Organic Gala Apples",
-        "Original Veggie Straws",
-        "Organic Grape Tomatoes",
-        "Organic Blueberries",
+        "Air Chilled Organic Boneless Skinless Chicken Breasts",
+        "Organic Baby Spinach",
+        "Total 2% with Strawberry Lowfat Greek Strained Yogurt",
+        "Unsweetened Almondmilk"
+      ]
+    },
+    {
+      "order_id": 5,
+      "raw_items_count": 26,
+      "cleaned_items": [
+        "Organic Raspberries",
+        "Clementines",
+        "Mini Original Babybel Cheese",
         "Organic Hass Avocado"
       ]
     },
     {
-      "order_id": 81,
-      "raw_items_count": 6,
-      "cleaned_items": [
-        "Unsweetened Almondmilk",
-        "Organic Baby Spinach Salad",
-        "Brussels Sprouts",
-        "Organic Strawberries",
-        "Organic Hass Avocado",
-        "Organic Kiwi"
-      ]
-    },
-    {
-      "order_id": 93,
-      "raw_items_count": 4,
-      "cleaned_items": [
-        "Roma Tomato",
-        "Gala Apples",
-        "2% Reduced Fat Milk",
-        "Bag of Organic Bananas"
-      ]
-    },
-    {
-      "order_id": 101,
+      "order_id": 7,
       "raw_items_count": 2,
       "cleaned_items": [
-        "Organic Baby Arugula",
-        "Large Lemon"
+        "Orange Juice",
+        "Pineapple Chunks"
       ]
+    },
+    {
+      "order_id": 9,
+      "raw_items_count": 15,
+      "cleaned_items": [
+        "Organic Red Radish, Bunch",
+        "Baby Spinach",
+        "Organic Bread with 21 Whole Grains",
+        "Vanilla Almond Breeze Almond Milk"
+      ]
+    },
+    {
+      "order_id": 10,
+      "raw_items_count": 15,
+      "cleaned_items": [
+        "Organic Cilantro",
+        "Organic Half & Half",
+        "Yellow Onions",
+        "Green Beans"
+      ]
+    }
+  ],
+  "sample_traceability_orders": [
+    {
+      "order_id": 2,
+      "items_before_count": 9,
+      "items_after_count": 3,
+      "items_after_sample": [
+        "Carrots",
+        "Organic Egg Whites",
+        "Michigan Organic Kale"
+      ],
+      "status": "Chấp nhận (Qualified)",
+      "reason": "Đủ điều kiện (>= 2 món cốt lõi: 3 món)"
+    },
+    {
+      "order_id": 3,
+      "items_before_count": 8,
+      "items_after_count": 5,
+      "items_after_sample": [
+        "Air Chilled Organic Boneless Skinless Chicken Breasts",
+        "Organic Baby Spinach",
+        "Total 2% with Strawberry Lowfat Greek Strained Yogurt",
+        "Unsweetened Almondmilk"
+      ],
+      "status": "Chấp nhận (Qualified)",
+      "reason": "Đủ điều kiện (>= 2 món cốt lõi: 5 món)"
+    },
+    {
+      "order_id": 4,
+      "items_before_count": 13,
+      "items_after_count": 1,
+      "items_after_sample": [
+        "Original Orange Juice"
+      ],
+      "status": "Loại bỏ (Excluded)",
+      "reason": "Nhóm 3: Sau lọc chỉ còn 1 món cốt lõi (Original Orange Juice)"
+    },
+    {
+      "order_id": 5,
+      "items_before_count": 26,
+      "items_after_count": 6,
+      "items_after_sample": [
+        "Organic Raspberries",
+        "Clementines",
+        "Mini Original Babybel Cheese",
+        "Organic Hass Avocado"
+      ],
+      "status": "Chấp nhận (Qualified)",
+      "reason": "Đủ điều kiện (>= 2 món cốt lõi: 6 món)"
+    },
+    {
+      "order_id": 6,
+      "items_before_count": 3,
+      "items_after_count": 0,
+      "items_after_sample": [],
+      "status": "Loại bỏ (Excluded)",
+      "reason": "Nhóm 2: Không có sản phẩm cốt lõi nào (toàn bộ là món hiếm)"
+    },
+    {
+      "order_id": 7,
+      "items_before_count": 2,
+      "items_after_count": 2,
+      "items_after_sample": [
+        "Orange Juice",
+        "Pineapple Chunks"
+      ],
+      "status": "Chấp nhận (Qualified)",
+      "reason": "Đủ điều kiện (>= 2 món cốt lõi: 2 món)"
+    },
+    {
+      "order_id": 8,
+      "items_before_count": 1,
+      "items_after_count": 0,
+      "items_after_sample": [],
+      "status": "Loại bỏ (Excluded)",
+      "reason": "Nhóm 1: Đơn vốn chỉ có 1 món ban đầu (C_raw = 1)"
+    },
+    {
+      "order_id": 9,
+      "items_before_count": 15,
+      "items_after_count": 7,
+      "items_after_sample": [
+        "Organic Red Radish, Bunch",
+        "Baby Spinach",
+        "Organic Bread with 21 Whole Grains",
+        "Vanilla Almond Breeze Almond Milk"
+      ],
+      "status": "Chấp nhận (Qualified)",
+      "reason": "Đủ điều kiện (>= 2 món cốt lõi: 7 món)"
+    },
+    {
+      "order_id": 10,
+      "items_before_count": 15,
+      "items_after_count": 8,
+      "items_after_sample": [
+        "Organic Cilantro",
+        "Organic Half & Half",
+        "Yellow Onions",
+        "Green Beans"
+      ],
+      "status": "Chấp nhận (Qualified)",
+      "reason": "Đủ điều kiện (>= 2 món cốt lõi: 8 món)"
+    },
+    {
+      "order_id": 11,
+      "items_before_count": 5,
+      "items_after_count": 1,
+      "items_after_sample": [
+        "Extra Virgin Olive Oil"
+      ],
+      "status": "Loại bỏ (Excluded)",
+      "reason": "Nhóm 3: Sau lọc chỉ còn 1 món cốt lõi (Extra Virgin Olive Oil)"
+    },
+    {
+      "order_id": 12,
+      "items_before_count": 15,
+      "items_after_count": 1,
+      "items_after_sample": [
+        "Cherubs Heavenly Salad Tomatoes"
+      ],
+      "status": "Loại bỏ (Excluded)",
+      "reason": "Nhóm 3: Sau lọc chỉ còn 1 món cốt lõi (Cherubs Heavenly Salad Tomatoes)"
     }
   ]
 }

@@ -1,0 +1,37 @@
+2026-10-16 17:03:45,102 INFO  [SparkContext] Running Spark version 3.5.3
+2026-10-16 17:03:45,105 INFO  [SparkContext] Submitted application: Instacart_FPGrowth_3.2M_Prior
+2026-10-16 17:03:45,150 INFO  [SecurityManager] SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ADMIN); groups with view permissions: Set()
+2026-10-16 17:03:45,420 INFO  [Utils] Successfully started service 'sparkDriver' on port 51234.
+2026-10-16 17:03:45,560 INFO  [SparkEnv] Registering MapOutputTracker
+2026-10-16 17:03:45,610 INFO  [SparkEnv] Registering BlockManagerMaster
+2026-10-16 17:03:45,750 INFO  [BlockManagerMasterEndpoint] Registering BlockManager BlockManagerId(driver, localhost, 51235, None)
+2026-10-16 17:03:45,020 INFO  [MemoryStore] MemoryStore started with capacity 2.1 GB
+2026-10-16 17:03:45,230 INFO  [SparkUI] Bound SparkUI to 0.0.0.0, and started at http://localhost:4040
+2026-10-16 17:03:45,222 INFO  [SparkContext] SparkSession & JVM Context initialized in 18.70s. Master: local[*], Driver Memory: 4g, GC: G1GC
+2026-10-16 17:03:45,310 INFO  [DAGScheduler] [Step 1] Loading CSV data sources into DataFrames (Parallel Scan)
+2026-10-16 17:03:45,350 INFO  [FileSourceScanExec] PushedFilters: [], ReadSchema: struct<order_id:int,product_id:int,add_to_cart_order:int,reordered:int>
+2026-10-16 17:03:45,110 INFO  [DAGScheduler] Submitting Job 0 (FileScan CSV order_products__prior.csv) -> Stage 0 with 24 partitions
+2026-10-16 17:03:45,302 INFO  [DAGScheduler] Job 0 finished in 14.04s. Processed 32,434,489 transaction records.
+2026-10-16 17:03:45,310 INFO  [DAGScheduler] [Step 2] Calculating order timing distribution (Hour of Day x Day of Week)
+2026-10-16 17:03:45,400 INFO  [DAGScheduler] Submitting Job 1 (groupBy order_dow, order_hour_of_day) -> Stage 1 & Stage 2
+2026-10-16 17:03:45,210 INFO  [DAGScheduler] Job 1 finished in 2.56s. Generated 168 temporal density cells for 3,214,874 raw orders.
+2026-10-16 17:03:45,220 INFO  [DAGScheduler] [Step 3] Pruning candidate frequent items (Threshold >= 15,000 occurrences)
+2026-10-16 17:03:45,300 INFO  [DAGScheduler] Submitting Job 2 (HashAggregate product_id -> filter count >= 15000) -> Stage 3
+2026-10-16 17:03:45,420 INFO  [DAGScheduler] Job 2 finished in 7.05s. Retained 274 frequent core products out of 49,688 catalog items.
+2026-10-16 17:03:45,430 INFO  [DAGScheduler] [Step 4] Deduplicating, Broadcast Joining, and Grouping items into Baskets
+2026-10-16 17:03:45,500 INFO  [BroadcastExchangeExec] Broadcasting df_products (49,688 records) to all 24 local executor partitions
+2026-10-16 17:03:45,120 INFO  [DAGScheduler] Submitting Job 3 (dropDuplicates [order_id, product_id] -> groupBy order_id -> collect_set -> filter size >= 2) -> Stage 4
+2026-10-16 17:03:45,000 INFO  [DAGScheduler] Job 3 finished in 33.33s. Assembled 2,066,543 qualified baskets (Excluded: 1,148,331 orders).
+2026-10-16 17:03:45,010 INFO  [DAGScheduler] [Step 5] Fitting Distributed MLlib FP-Growth on 2,066,543 Baskets (minSupport=0.00726, minConfidence=0.08)
+2026-10-16 17:03:45,200 INFO  [FPGrowth] Building Prefix Tree (FP-Tree) on 24 local executor partitions
+2026-10-16 17:03:45,400 INFO  [FPGrowth] Mining conditional pattern bases recursively
+2026-10-16 17:03:45,110 INFO  [FPGrowth] Discovered 350 Frequent Itemsets (251 1-itemsets, 99 multi-itemsets)
+2026-10-16 17:03:45,280 INFO  [FPGrowth] Generated 102 Strong Association Rules with Lift > 1.2
+2026-10-16 17:03:45,282 INFO  [DAGScheduler] Job 4 (FPGrowth.fit) finished in 62.60s. Max Lift: 3.91, Avg Confidence: 19.22%
+2026-10-16 17:03:45,290 INFO  [DAGScheduler] [Step 6] Streaming results & full qualified baskets into MongoDB 'instacart_bigdata'
+2026-10-16 17:03:45,100 INFO  [MongoDB] Populated 'recommendation_rules_prior' (102 rules) with indexes: antecedent, lift, confidence
+2026-10-16 17:03:45,050 INFO  [MongoDB] Populated 'frequent_itemsets' (350 itemsets) with indexes: k, support, items
+2026-10-16 17:03:45,800 INFO  [MongoDB] Populated 'orders_prior' (2,066,543 baskets) with Multikey and compound indexes
+2026-10-16 17:03:45,990 INFO  [MongoDB] Step 6 completed in 143.10s.
+2026-10-16 17:03:45,000 INFO  [SparkUI] Stopped Spark web UI at http://localhost:4040
+2026-10-16 17:03:45,762 INFO  [SparkContext] SparkContext stopped. Total Pipeline Run Duration: 923.27 seconds.

@@ -1,30 +1,44 @@
 {
-  "collection_name": "recommendation_rules_prior",
-  "total_documents": 102,
-  "tested_query": {
-    "antecedent": "Limes"
-  },
-  "winning_stage_with_index": "FETCH",
-  "index_name_used": "antecedent_1",
-  "execution_stats": {
-    "with_index": {
-      "stage": "IXSCAN -> FETCH",
-      "docs_examined": 12,
-      "docs_returned": 12,
-      "mean_latency_ms": 1.15,
-      "p50_latency_ms": 0.95,
-      "p95_latency_ms": 2.1,
-      "p99_latency_ms": 3.85
+  "bigdata_storage_benchmark": {
+    "collection_name": "orders_prior",
+    "total_documents": 2066543,
+    "target_query_with_index": {
+      "order_id": 2
     },
-    "without_index_simulation": {
+    "target_query_unindexed": {
+      "items_count": 99999
+    },
+    "without_index_collscan": {
       "stage": "COLLSCAN (Quét toàn bộ collection)",
-      "docs_examined": 102,
-      "docs_returned": 12,
-      "mean_latency_ms": 4.8,
-      "p50_latency_ms": 4.2,
-      "p95_latency_ms": 7.5,
-      "p99_latency_ms": 9.2
+      "total_docs_examined": 2066543,
+      "execution_time_millis": 2283,
+      "driver_measured_latency_ms": 2284.1,
+      "docs_returned": 0
+    },
+    "with_btree_index_ixscan": {
+      "stage": "FETCH -> IXSCAN",
+      "index_name": "order_id_1",
+      "total_keys_examined": 1,
+      "total_docs_examined": 1,
+      "execution_time_millis": 6,
+      "driver_measured_latency_ms": 7.1,
+      "docs_returned": 1
+    },
+    "performance_gain": {
+      "speedup_factor": "380.5x",
+      "latency_reduction_percent": "99.74%",
+      "conclusion": "Chỉ mục B-Tree order_id_1 giúp định vị trực tiếp bản ghi qua cây chỉ mục, giảm 99.74% thời gian đáp ứng (từ ~2283ms xuống 6ms)."
     }
   },
-  "scalability_assessment": "Khi số lượng luật tăng lên hàng trăm ngàn hoặc hàng triệu bản ghi, chỉ mục B-Tree duy trì thời gian tìm kiếm O(log N) < 5ms, trong khi COLLSCAN sẽ tăng tuyến tính O(N) gây thắt cổ chai."
+  "serving_layer_rule_benchmark": {
+    "collection_name": "recommendation_rules_prior",
+    "total_documents": 102,
+    "tested_query": {
+      "antecedent": "Limes"
+    },
+    "winning_stage": "FETCH",
+    "index_used": "antecedent_1",
+    "in_memory_rule_engine_latency_ms": 0.25,
+    "architecture_note": "Đối với ứng dụng gợi ý mua kèm thời gian thực, Streamlit nạp 102 luật vào RAM (@st.cache_data) và so khớp tập hợp set.issubset() trong 0.25 ms, hoàn toàn độc lập với chi phí mạng của cơ sở dữ liệu."
+  }
 }
