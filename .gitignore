@@ -30,8 +30,10 @@ Thumbs.db
 .ipynb_checkpoints/
 notebooks/
 
-# Local Project Documentation and Drafts
-Docs/
+# Local Project Documentation and Drafts (Keep Markdown Demo Guides tracked)
+Docs/*
+!Docs/HuongDanSuDungVaDemo.md
+!Docs/KichBanThuyetTrinhDemo.md
 scripts/update_docx_final.py
 
 AGENTS.md

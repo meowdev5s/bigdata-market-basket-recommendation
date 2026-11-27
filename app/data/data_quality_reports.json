@@ -1,6 +1,6 @@
 {
   "run_id": "RUN-SPARK-BIGDATA-PROD",
-  "timestamp": "2026-10-16 18:03:45",
+  "timestamp": "2026-11-26 15:58:22",
   "audit_status": "Đã kiểm định tự động từ pipeline và tệp dữ liệu thực tế",
   "parameters": {
     "min_item_freq": 15000,
@@ -10,7 +10,7 @@
     "basket_aggregation": "collect_set(product_name)"
   },
   "kpis": {
-    "total_csv_files": 5,
+    "total_csv_files": 6,
     "validity_rate": "100.0% (sau khi lọc toàn vẹn)",
     "valid_baskets": 2066543,
     "excluded_baskets": 1148331,
@@ -63,7 +63,7 @@
       "null_rate": "0.86% (chỉ ở cột days_since_prior_order của đơn đầu tiên)",
       "duplicates": 0,
       "foreign_key_valid": true,
-      "description": "Metadata đơn hàng: người dùng, thứ trong tuần, giờ đặt hàng (3,214,874 đơn thuộc tập prior)."
+      "description": "Metadata đơn hàng: người dùng, thứ trong tuần, giờ đặt hàng (3,214,874 đơn prior; 131,209 đơn train)."
     },
     {
       "table_name": "order_products__prior.csv",
@@ -75,7 +75,19 @@
       "null_rate": "0.00%",
       "duplicates": 0,
       "foreign_key_valid": true,
-      "description": "Chi tiết lịch sử 32.4 triệu giao dịch cho 3,214,874 đơn hàng prior."
+      "description": "Chi tiết lịch sử 32,434,489 dòng giao dịch cho 3,214,874 đơn hàng prior (Đầu vào chính của pipeline)."
+    },
+    {
+      "table_name": "order_products__train.csv",
+      "entity": "Giao dịch Đánh giá Độc lập (Train Set)",
+      "total_rows": 1384617,
+      "total_cols": 4,
+      "primary_key": "(order_id, product_id)",
+      "null_count": 0,
+      "null_rate": "0.00%",
+      "duplicates": 0,
+      "foreign_key_valid": true,
+      "description": "Tập giao dịch đánh giá độc lập của Instacart (131,209 đơn train), tách biệt hoàn toàn và không nạp vào pipeline huấn luyện Prior."
     }
   ],
   "cleaning_stages": [
@@ -95,7 +107,7 @@
       "after_cleaning": 11188797,
       "removed_records": 21245692,
       "removed_rate": "65.50%",
-      "rule": "Lọc ứng viên thường xuyên (Apriori Pruning: >= 15.000 lần xuất hiện) loại bỏ nhiễu thưa thớt trên không gian 49.688 sản phẩm."
+      "rule": "Lọc ngưỡng tần suất tối thiểu (>= 15.000 lần xuất hiện) loại bỏ nhiễu thưa thớt trên không gian 49.688 sản phẩm."
     }
   ],
   "excluded_orders_breakdown": [

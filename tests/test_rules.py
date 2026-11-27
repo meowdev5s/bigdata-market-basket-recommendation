@@ -74,7 +74,7 @@ class TestAssociationRules(unittest.TestCase):
         self.assertIn("parameters", dq)
         self.assertIn("kpis", dq)
         self.assertIn("tables", dq)
-        self.assertEqual(len(dq["tables"]), 5, "Báo cáo phải kiểm định đủ 5 tệp CSV Instacart!")
+        self.assertEqual(len(dq["tables"]), 6, "Báo cáo phải kiểm định đủ 6 tệp CSV của bộ dữ liệu Instacart!")
         
         # Đối soát số lượng giỏ hợp lệ và số đơn bị loại
         kpis = dq["kpis"]

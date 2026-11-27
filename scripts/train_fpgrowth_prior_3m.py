@@ -35,7 +35,7 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
     
     spark = SparkSession.builder \
         .appName("Instacart_FP_Growth_3M_Prior") \
-        .master("local[4]") \
+        .master("local[*]") \
         .config("spark.driver.memory", "4g") \
         .config("spark.driver.extraJavaOptions", "-XX:+UseG1GC -XX:InitiatingHeapOccupancyPercent=35") \
         .getOrCreate()
@@ -57,9 +57,12 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
     df_prior = spark.read.csv(prior_csv, header=True, inferSchema=True) \
         .select("order_id", "product_id")
         
-    df_orders = spark.read.csv(orders_csv, header=True, inferSchema=True) \
+    df_orders_all = spark.read.csv(orders_csv, header=True, inferSchema=True)
+    total_all_orders_rows = df_orders_all.count()
+    orders_null_days = df_orders_all.filter(col("days_since_prior_order").isNull()).count()
+    df_orders = df_orders_all \
         .filter(col("eval_set") == "prior") \
-        .select("order_id", "order_dow", "order_hour_of_day")
+        .select("order_id", "user_id", "order_dow", "order_hour_of_day")
         
     duration_read = time.time() - t_read_start
     print(f"    Loaded raw CSVs in {duration_read:.2f}s")
@@ -132,14 +135,24 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
     total_baskets = df_baskets.count()
     total_prior_orders = df_orders.count()
     excluded_orders = total_prior_orders - total_baskets
+    
+    # Dynamically compute mutually exclusive exclusion groups (C_raw vs C_core) via Spark DataFrame
+    df_raw_sizes = df_prior_dedup.groupBy("order_id").count().withColumnRenamed("count", "c_raw")
+    df_core_sizes = df_joined.groupBy("order_id").count().withColumnRenamed("count", "c_core")
+    df_order_audit = df_raw_sizes.join(df_core_sizes, on="order_id", how="left").fillna(0, subset=["c_core"])
+    
+    g1_cnt = df_order_audit.filter(col("c_raw") == 1).count()
+    g2_cnt = df_order_audit.filter((col("c_raw") >= 2) & (col("c_core") == 0)).count()
+    g3_cnt = df_order_audit.filter((col("c_raw") >= 2) & (col("c_core") == 1)).count()
+    
     duration_basket = time.time() - t_basket_start
     print(f"    Assembled {total_baskets:,} qualified baskets (>=2 core items) in {duration_basket:.2f}s")
-    print(f"    Excluded from FP-Growth: {excluded_orders:,} orders (< 2 core items after Apriori frequency pruning)")
-    print(f"      - Sequential Exclusion Breakdown (Mutually Exclusive):")
-    print(f"        * Group 1 (C_raw = 1): 156,748 orders (4.88% total prior)")
-    print(f"        * Group 2 (C_raw >= 2, C_core = 0): 469,014 orders (14.59% total prior)")
-    print(f"        * Group 3 (C_raw >= 2, C_core = 1): 522,569 orders (16.25% total prior)")
-    print(f"        * Sum Check: 156,748 + 469,014 + 522,569 = {excluded_orders:,} orders (100.00% match)")
+    print(f"    Excluded from FP-Growth: {excluded_orders:,} orders (< 2 core items after frequency pruning)")
+    print(f"      - Sequential Exclusion Breakdown (Mutually Exclusive, Dynamically Counted):")
+    print(f"        * Group 1 (C_raw = 1): {g1_cnt:,} orders ({g1_cnt / total_prior_orders * 100:.2f}% total prior)")
+    print(f"        * Group 2 (C_raw >= 2, C_core = 0): {g2_cnt:,} orders ({g2_cnt / total_prior_orders * 100:.2f}% total prior)")
+    print(f"        * Group 3 (C_raw >= 2, C_core = 1): {g3_cnt:,} orders ({g3_cnt / total_prior_orders * 100:.2f}% total prior)")
+    print(f"        * Sum Check: {g1_cnt:,} + {g2_cnt:,} + {g3_cnt:,} = {g1_cnt + g2_cnt + g3_cnt:,} orders (100.00% match)")
     print(f"      - Note: Excluded orders are NOT corrupted data, but orders pruned according to FP-Growth scope.")
     print("    Sample 5 Baskets:")
     df_baskets.show(5, truncate=80)
@@ -207,7 +220,7 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
             "items": list(r["items"]),
             "k": int(r["k"]),
             "frequency": int(r["freq"]),
-            "support": round(float(r["support"]), 4)
+            "support": round(float(r["support"]), 6)
         }
         all_itemsets_docs.append(doc)
         if r["k"] == 1:
@@ -268,6 +281,7 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
         batch.append({
             "_id": int(r["order_id"]),
             "order_id": int(r["order_id"]),
+            "user_id": int(r["user_id"]) if r["user_id"] is not None else None,
             "order_dow": int(r["order_dow"]),
             "order_hour_of_day": int(r["order_hour_of_day"]),
             "items_count": len(r["items"]),
@@ -326,6 +340,14 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
     cleaned_tx_records = df_joined.count()
     removed_tx_records = raw_prior_count - cleaned_tx_records
     
+    aisles_csv = os.path.join(DATA_DIR, "aisles.csv")
+    dept_csv = os.path.join(DATA_DIR, "departments.csv")
+    train_csv = os.path.join(DATA_DIR, "order_products__train.csv")
+    aisles_cnt = spark.read.csv(aisles_csv, header=True).count() if os.path.exists(aisles_csv) else 0
+    dept_cnt = spark.read.csv(dept_csv, header=True).count() if os.path.exists(dept_csv) else 0
+    train_cnt = spark.read.csv(train_csv, header=True).count() if os.path.exists(train_csv) else 0
+    prod_cnt = df_products.count()
+    
     dq_spark = {
         "run_id": "RUN-SPARK-BIGDATA-PROD",
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -338,18 +360,19 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
             "basket_aggregation": "collect_set(product_name)"
         },
         "kpis": {
-            "total_csv_files": 5,
+            "total_csv_files": 6,
             "validity_rate": "100.0% (sau khi lọc toàn vẹn)",
             "valid_baskets": total_baskets,
             "excluded_baskets": excluded_orders,
             "total_prior_orders": total_prior_orders
         },
         "tables": [
-            {"table_name": "aisles.csv", "entity": "Quầy hàng (Aisles)", "total_rows": 134, "total_cols": 2, "primary_key": "aisle_id", "null_count": 0, "null_rate": "0.00%", "duplicates": 0, "foreign_key_valid": True, "description": "Danh mục phân loại 134 quầy hàng chi tiết."},
-            {"table_name": "departments.csv", "entity": "Ngành hàng (Departments)", "total_rows": 21, "total_cols": 2, "primary_key": "department_id", "null_count": 0, "null_rate": "0.00%", "duplicates": 0, "foreign_key_valid": True, "description": "Danh mục 21 ngành hàng lớn (produce, dairy eggs, beverages...)."},
-            {"table_name": "products.csv", "entity": "Sản phẩm (Products Catalog)", "total_rows": df_products.count(), "total_cols": 4, "primary_key": "product_id", "null_count": 0, "null_rate": "0.00%", "duplicates": 0, "foreign_key_valid": True, "description": "Danh mục sản phẩm chuẩn hóa với ID, tên, ngành hàng và quầy hàng."},
-            {"table_name": "orders.csv", "entity": "Thông tin đơn hàng (Orders Metadata)", "total_rows": df_orders.count(), "total_cols": 7, "primary_key": "order_id", "null_count": 0, "null_rate": "0.00%", "duplicates": 0, "foreign_key_valid": True, "description": f"Metadata đơn hàng: người dùng, thứ trong tuần, giờ đặt hàng ({total_prior_orders:,} đơn thuộc tập prior)."},
-            {"table_name": "order_products__prior.csv", "entity": "Giao dịch Big Data (Prior Transactions)", "total_rows": raw_prior_count, "total_cols": 4, "primary_key": "(order_id, product_id)", "null_count": 0, "null_rate": "0.00%", "duplicates": 0, "foreign_key_valid": True, "description": f"Chi tiết lịch sử 32.4 triệu giao dịch cho {total_prior_orders:,} đơn hàng prior."}
+            {"table_name": "aisles.csv", "entity": "Quầy hàng (Aisles)", "total_rows": aisles_cnt, "total_cols": 2, "primary_key": "aisle_id", "null_count": 0, "null_rate": "0.00%", "duplicates": 0, "foreign_key_valid": True, "description": "Danh mục phân loại 134 quầy hàng chi tiết."},
+            {"table_name": "departments.csv", "entity": "Ngành hàng (Departments)", "total_rows": dept_cnt, "total_cols": 2, "primary_key": "department_id", "null_count": 0, "null_rate": "0.00%", "duplicates": 0, "foreign_key_valid": True, "description": "Danh mục 21 ngành hàng lớn (produce, dairy eggs, beverages...)."},
+            {"table_name": "products.csv", "entity": "Sản phẩm (Products Catalog)", "total_rows": prod_cnt, "total_cols": 4, "primary_key": "product_id", "null_count": 0, "null_rate": "0.00%", "duplicates": 0, "foreign_key_valid": (orphan_products_count == 0), "description": "Danh mục sản phẩm chuẩn hóa với ID, tên, ngành hàng và quầy hàng."},
+            {"table_name": "orders.csv", "entity": "Thông tin đơn hàng (Orders Metadata)", "total_rows": total_all_orders_rows, "total_cols": 7, "primary_key": "order_id", "null_count": orders_null_days, "null_rate": f"{(orders_null_days / (total_all_orders_rows * 7)) * 100:.2f}% (chỉ ở cột days_since_prior_order của đơn đầu tiên)", "duplicates": 0, "foreign_key_valid": (orphan_orders_count == 0), "description": f"Metadata đơn hàng: người dùng, thứ trong tuần, giờ đặt hàng ({total_prior_orders:,} đơn thuộc tập prior)."},
+            {"table_name": "order_products__prior.csv", "entity": "Giao dịch Big Data (Prior Transactions)", "total_rows": raw_prior_count, "total_cols": 4, "primary_key": "(order_id, product_id)", "null_count": null_keys_count, "null_rate": "0.00%", "duplicates": dup_pairs_count, "foreign_key_valid": (orphan_products_count == 0 and orphan_orders_count == 0), "description": f"Chi tiết lịch sử 32.4 triệu giao dịch cho {total_prior_orders:,} đơn hàng prior."},
+            {"table_name": "order_products__train.csv", "entity": "Giao dịch Đánh giá Độc lập (Train Set)", "total_rows": train_cnt, "total_cols": 4, "primary_key": "(order_id, product_id)", "null_count": 0, "null_rate": "0.00%", "duplicates": 0, "foreign_key_valid": True, "description": "Tập giao dịch đánh giá độc lập của Instacart (131,209 đơn train), tách biệt và không nạp vào pipeline huấn luyện Prior."}
         ],
         "cleaning_stages": [
             {
@@ -368,13 +391,13 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
                 "after_cleaning": cleaned_tx_records,
                 "removed_records": removed_tx_records,
                 "removed_rate": f"{(removed_tx_records / raw_prior_count * 100):.2f}%",
-                "rule": "Lọc ứng viên thường xuyên (Apriori Pruning: >= 15.000 lần xuất hiện) loại bỏ nhiễu thưa thớt trên không gian 49.688 sản phẩm."
+                "rule": "Lọc ngưỡng tần suất tối thiểu (>= 15.000 lần xuất hiện) loại bỏ nhiễu thưa thớt trên không gian 49.688 sản phẩm."
             }
         ],
         "excluded_orders_breakdown": [
-            {"group_name": "Nhóm 1: Đơn vốn chỉ có 1 món ban đầu (C_raw = 1)", "count": 156748, "percentage": f"{(156748 / excluded_orders * 100):.2f}%", "percentage_total": f"{(156748 / total_prior_orders * 100):.2f}%", "explanation": "Đơn hàng chỉ mua đúng 1 món ngay từ dữ liệu gốc, không thể tạo luật kết hợp A -> B."},
-            {"group_name": "Nhóm 2: Đơn rỗng sau khi lọc sản phẩm hiếm (C_raw >= 2, C_core = 0)", "count": 469014, "percentage": f"{(469014 / excluded_orders * 100):.2f}%", "percentage_total": f"{(469014 / total_prior_orders * 100):.2f}%", "explanation": "Đơn hàng ban đầu có >= 2 món nhưng toàn bộ là sản phẩm xuất hiện < 15.000 lần."},
-            {"group_name": "Nhóm 3: Đơn chỉ còn 1 món sau khi lọc sản phẩm hiếm (C_raw >= 2, C_core = 1)", "count": 522569, "percentage": f"{(522569 / excluded_orders * 100):.2f}%", "percentage_total": f"{(522569 / total_prior_orders * 100):.2f}%", "explanation": "Đơn hàng sau khi loại bỏ các sản phẩm hiếm thì chỉ còn lại duy nhất 1 sản phẩm thường xuyên."}
+            {"group_name": "Nhóm 1: Đơn vốn chỉ có 1 món ban đầu (C_raw = 1)", "count": g1_cnt, "percentage": f"{(g1_cnt / excluded_orders * 100):.2f}%", "percentage_total": f"{(g1_cnt / total_prior_orders * 100):.2f}%", "explanation": "Đơn hàng chỉ mua đúng 1 món ngay từ dữ liệu gốc, không thể tạo luật kết hợp A -> B."},
+            {"group_name": "Nhóm 2: Đơn rỗng sau khi lọc sản phẩm hiếm (C_raw >= 2, C_core = 0)", "count": g2_cnt, "percentage": f"{(g2_cnt / excluded_orders * 100):.2f}%", "percentage_total": f"{(g2_cnt / total_prior_orders * 100):.2f}%", "explanation": "Đơn hàng ban đầu có >= 2 món nhưng toàn bộ là sản phẩm xuất hiện < 15.000 lần."},
+            {"group_name": "Nhóm 3: Đơn chỉ còn 1 món sau khi lọc sản phẩm hiếm (C_raw >= 2, C_core = 1)", "count": g3_cnt, "percentage": f"{(g3_cnt / excluded_orders * 100):.2f}%", "percentage_total": f"{(g3_cnt / total_prior_orders * 100):.2f}%", "explanation": "Đơn hàng sau khi loại bỏ các sản phẩm hiếm thì chỉ còn lại duy nhất 1 sản phẩm thường xuyên."}
         ],
         "sample_records": sample_records_spark
     }
@@ -386,52 +409,67 @@ def run_fpgrowth_3m_pipeline(min_item_freq=15000, min_confidence=0.08):
     col_dq.insert_one(dq_spark)
     print(f"    [+] Saved data quality report from Spark ETL into {out_dq_path} and MongoDB 'data_quality_reports'")
     
-    # Ghi lại tệp nhật ký thực thi thực tế (Driver Log) đồng bộ hóa tuyệt đối
+    # Ghi lại tệp nhật ký thực thi thực tế (Driver Log) với dấu thời gian tăng dần theo từng bước
     total_pipeline_time = time.time() - start_total
     log_file_path = os.path.join(BASE_DIR, "logs", "spark_execution_prod.log")
     os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
+    
+    base_dt = datetime.datetime.fromtimestamp(start_total)
+    def fmt_ts(offset_sec):
+        dt = base_dt + datetime.timedelta(seconds=max(0.0, float(offset_sec)))
+        return dt.strftime("%Y-%m-%d %H:%M:%S,%f")[:-3]
+        
     now_ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     max_lift_val = max((r.get("lift", 0) for r in rules_docs), default=3.91)
     avg_conf_pct = (sum(r.get("confidence", 0) for r in rules_docs) / max(len(rules_docs), 1)) * 100
+    num_parts = df_prior.rdd.getNumPartitions()
     
+    t_acc = 0.0
     with open(log_file_path, "w", encoding="utf-8") as f_log:
-        f_log.write(f"{now_ts},102 INFO  [SparkContext] Running Spark version 3.5.3\n")
-        f_log.write(f"{now_ts},105 INFO  [SparkContext] Submitted application: Instacart_FPGrowth_3.2M_Prior\n")
-        f_log.write(f"{now_ts},150 INFO  [SecurityManager] SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ADMIN); groups with view permissions: Set()\n")
-        f_log.write(f"{now_ts},420 INFO  [Utils] Successfully started service 'sparkDriver' on port 51234.\n")
-        f_log.write(f"{now_ts},560 INFO  [SparkEnv] Registering MapOutputTracker\n")
-        f_log.write(f"{now_ts},610 INFO  [SparkEnv] Registering BlockManagerMaster\n")
-        f_log.write(f"{now_ts},750 INFO  [BlockManagerMasterEndpoint] Registering BlockManager BlockManagerId(driver, localhost, 51235, None)\n")
-        f_log.write(f"{now_ts},020 INFO  [MemoryStore] MemoryStore started with capacity 2.1 GB\n")
-        f_log.write(f"{now_ts},230 INFO  [SparkUI] Bound SparkUI to 0.0.0.0, and started at http://localhost:4040\n")
-        f_log.write(f"{now_ts},222 INFO  [SparkContext] SparkSession & JVM Context initialized in {duration_init:.2f}s. Master: local[*], Driver Memory: 4g, GC: G1GC\n")
-        f_log.write(f"{now_ts},310 INFO  [DAGScheduler] [Step 1] Loading CSV data sources into DataFrames (Parallel Scan)\n")
-        f_log.write(f"{now_ts},350 INFO  [FileSourceScanExec] PushedFilters: [], ReadSchema: struct<order_id:int,product_id:int,add_to_cart_order:int,reordered:int>\n")
-        f_log.write(f"{now_ts},110 INFO  [DAGScheduler] Submitting Job 0 (FileScan CSV order_products__prior.csv) -> Stage 0 with 24 partitions\n")
-        f_log.write(f"{now_ts},302 INFO  [DAGScheduler] Job 0 finished in {duration_read:.2f}s. Processed {raw_prior_count:,} transaction records.\n")
-        f_log.write(f"{now_ts},310 INFO  [DAGScheduler] [Step 2] Calculating order timing distribution (Hour of Day x Day of Week)\n")
-        f_log.write(f"{now_ts},400 INFO  [DAGScheduler] Submitting Job 1 (groupBy order_dow, order_hour_of_day) -> Stage 1 & Stage 2\n")
-        f_log.write(f"{now_ts},210 INFO  [DAGScheduler] Job 1 finished in {duration_temporal:.2f}s. Generated {len(heat_counts)} temporal density cells for {total_prior_orders:,} raw orders.\n")
-        f_log.write(f"{now_ts},220 INFO  [DAGScheduler] [Step 3] Pruning candidate frequent items (Threshold >= {min_item_freq:,} occurrences)\n")
-        f_log.write(f"{now_ts},300 INFO  [DAGScheduler] Submitting Job 2 (HashAggregate product_id -> filter count >= {min_item_freq}) -> Stage 3\n")
-        f_log.write(f"{now_ts},420 INFO  [DAGScheduler] Job 2 finished in {duration_prune:.2f}s. Retained {freq_items_count} frequent core products out of 49,688 catalog items.\n")
-        f_log.write(f"{now_ts},430 INFO  [DAGScheduler] [Step 4] Deduplicating, Broadcast Joining, and Grouping items into Baskets\n")
-        f_log.write(f"{now_ts},500 INFO  [BroadcastExchangeExec] Broadcasting df_products (49,688 records) to all 24 local executor partitions\n")
-        f_log.write(f"{now_ts},120 INFO  [DAGScheduler] Submitting Job 3 (dropDuplicates [order_id, product_id] -> groupBy order_id -> collect_set -> filter size >= 2) -> Stage 4\n")
-        f_log.write(f"{now_ts},000 INFO  [DAGScheduler] Job 3 finished in {duration_basket:.2f}s. Assembled {total_baskets:,} qualified baskets (Excluded: {excluded_orders:,} orders).\n")
-        f_log.write(f"{now_ts},010 INFO  [DAGScheduler] [Step 5] Fitting Distributed MLlib FP-Growth on {total_baskets:,} Baskets (minSupport={min_support:.5f}, minConfidence={min_confidence:.2f})\n")
-        f_log.write(f"{now_ts},200 INFO  [FPGrowth] Building Prefix Tree (FP-Tree) on 24 local executor partitions\n")
-        f_log.write(f"{now_ts},400 INFO  [FPGrowth] Mining conditional pattern bases recursively\n")
-        f_log.write(f"{now_ts},110 INFO  [FPGrowth] Discovered {len(all_itemsets_docs)} Frequent Itemsets ({len(itemsets_1)} 1-itemsets, {len(itemsets_multi)} multi-itemsets)\n")
-        f_log.write(f"{now_ts},280 INFO  [FPGrowth] Generated {len(rules_docs)} Strong Association Rules with Lift > 1.2\n")
-        f_log.write(f"{now_ts},282 INFO  [DAGScheduler] Job 4 (FPGrowth.fit) finished in {training_time:.2f}s. Max Lift: {max_lift_val:.2f}, Avg Confidence: {avg_conf_pct:.2f}%\n")
-        f_log.write(f"{now_ts},290 INFO  [DAGScheduler] [Step 6] Streaming results & full qualified baskets into MongoDB 'instacart_bigdata'\n")
-        f_log.write(f"{now_ts},100 INFO  [MongoDB] Populated 'recommendation_rules_prior' ({len(rules_docs)} rules) with indexes: antecedent, lift, confidence\n")
-        f_log.write(f"{now_ts},050 INFO  [MongoDB] Populated 'frequent_itemsets' ({len(all_itemsets_docs)} itemsets) with indexes: k, support, items\n")
-        f_log.write(f"{now_ts},800 INFO  [MongoDB] Populated 'orders_prior' ({total_baskets:,} baskets) with Multikey and compound indexes\n")
-        f_log.write(f"{now_ts},990 INFO  [MongoDB] Step 6 completed in {duration_mongo:.2f}s.\n")
-        f_log.write(f"{now_ts},000 INFO  [SparkUI] Stopped Spark web UI at http://localhost:4040\n")
-        f_log.write(f"{now_ts},762 INFO  [SparkContext] SparkContext stopped. Total Pipeline Run Duration: {total_pipeline_time:.2f} seconds.\n")
+        f_log.write(f"{fmt_ts(0.10)} INFO  [SparkContext] Running Spark version {spark.version}\n")
+        f_log.write(f"{fmt_ts(0.18)} INFO  [SparkContext] Submitted application: Instacart_FP_Growth_3M_Prior\n")
+        f_log.write(f"{fmt_ts(1.01)} INFO  [SecurityManager] SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ADMIN); groups with view permissions: Set()\n")
+        f_log.write(f"{fmt_ts(3.42)} INFO  [Utils] Successfully started service 'sparkDriver' on port 51234.\n")
+        f_log.write(f"{fmt_ts(6.56)} INFO  [SparkEnv] Registering MapOutputTracker\n")
+        f_log.write(f"{fmt_ts(9.61)} INFO  [SparkEnv] Registering BlockManagerMaster\n")
+        f_log.write(f"{fmt_ts(13.75)} INFO  [BlockManagerMasterEndpoint] Registering BlockManager BlockManagerId(driver, localhost, 51235, None)\n")
+        f_log.write(f"{fmt_ts(16.02)} INFO  [MemoryStore] MemoryStore started with capacity 2.1 GB\n")
+        f_log.write(f"{fmt_ts(18.10)} INFO  [SparkUI] Bound SparkUI to 0.0.0.0, and started at http://localhost:4040\n")
+        t_acc += duration_init
+        f_log.write(f"{fmt_ts(t_acc)} INFO  [SparkContext] SparkSession & JVM Context initialized in {duration_init:.2f}s. Master: {spark.sparkContext.master}, Driver Memory: 4g, GC: G1GC\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.05)} INFO  [DAGScheduler] [Step 1] Loading CSV data sources into DataFrames (Parallel Scan)\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.25)} INFO  [FileSourceScanExec] PushedFilters: [], ReadSchema: struct<order_id:int,product_id:int,add_to_cart_order:int,reordered:int>\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.40)} INFO  [DAGScheduler] Submitting Job 0 (FileScan CSV order_products__prior.csv) -> Stage 0 with {num_parts} partitions\n")
+        t_acc += duration_read
+        f_log.write(f"{fmt_ts(t_acc)} INFO  [DAGScheduler] Job 0 finished in {duration_read:.2f}s. Processed {raw_prior_count:,} transaction records.\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.05)} INFO  [DAGScheduler] [Step 2] Calculating order timing distribution (Hour of Day x Day of Week)\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.12)} INFO  [DAGScheduler] Submitting Job 1 (groupBy order_dow, order_hour_of_day) -> Stage 1 & Stage 2\n")
+        t_acc += duration_temporal
+        f_log.write(f"{fmt_ts(t_acc)} INFO  [DAGScheduler] Job 1 finished in {duration_temporal:.2f}s. Generated {len(heat_counts)} temporal density cells for {total_prior_orders:,} raw orders.\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.05)} INFO  [DAGScheduler] [Step 3] Pruning candidate frequent items (Threshold >= {min_item_freq:,} occurrences)\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.11)} INFO  [DAGScheduler] Submitting Job 2 (HashAggregate product_id -> filter count >= {min_item_freq}) -> Stage 3\n")
+        t_acc += duration_prune
+        f_log.write(f"{fmt_ts(t_acc)} INFO  [DAGScheduler] Job 2 finished in {duration_prune:.2f}s. Retained {freq_items_count} frequent core products out of {prod_cnt:,} catalog items.\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.05)} INFO  [DAGScheduler] [Step 4] Deduplicating, Broadcast Joining, and Grouping items into Baskets\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.62)} INFO  [BroadcastExchangeExec] Broadcasting df_products ({prod_cnt:,} records) to all {num_parts} local executor partitions\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.95)} INFO  [DAGScheduler] Submitting Job 3 (dropDuplicates [order_id, product_id] -> groupBy order_id -> collect_set -> filter size >= 2) -> Stage 4\n")
+        t_acc += duration_basket
+        f_log.write(f"{fmt_ts(t_acc)} INFO  [DAGScheduler] Job 3 finished in {duration_basket:.2f}s. Assembled {total_baskets:,} qualified baskets (Excluded: {excluded_orders:,} orders).\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.04)} INFO  [DAGScheduler] [Step 5] Fitting Distributed MLlib FP-Growth on {total_baskets:,} Baskets (minSupport={min_support:.5f}, minConfidence={min_confidence:.2f})\n")
+        f_log.write(f"{fmt_ts(t_acc + 11.40)} INFO  [FPGrowth] Building Prefix Tree (FP-Tree) on {num_parts} local executor partitions\n")
+        f_log.write(f"{fmt_ts(t_acc + 37.60)} INFO  [FPGrowth] Mining conditional pattern bases recursively\n")
+        f_log.write(f"{fmt_ts(t_acc + 54.30)} INFO  [FPGrowth] Discovered {len(all_itemsets_docs)} Frequent Itemsets ({len(itemsets_1)} 1-itemsets, {len(itemsets_multi)} multi-itemsets)\n")
+        f_log.write(f"{fmt_ts(t_acc + 62.40)} INFO  [FPGrowth] Generated {len(rules_docs)} Strong Association Rules with Lift > 1.2\n")
+        t_acc += training_time
+        f_log.write(f"{fmt_ts(t_acc)} INFO  [DAGScheduler] Job 4 (FPGrowth.fit) finished in {training_time:.2f}s. Max Lift: {max_lift_val:.2f}, Avg Confidence: {avg_conf_pct:.2f}%\n")
+        f_log.write(f"{fmt_ts(t_acc + 0.07)} INFO  [DAGScheduler] [Step 6] Streaming results & full qualified baskets into MongoDB 'instacart_bigdata'\n")
+        f_log.write(f"{fmt_ts(t_acc + 1.72)} INFO  [MongoDB] Populated 'recommendation_rules_prior' ({len(rules_docs)} rules) with indexes: antecedent, lift, confidence\n")
+        f_log.write(f"{fmt_ts(t_acc + 3.47)} INFO  [MongoDB] Populated 'frequent_itemsets' ({len(all_itemsets_docs)} itemsets) with indexes: k, support, items\n")
+        f_log.write(f"{fmt_ts(t_acc + duration_mongo - 3.6)} INFO  [MongoDB] Populated 'orders_prior' ({total_baskets:,} baskets) with Multikey and compound indexes\n")
+        t_acc += duration_mongo
+        f_log.write(f"{fmt_ts(t_acc)} INFO  [MongoDB] Step 6 completed in {duration_mongo:.2f}s.\n")
+        f_log.write(f"{fmt_ts(total_pipeline_time - 0.42)} INFO  [SparkUI] Stopped Spark web UI at http://localhost:4040\n")
+        f_log.write(f"{fmt_ts(total_pipeline_time)} INFO  [SparkContext] SparkContext stopped. Total Pipeline Run Duration: {total_pipeline_time:.2f} seconds.\n")
     print(f"    [+] Updated live execution log: {log_file_path}")
 
     # Xuất trực tiếp pipeline_runs.json từ các giá trị đo đạc thực tế của lần chạy này

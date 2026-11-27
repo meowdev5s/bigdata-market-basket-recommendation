@@ -258,7 +258,7 @@ cache_sb = load_dashboard_cache()
 sb_orders = cache_sb.get("total_orders", 3214874)
 sb_tx = cache_sb.get("total_transactions", 32434489)
 pipeline_data_sb = load_json_artifact(PIPELINE_RUNS_FILE)
-spark_v = pipeline_data_sb[0].get("spark_version", "3.5.3") if pipeline_data_sb else "3.5.3"
+spark_v = pipeline_data_sb[0].get("spark_version", "3.5.9") if pipeline_data_sb else "3.5.9"
 run_code = pipeline_data_sb[0].get("run_id", "RUN-SPARK-BIGDATA-PROD") if pipeline_data_sb else "RUN-SPARK-BIGDATA-PROD"
 
 st.sidebar.markdown("**HỆ THỐNG PHÂN TÍCH HÀNH VI & GỢI Ý MUA KÈM**")
@@ -453,21 +453,23 @@ elif app_mode == "2. Khám Phá & Chất Lượng Dữ Liệu":
     else:
         st.info("Chưa có dữ liệu danh mục nguồn được kiểm định.")
         
-    with st.expander("Xem chi tiết Từ điển dữ liệu & Đặc tả ý nghĩa các trường (Data Dictionary)"):
+    with st.expander("Xem chi tiết Từ điển dữ liệu & Đặc tả ý nghĩa các trường (Data Dictionary - 6 Tệp CSV)"):
         table_dict = {t["table_name"]: t for t in dq_data.get("tables", [])} if dq_data else {}
         ord_rows = table_dict.get("orders.csv", {}).get("total_rows", 3421083)
         prior_rows = table_dict.get("order_products__prior.csv", {}).get("total_rows", 32434489)
+        train_rows = table_dict.get("order_products__train.csv", {}).get("total_rows", 1384617)
         prod_rows = table_dict.get("products.csv", {}).get("total_rows", 49688)
         aisle_rows = table_dict.get("aisles.csv", {}).get("total_rows", 134)
         dept_rows = table_dict.get("departments.csv", {}).get("total_rows", 21)
         st.markdown(f"""
-        | Tên tệp CSV | Khóa chính | Ràng buộc / Ý nghĩa các trường dữ liệu |
-        | :--- | :--- | :--- |
-        | **`orders.csv`** ({ord_rows:,} dòng) | `order_id` | `order_id` (ID đơn hàng), `user_id` (ID khách hàng), `eval_set` (tập prior: 3.21M / train / test), `order_number` (thứ tự đơn), `order_dow` (thứ trong tuần: 0=Chủ Nhật ... 6=Thứ Bảy), `order_hour_of_day` (giờ đặt 0-23h), `days_since_prior_order` (khoảng cách ngày kể từ đơn trước, null ở đơn đầu tiên: 6.03%). |
-        | **`order_products__prior.csv`** ({prior_rows:,} dòng) | `(order_id, product_id)` | `order_id` (FK tham chiếu orders), `product_id` (FK tham chiếu products), `add_to_cart_order` (thứ tự thêm vào giỏ), `reordered` (1: mua lại, 0: mua lần đầu). |
-        | **`products.csv`** ({prod_rows:,} dòng) | `product_id` | `product_id` (ID sản phẩm chuẩn hóa), `product_name` (tên đầy đủ mặt hàng), `aisle_id` (FK tham chiếu aisles), `department_id` (FK tham chiếu departments). |
-        | **`aisles.csv`** ({aisle_rows:,} dòng) | `aisle_id` | `aisle_id` (ID quầy), `aisle` (tên quầy hàng chi tiết). |
-        | **`departments.csv`** ({dept_rows:,} dòng) | `department_id` | `department_id` (ID ngành), `department` (tên ngành hàng lớn: produce, dairy eggs, beverages...). |
+        | Tên tệp CSV | Khóa chính | Phạm vi Pipeline | Ràng buộc / Ý nghĩa các trường dữ liệu |
+        | :--- | :--- | :--- | :--- |
+        | **`orders.csv`** ({ord_rows:,} dòng) | `order_id` | **Dùng trong Prior** (lọc `eval_set == 'prior'`: 3.214.874 đơn) | `order_id` (ID đơn hàng), `user_id` (ID khách hàng), `eval_set` (`prior` / `train` / `test`), `order_number` (thứ tự đơn), `order_dow` (0=Chủ Nhật ... 6=Thứ Bảy), `order_hour_of_day` (0-23h), `days_since_prior_order` (null ở đơn đầu tiên: 206.209 dòng, 0.86% tổng số ô). |
+        | **`order_products__prior.csv`** ({prior_rows:,} dòng) | `(order_id, product_id)` | **Đầu vào chính của Spark FP-Growth** | `order_id` (FK tham chiếu orders), `product_id` (FK tham chiếu products), `add_to_cart_order` (thứ tự thêm vào giỏ), `reordered` (1: mua lại, 0: mua lần đầu). |
+        | **`order_products__train.csv`** ({train_rows:,} dòng) | `(order_id, product_id)` | **Tập đánh giá riêng của Instacart** *(Không nạp vào pipeline Prior)* | Chi tiết giao dịch của 131.209 đơn hàng thuộc `eval_set == 'train'`, được tách biệt khỏi lịch sử `prior`. |
+        | **`products.csv`** ({prod_rows:,} dòng) | `product_id` | **Dùng trong Prior & MongoDB** | `product_id` (ID sản phẩm chuẩn hóa), `product_name` (tên đầy đủ mặt hàng), `aisle_id` (FK tham chiếu aisles), `department_id` (FK tham chiếu departments). |
+        | **`aisles.csv`** ({aisle_rows:,} dòng) | `aisle_id` | **Dùng trong Danh mục MongoDB** | `aisle_id` (ID quầy), `aisle` (tên 134 quầy hàng chi tiết). |
+        | **`departments.csv`** ({dept_rows:,} dòng) | `department_id` | **Dùng trong Danh mục MongoDB** | `department_id` (ID ngành), `department` (tên 21 ngành hàng lớn: produce, dairy eggs, beverages...). |
         """.replace(",", "."))
         
     st.markdown("---")
@@ -540,7 +542,7 @@ elif app_mode == "2. Khám Phá & Chất Lượng Dữ Liệu":
     <div class="insight-box">
         <b>Phân biệt Làm sạch dữ liệu vs Lọc phạm vi khai phá (Data Cleaning vs Candidate Pruning):</b><br>
         1. <b>Kiểm tra tính toàn vẹn (Referential Integrity & Deduplication):</b> Mọi mã <code>product_id</code> đều hợp lệ; áp dụng <code>dropDuplicates(["order_id", "product_id"])</code> và <code>collect_set</code> để mỗi giỏ hàng là một tập hợp các phần tử duy nhất.<br>
-        2. <b>Lọc ứng viên thường xuyên (Apriori Candidate Pruning):</b> Chỉ giữ các mặt hàng xuất hiện &ge; {params.get('min_item_freq', 15000):,} lần nhằm khử nhiễu thưa thớt trên không gian 49.688 sản phẩm.<br>
+        2. <b>Lọc ngưỡng tần suất tối thiểu (Minimum Frequency Pruning):</b> Chỉ giữ các mặt hàng xuất hiện &ge; {params.get('min_item_freq', 15000):,} lần nhằm khử nhiễu thưa thớt trên không gian 49.688 sản phẩm.<br>
         3. <b>Bản chất {ex_cnt:,} đơn không đưa vào FP-Growth:</b> Đây <i>không phải dữ liệu lỗi/hỏng</i>, mà là các đơn không đủ điều kiện tạo luật kết hợp sau bước lọc tần suất (gồm: đơn vốn chỉ có 1 món ban đầu, đơn chứa toàn sản phẩm hiếm nên bị rỗng sau lọc, và đơn chỉ còn lại 1 món sau khi loại bỏ các sản phẩm hiếm).
     </div>
     """.replace(",", "."), unsafe_allow_html=True)
@@ -1201,7 +1203,9 @@ elif app_mode == "6. Thực Nghiệm & Đánh Giá Chất Lượng":
             
             # Dynamic Metric Cards
             t1, t2, t3, t4 = st.columns(4)
-            t1.metric("Số giỏ hàng kiểm thử", f"{eval_data.get('test_size_baskets', 1000):,} giỏ", "Leave-k-out Protocol")
+            queried_cnt = eval_data.get("test_size_baskets_queried", eval_data.get("test_size_baskets", 1000))
+            valid_eval_cnt = eval_data.get("valid_baskets_evaluated", 978)
+            t1.metric("Giỏ hàng kiểm thử", f"{queried_cnt:,} giỏ", f"{valid_eval_cnt:,} giỏ hợp lệ (>= 2 món)")
             t2.metric("Sản phẩm tiền tố (Antecedents)", f"{eval_data.get('unique_antecedents', 34)} món", "Mặt hàng kích hoạt")
             t3.metric("Sản phẩm hậu tố (Consequents)", f"{eval_data.get('unique_consequents', 19)} món", "Mặt hàng gợi ý")
             t4.metric("Trần Catalog Coverage", f"{eval_data.get('academic_catalog_coverage_percent', 6.93):.2f}%", f"274 món cốt lõi ({eval_data.get('evaluation_execution_time_seconds', 0.043):.3f}s)")
@@ -1284,43 +1288,43 @@ elif app_mode == "6. Thực Nghiệm & Đánh Giá Chất Lượng":
                 total_docs = storage_bench.get("total_documents", 2066543)
                 collscan_info = storage_bench.get("without_index_collscan", {})
                 ixscan_info = storage_bench.get("with_btree_index_ixscan", {})
-                gain_info = storage_bench.get("performance_gain", {})
+                comp_summary = storage_bench.get("comparison_summary", storage_bench.get("performance_gain", {}))
                 
                 b1, b2, b3 = st.columns(3)
-                b1.metric("Kế hoạch truy vấn (Winning Plan)", ixscan_info.get("stage", "FETCH -> IXSCAN"), f"Chỉ mục: {ixscan_info.get('index_name', 'order_id_1')}")
-                b2.metric("Độ trễ có Index (IXSCAN)", f"{ixscan_info.get('driver_measured_latency_ms', 0.9):.2f} ms", f"-{gain_info.get('latency_reduction_percent', '100.0%')} so với COLLSCAN")
-                b3.metric("Độ trễ không Index (COLLSCAN)", f"{collscan_info.get('driver_measured_latency_ms', 2482.94):.2f} ms", f"Quét {collscan_info.get('total_docs_examined', total_docs):,} docs")
+                b1.metric("Kế hoạch truy vấn có Index", ixscan_info.get("stage", "FETCH -> IXSCAN"), f"Chỉ mục đơn: {ixscan_info.get('index_name', 'order_id_1')}")
+                b2.metric("Tình huống 1: Có Index (order_id)", f"{ixscan_info.get('execution_time_millis', 0)} ms (Engine)", f"Driver: {ixscan_info.get('driver_measured_latency_ms', 0.9):.2f} ms | Duyệt {ixscan_info.get('total_docs_examined', 1)} doc")
+                b3.metric("Tình huống 2: Không Index (items_count)", f"{collscan_info.get('execution_time_millis', 2283):,} ms (Engine)", f"Driver: {collscan_info.get('driver_measured_latency_ms', 2284.1):.2f} ms | Quét {collscan_info.get('total_docs_examined', total_docs):,} docs")
                 
                 st.markdown("---")
                 
                 # Comparison Table
                 df_storage = pd.DataFrame([
                     {
-                        "Phương thức truy vấn": "Có chỉ mục B-Tree Index (IXSCAN)",
-                        "Trạng thái thực thi": ixscan_info.get("stage", "IXSCAN"),
-                        "Số bản ghi đã duyệt": f"{ixscan_info.get('total_docs_examined', 1):,} docs",
+                        "Tình huống truy vấn": "Tình huống 1: Truy vấn theo trường có chỉ mục B-Tree (order_id = 2)",
+                        "Cơ chế thực thi (Winning Plan)": ixscan_info.get("stage", "FETCH -> IXSCAN"),
+                        "Số khóa / bản ghi đã duyệt": f"{ixscan_info.get('total_keys_examined', 1)} key / {ixscan_info.get('total_docs_examined', 1):,} doc",
                         "Thời gian MongoDB Engine": f"{ixscan_info.get('execution_time_millis', 0)} ms",
                         "Độ trễ đo tại Driver": f"{ixscan_info.get('driver_measured_latency_ms', 0.9):.2f} ms",
                         "Kết quả trả về": f"{ixscan_info.get('docs_returned', 1)} bản ghi"
                     },
                     {
-                        "Phương thức truy vấn": "Không dùng chỉ mục (COLLSCAN)",
-                        "Trạng thái thực thi": collscan_info.get("stage", "COLLSCAN"),
-                        "Số bản ghi đã duyệt": f"{collscan_info.get('total_docs_examined', total_docs):,} docs",
-                        "Thời gian MongoDB Engine": f"{collscan_info.get('execution_time_millis', 2481)} ms",
-                        "Độ trễ đo tại Driver": f"{collscan_info.get('driver_measured_latency_ms', 2482.94):.2f} ms",
+                        "Tình huống truy vấn": "Tình huống 2: Truy vấn theo trường chưa lập chỉ mục (items_count = 99999)",
+                        "Cơ chế thực thi (Winning Plan)": collscan_info.get("stage", "COLLSCAN"),
+                        "Số khóa / bản ghi đã duyệt": f"0 key / {collscan_info.get('total_docs_examined', total_docs):,} docs",
+                        "Thời gian MongoDB Engine": f"{collscan_info.get('execution_time_millis', 2283):,} ms",
+                        "Độ trễ đo tại Driver": f"{collscan_info.get('driver_measured_latency_ms', 2284.1):.2f} ms",
                         "Kết quả trả về": f"{collscan_info.get('docs_returned', 0)} bản ghi"
                     }
                 ])
                 st.dataframe(df_storage, use_container_width=True)
                 
                 fig_bench = px.bar(
-                    x=["Có Index B-Tree (IXSCAN)", "Không Index (COLLSCAN)"],
-                    y=[ixscan_info.get('driver_measured_latency_ms', 0.9), collscan_info.get('driver_measured_latency_ms', 2482.94)],
-                    color=["Có Index B-Tree (IXSCAN)", "Không Index (COLLSCAN)"],
+                    x=["Tình huống 1: Có Index B-Tree (order_id)", "Tình huống 2: Không Index COLLSCAN (items_count)"],
+                    y=[ixscan_info.get('driver_measured_latency_ms', 0.9), collscan_info.get('driver_measured_latency_ms', 2284.1)],
+                    color=["Tình huống 1: Có Index B-Tree (order_id)", "Tình huống 2: Không Index COLLSCAN (items_count)"],
                     color_discrete_sequence=["#10B981", "#EF4444"],
-                    labels={"x": "Chiến lược tìm kiếm", "y": "Độ trễ phản hồi (ms)"},
-                    title=f"Độ trễ truy vấn dữ liệu lớn trên Collection '{coll_name}' ({total_docs:,} bản ghi)"
+                    labels={"x": "Tình huống truy vấn thực nghiệm", "y": "Thời gian thực thi đo tại Driver (ms)"},
+                    title=f"Đối chiếu thời gian thực thi của 2 tình huống truy vấn trên Collection '{coll_name}' ({total_docs:,} bản ghi)"
                 )
                 st.plotly_chart(fig_bench, use_container_width=True)
                 
@@ -1329,16 +1333,18 @@ elif app_mode == "6. Thực Nghiệm & Đánh Giá Chất Lượng":
                     st.markdown("#### Hiệu năng Tầng phục vụ gợi ý (Serving Layer In-Memory)")
                     st.caption(f"{serving_bench.get('architecture_note', '')}")
                     s1, s2, s3 = st.columns(3)
-                    s1.metric("Tập luật nạp RAM", f"{serving_bench.get('total_documents', 102)} luật", "In-memory Cache")
-                    s2.metric("Chỉ mục NoSQL lưu trữ", serving_bench.get("index_used", "antecedent_1"), "B-Tree Compound")
-                    s3.metric("Độ trễ so khớp tập hợp", f"{serving_bench.get('in_memory_rule_engine_latency_ms', 0.25):.2f} ms", "Cực nhanh (< 1ms)")
+                    s1.metric("Tập luật nạp RAM", f"{serving_bench.get('total_documents', 102)} luật", "In-memory Cache (@st.cache_data)")
+                    s2.metric("Chỉ mục NoSQL lưu trữ", serving_bench.get("index_used", "antecedent_1"), "B-Tree Multikey Index")
+                    s3.metric("Độ trễ so khớp tập hợp", f"{serving_bench.get('in_memory_rule_engine_latency_ms', 0.25):.2f} ms", "Phản hồi tức thì (< 1ms)")
                 
-                conclusion_text = gain_info.get('conclusion', '')
+                conclusion_text = comp_summary.get('conclusion', '')
+                method_note = comp_summary.get('methodology_note', '')
                 st.markdown(f"""
                 <div class="insight-box">
-                    <b>Đánh giá khả năng mở rộng & Kết luận benchmark:</b><br>
-                    {conclusion_text}<br>
-                    - Khi số lượng giao dịch và giỏ hàng mở rộng lên hàng triệu bản ghi, việc đánh chỉ mục B-Tree (trên <code>order_id</code> và <code>antecedent</code>) chuyển độ phức tạp từ <b>O(N)</b> (duyệt tuần tự) sang <b>O(log N)</b> (tìm kiếm cây), đảm bảo hệ thống phản hồi tức thì dưới tải cao.
+                    <b>Nhận xét thực nghiệm & Minh định phương pháp đo lường:</b><br>
+                    - <b>Kết quả đo:</b> {conclusion_text}<br>
+                    - <b>Lưu ý phương pháp luận:</b> {method_note}<br>
+                    - <b>Kiến trúc phục vụ gợi ý:</b> Tại Phân hệ 5, hệ thống nạp 102 luật vào bộ nhớ RAM (<code>@st.cache_data</code>) để so khớp tập tiền đề trong ~0.25 ms mà không cần truy vấn mạng tới MongoDB cho từng thao tác chọn sản phẩm.
                 </div>
                 """, unsafe_allow_html=True)
             else:

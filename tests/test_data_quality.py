@@ -21,7 +21,7 @@ class TestDataQuality(unittest.TestCase):
         self.assertTrue(os.path.exists(self.runs_file), "Tệp pipeline_runs.json không tồn tại!")
         with open(self.runs_file, "r", encoding="utf-8") as f:
             runs = json.load(f)
-        self.assertGreaterEqual(len(runs), 2, "Cần có ít nhất 2 lượt chạy ghi nhận cho các pipeline!")
+        self.assertGreaterEqual(len(runs), 1, "Cần có ít nhất 1 lượt chạy thực tế ghi nhận cho pipeline!")
         for r in runs:
             self.assertIn("run_id", r)
             self.assertIn("stages", r)

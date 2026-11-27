@@ -1,12 +1,17 @@
 {
   "test_size_baskets": 1000,
-  "evaluation_protocol": "Leave-k-out: Giữ lại 1 món làm giỏ hàng đầu vào quan sát được (Observed), đánh giá khả năng mô hình gợi ý đúng các món còn lại trong giỏ hàng thực tế (Held-out Ground Truth).",
+  "test_size_baskets_queried": 1000,
+  "valid_baskets_evaluated": 1000,
+  "skipped_single_item_baskets": 0,
+  "used_fallback_metrics": false,
+  "evaluation_protocol": "Leave-k-out: Giữ lại sản phẩm đầu tiên trong giỏ làm dữ liệu đầu vào quan sát được (Observed Basket), các sản phẩm còn lại làm tập dữ liệu đối chiếu thực tế (Held-out Ground Truth).",
+  "coverage_definition": "Tỷ lệ phần trăm số sản phẩm duy nhất được đề xuất trên danh mục tham chiếu gồm 274 sản phẩm cốt lõi (>= 15.000 lượt mua).",
   "random_seed": 42,
   "catalog_size": 274,
   "unique_antecedents": 34,
   "unique_consequents": 19,
   "academic_catalog_coverage_percent": 6.93,
-  "evaluation_execution_time_seconds": 0.04,
+  "evaluation_execution_time_seconds": 0.046,
   "metrics_by_k": [
     {
       "k": 3,
@@ -43,9 +48,9 @@
     }
   ],
   "academic_insights": [
-    "Tập 102 luật kết hợp hội tụ về đúng 19 mặt hàng hậu tố thiết yếu (Head Items). Trần Catalog Coverage học thuật đạt 6.93% trên 274 sản phẩm cốt lõi (vẫn cao gấp 3.8 lần so với Baseline Top Popular tại K=5 chỉ đạt 1.82%).",
-    "Mô hình Spark FP-Growth kết hợp Fallback duy trì độ chính xác và tỷ lệ đánh trúng (Hit Rate) cao, đồng thời đa dạng hóa danh mục gợi ý.",
-    "Tỷ lệ Catalog Interaction Spread của FP-Growth giải quyết sự đơn điệu của Baseline Top Popular chỉ lặp lại chuối và dâu.",
-    "Giới hạn phương pháp: Thử nghiệm offline đánh giá trên giỏ hàng tĩnh, đối với các sản phẩm Long-Tail cần cơ chế Fallback bổ trợ."
+    "Tập 102 luật kết hợp hội tụ về đúng 19 mặt hàng hậu tố thiết yếu (Head Items). Trần Catalog Coverage của riêng vế hệ quả đạt 6.93% trên 274 sản phẩm cốt lõi (cao hơn đáng kể so với Baseline Top Popular tại K=5 chỉ đạt 2.2%).",
+    "Tại K=10, mô hình Spark FP-Growth vượt qua Baseline Top Popular ở cả ba chỉ số: HitRate@10 (61.1% vs 60.5%), Precision@10 (9.1% vs 8.9%) và Recall@10 (26.3% vs 25.9%).",
+    "Phương pháp khai phá luật kết hợp giúp đa dạng hóa danh mục sản phẩm đề xuất theo ngữ cảnh giỏ hàng, khắc phục sự đơn điệu của Baseline chỉ lặp lại cố định các mặt hàng bán chạy nhất.",
+    "Giới hạn phương pháp: Đánh giá ngoại tuyến thực hiện trên giỏ hàng tĩnh theo giao thức giữ lại sản phẩm đầu tiên; chưa kết hợp hồ sơ lịch sử cá nhân hóa theo từng user_id."
   ]
 }

@@ -19,11 +19,11 @@ Dự án xây dựng chuỗi giá trị xử lý dữ liệu lớn toàn diện 
                            ▼
 ┌──────────────────────────────────────────────────────────────┐
 │           TẦNG XỬ LÝ LÔ (APACHE SPARK BATCH LAYER)           │
-│  1. Đọc song song phân tán (Parallel CSV Read)              │
-│  2. Kiểm tra toàn vẹn khóa ngoại (Referential Join)          │
-│  3. Gom giỏ hàng & khử trùng lặp (collect_list deduplication)│
-│  4. Lọc bỏ giỏ hàng rác (size >= 2 items)                    │
-│  5. Khử nhiễu thưa thớt (Apriori candidate pruning >= 15k)   │
+│  1. Đọc song song phân tán (Parallel CSV Read)               │
+│  2. Kiểm tra toàn vẹn khóa ngoại (Referential Anti-Join)     │
+│  3. Gom giỏ hàng & khử trùng lặp (collect_set deduplication) │
+│  4. Lọc ngưỡng tần suất sản phẩm cốt lõi (>= 15.000 lượt mua)│
+│  5. Lọc giỏ hàng hợp lệ (size >= 2 sản phẩm cốt lõi)         │
 │  6. Khai phá tập phổ biến & luật kết hợp (MLlib FP-Growth)   │
 └──────────────────────────────────────────────────────────────┘
                            │
@@ -57,20 +57,20 @@ bigData/
 │       ├── experiment_results.json         # Ma trận thử nghiệm tham số FP-Growth
 │       ├── evaluation_results.json         # Đánh giá Offline vs Baseline Top Popular
 │       └── mongodb_benchmark.json          # Benchmark chỉ mục B-Tree (IXSCAN vs COLLSCAN)
-├── notebooks/
-│   └── Train_FP_Growth_Colab.ipynb    # Sổ tay huấn luyện trên Google Colab
 ├── scripts/
 │   ├── import_to_mongodb.py           # Nạp danh mục sản phẩm và đơn hàng vào MongoDB
 │   ├── train_fpgrowth_prior_3m.py     # Pipeline Spark chính thức trên 3.2M đơn hàng
 │   ├── train_fpgrowth_pyspark.py      # Script chuyển tiếp gọi pipeline Spark chính thức
-│   ├── generate_metrics_and_evaluation.py # Sinh artifacts kiểm định và benchmark
+│   ├── benchmark_parameter_experiments.py # Thực nghiệm đo đạc 5 cấu hình tham số FP-Growth
+│   ├── generate_metrics_and_evaluation.py # Sinh artifacts kiểm định và benchmark động
 │   └── monitor_spark_ui.py            # Tiện ích theo dõi Spark UI (cổng 4040)
 ├── tests/
 │   ├── test_data_quality.py           # Kiểm thử tự động tính toàn vẹn dữ liệu
 │   ├── test_rules.py                  # Kiểm thử các ràng buộc toán học của tập luật & tập phổ biến
 │   └── test_recommendations.py        # Kiểm thử thuật toán gợi ý và cơ chế Fallback
 ├── Docs/                              # Tài liệu hướng dẫn sử dụng và kịch bản demo
-│   └── HuongDanSuDungVaDemo.md        # Hướng dẫn thao tác chi tiết 6 phân hệ & phản biện
+│   ├── HuongDanSuDungVaDemo.md        # Hướng dẫn thao tác chi tiết 6 phân hệ & phản biện
+│   └── KichBanThuyetTrinhDemo.md      # Kịch bản thuyết trình trước Hội đồng
 ├── .env.example                       # File mẫu biến môi trường cấu hình
 ├── requirements.txt                   # Danh mục thư viện Python
 ├── run_app.bat                        # Khởi chạy 1-click ứng dụng Web
@@ -105,22 +105,24 @@ bigData/
            ├── departments.csv             # 21 ngành hàng (~270 B)
            ├── products.csv                # 49.688 sản phẩm (~2.1 MB)
            ├── orders.csv                  # 3.421.083 đơn hàng (~108 MB)
-           └── order_products__prior.csv   # 32.434.489 dòng giao dịch (~577 MB)
+           ├── order_products__prior.csv   # 32.434.489 dòng giao dịch (~577 MB - Đầu vào huấn luyện chính)
+           └── order_products__train.csv   # 1.384.617 dòng giao dịch (~24.7 MB - Tập đánh giá độc lập của Instacart)
    ```
 
-*(Lưu ý: Dự án đã tích hợp sẵn toàn bộ Artifacts/Cache JSON trong thư mục `app/data/`, do đó ứng dụng Web Streamlit có thể khởi chạy và trình diễn đầy đủ ngay lập tức mà không bắt buộc phải tải lại tệp CSV 3.5GB).*
+*(Lưu ý: Dự án đã tích hợp sẵn toàn bộ Artifacts/Cache JSON trong thư mục `app/data/`, do đó ứng dụng Web Streamlit có thể khởi chạy và trình diễn đầy đủ ngay lập tức mà không bắt buộc phải tải lại tệp CSV).*
 
 ---
 
-### 4.3. Bảng Ý Nghĩa Các Trường & Đặc Tả Lược Đồ (Data Dictionary)
+### 4.3. Bảng Ý Nghĩa Các Trường & Đặc Tả Lược Đồ (Data Dictionary - 6 Tệp CSV)
 
-| Tên tệp CSV | Thực thể | Số dòng | Số cột | Khóa chính | Ràng buộc / Ý nghĩa các trường dữ liệu |
+| Tên tệp CSV | Thực thể | Số dòng | Số cột | Khóa chính | Phạm vi & Ý nghĩa các trường dữ liệu |
 | :--- | :--- | :---: | :---: | :--- | :--- |
-| **`orders.csv`** | Metadata đơn hàng | **3.421.083** | 7 | `order_id` | - `order_id` (int): Mã định danh duy nhất của đơn hàng.<br>- `user_id` (int): Mã khách hàng ẩn danh.<br>- `eval_set` (str): Tập dữ liệu (`prior`: 3.214.874 đơn, `train`: 131.209 đơn, `test`: 75.000 đơn).<br>- `order_number` (int): Thứ tự đơn hàng của khách hàng (1, 2, 3...).<br>- `order_dow` (int): Ngày trong tuần (0 = Chủ Nhật, 1 = Thứ Hai, ..., 6 = Thứ Bảy).<br>- `order_hour_of_day` (int): Khung giờ đặt hàng trong ngày (0 đến 23).<br>- `days_since_prior_order` (float): Số ngày kể từ đơn đặt gần nhất (null ở đơn đầu tiên của user: 206.209 dòng, 6.03%). |
-| **`order_products__prior.csv`** | Giao dịch Big Data | **32.434.489** | 4 | `(order_id, product_id)` | - `order_id` (int): Mã đơn hàng (Khóa ngoại tham chiếu `orders.csv`).<br>- `product_id` (int): Mã sản phẩm (Khóa ngoại tham chiếu `products.csv`).<br>- `add_to_cart_order` (int): Thứ tự sản phẩm được khách chọn vào giỏ.<br>- `reordered` (int): Trạng thái mua lại (1: Đã từng mua trước đây, 0: Mua lần đầu). |
-| **`products.csv`** | Danh mục sản phẩm | **49.688** | 4 | `product_id` | - `product_id` (int): Mã sản phẩm chuẩn hóa.<br>- `product_name` (str): Tên hiển thị đầy đủ của mặt hàng.<br>- `aisle_id` (int): Mã quầy hàng (FK tham chiếu `aisles.csv`).<br>- `department_id` (int): Mã ngành hàng (FK tham chiếu `departments.csv`). |
-| **`aisles.csv`** | Quầy hàng chi tiết | **134** | 2 | `aisle_id` | - `aisle_id` (int): Mã định danh quầy hàng.<br>- `aisle` (str): Tên quầy hàng (fresh fruits, yogurt, packaged cheese...). |
-| **`departments.csv`** | Ngành hàng lớn | **21** | 2 | `department_id` | - `department_id` (int): Mã định danh ngành hàng.<br>- `department` (str): Tên ngành hàng lớn (produce, dairy eggs, beverages, snacks...). |
+| **`orders.csv`** | Metadata đơn hàng | **3.421.083** | 7 | `order_id` | - **Phạm vi:** Pipeline lọc `eval_set == 'prior'` (3.214.874 đơn).<br>- `order_id` (int): Mã đơn hàng.<br>- `user_id` (int): Mã khách hàng ẩn danh.<br>- `eval_set` (str): Tập dữ liệu (`prior`: 3.214.874 đơn, `train`: 131.209 đơn, `test`: 75.000 đơn).<br>- `order_number` (int): Thứ tự đơn của khách.<br>- `order_dow` (int): Ngày trong tuần (0..6).<br>- `order_hour_of_day` (int): Khung giờ đặt hàng (0..23).<br>- `days_since_prior_order` (float): Số ngày kể từ đơn trước (null ở đơn đầu tiên của user: 206.209 dòng). |
+| **`order_products__prior.csv`** | Giao dịch Big Data (Prior) | **32.434.489** | 4 | `(order_id, product_id)` | - **Phạm vi:** Đầu vào chính của pipeline Spark ETL & FP-Growth.<br>- `order_id` (int): FK tham chiếu `orders.csv`.<br>- `product_id` (int): FK tham chiếu `products.csv`.<br>- `add_to_cart_order` (int): Thứ tự chọn vào giỏ.<br>- `reordered` (int): Trạng thái mua lại (1/0). |
+| **`order_products__train.csv`** | Giao dịch Đánh giá (Train) | **1.384.617** | 4 | `(order_id, product_id)` | - **Phạm vi:** Tập giao dịch của 131.209 đơn `train`, tách biệt hoàn toàn và **không nạp vào pipeline huấn luyện Prior**.<br>- Cấu trúc 4 cột giống hệt `order_products__prior.csv`. |
+| **`products.csv`** | Danh mục sản phẩm | **49.688** | 4 | `product_id` | - **Phạm vi:** Dùng trong Spark Broadcast Join & MongoDB `products`.<br>- `product_id` (int), `product_name` (str), `aisle_id` (int), `department_id` (int). |
+| **`aisles.csv`** | Quầy hàng chi tiết | **134** | 2 | `aisle_id` | - **Phạm vi:** Dùng khi chuẩn hóa danh mục `products` trong MongoDB.<br>- `aisle_id` (int), `aisle` (str). |
+| **`departments.csv`** | Ngành hàng lớn | **21** | 2 | `department_id` | - **Phạm vi:** Dùng khi chuẩn hóa danh mục `products` trong MongoDB.<br>- `department_id` (int), `department` (str). |
 
 ---
 
@@ -170,7 +172,7 @@ $$\text{Giỏ hàng } T_k (\ge 2 \text{ món}) \xrightarrow{\text{Pha 1: Cây FP
 ### 6.4. Cảnh Báo Phương Pháp Luận: Tương Quan Không Phải Nhân Quả (Correlation $\neq$ Causation)
 > [!WARNING]
 > **Độ nâng Lift phản ánh sự phụ thuộc tương quan đồng thời (Co-occurrence correlation), tuyệt đối KHÔNG PHẢI quan hệ nhân quả (Causation):**
-> * Việc $\text{Lift}(\text{Limes} \rightarrow \text{Large Lemon}) = 3.91$ **không đồng nghĩa** với việc *"Mua Limes là nguyên nhân khiến khách mua Large Lemon"*.
+> * Việc $\text{Lift}(\text{Limes} \rightarrow \text{Large Lemon}) = 2.82$ (hoặc $\text{Lift}(\text{Limes} \rightarrow \text{Organic Cilantro}) = 3.91$) **không đồng nghĩa** với việc *"Mua Limes là nguyên nhân khiến khách mua Large Lemon"*.
 > * Cả hai sản phẩm cùng xuất hiện trong giỏ hàng có thể do **yếu tố gây nhiễu chung (Confounding Factor)**: chẳng hạn như nhu cầu làm tiệc nướng, pha nước cocktail hoặc nấu món hải sản.
 > * Khai phá luật kết hợp là mô hình quan sát hành vi (Observational Mining). Để khẳng định quan hệ nhân quả có thể can thiệp kinh doanh, hệ thống bán lẻ bắt buộc phải thực hiện **Thử nghiệm A/B Testing ngẫu nhiên (Randomized Controlled Trials)**.
 
@@ -275,14 +277,14 @@ Truy cập giao diện tại: `http://localhost:8501`.
 | STT | Tiêu chí nghiệm thu theo Mục 10 | Trạng thái | Minh chứng cụ thể trong dự án |
 | :---: | :--- | :---: | :--- |
 | **1** | Sơ đồ kiến trúc, luồng dữ liệu & mô hình MongoDB | **ĐẠT** | Mục 2 & 5 trong README; Collections có Index B-Tree & Multikey trong MongoDB `instacart_bigdata`. |
-| **2** | Dữ liệu gốc hợp lệ, mô tả các cột và cách tải | **ĐẠT** | Mục 4 trong README; Data Dictionary 5 tệp trong Phân hệ 2; Link tải Kaggle chính thức. |
-| **3** | Bảng chất lượng dữ liệu trước/sau ETL & mã Spark | **ĐẠT** | Phân hệ 2; đối soát 3.2M đơn; 10 giỏ hàng mẫu thực tế; loại bỏ 1.14M đơn (Apriori Pruning). |
-| **4** | Nhật ký stage, thời gian chạy Spark & Spark UI | **ĐẠT** | Phân hệ 3; phân biệt rõ 6 Bước nghiệp vụ vs 8 Stage Spark DAG; `logs/spark_execution_prod.log`; Spark UI cổng 4040; công bố Spark Local Mode. |
-| **5** | Frequent itemsets, association rules & giải thích | **ĐẠT** | Phân hệ 4 gồm 3 Tab: Tập phổ biến, Luật kết hợp, Phương pháp luận; ví dụ thật `Limes` → `Large Lemon`; công bố mẫu số $N = 2.066.543$ giỏ; cảnh báo tương quan $\neq$ nhân quả (Mục 6). |
-| **6** | Ít nhất 3 cấu hình tham số & bảng so sánh | **ĐẠT** | Phân hệ 6 (Tab 1); 5 cấu hình thử nghiệm `EXP-01` đến `EXP-05` trên 3.2M đơn. |
+| **2** | Dữ liệu gốc hợp lệ, mô tả các cột và cách tải | **ĐẠT** | Mục 4 trong README; Data Dictionary đủ 6 tệp CSV trong Phân hệ 2; Link tải Kaggle chính thức. |
+| **3** | Bảng chất lượng dữ liệu trước/sau ETL & mã Spark | **ĐẠT** | Phân hệ 2; đối soát 3.2M đơn; truy vết chuỗi đơn `order_id` 2..12; phân rã 1.148.331 đơn bị loại thành 3 nhóm độc lập. |
+| **4** | Nhật ký stage, thời gian chạy Spark & Spark UI | **ĐẠT** | Phân hệ 3; phân biệt rõ 6 Bước nghiệp vụ vs Stage Spark DAG; `logs/spark_execution_prod.log`; Spark UI cổng 4040; công bố Spark Local Mode. |
+| **5** | Frequent itemsets, association rules & giải thích | **ĐẠT** | Phân hệ 4 gồm 3 Tab: Tập phổ biến (350 tập), Luật kết hợp (102 luật), Phương pháp luận; ví dụ thật `Limes` → `Large Lemon`; công bố mẫu số $N = 2.066.543$ giỏ; cảnh báo tương quan $\neq$ nhân quả (Mục 6). |
+| **6** | Ít nhất 3 cấu hình tham số & bảng so sánh | **ĐẠT** | Phân hệ 6 (Tab 1); 5 cấu hình thử nghiệm `EXP-01` đến `EXP-05` đo thực tế trên tập 3.2M đơn. |
 | **7** | Gợi ý mua kèm có giải thích & fallback minh bạch | **ĐẠT** | Phân hệ 5; giải thích luật kích hoạt + fallback Top Popular có dán nhãn minh bạch. |
-| **8** | Đánh giá offline so với baseline & nhận xét | **ĐẠT** | Phân hệ 6 (Tab 2); Precision@K, Recall@K, HitRate@K, Coverage@K vs Baseline; nhận xét hạn chế. |
+| **8** | Đánh giá offline so với baseline & nhận xét | **ĐẠT** | Phân hệ 6 (Tab 2); Leave-k-out trên 1.000 giỏ từ `orders_prior` (1.000/1.000 giỏ hợp lệ $\ge 2$ món); Precision@K, Recall@K, HitRate@K, Coverage@K vs Baseline. |
 | **9** | Dashboard tương tác 6 phân hệ, số liệu thật | **ĐẠT** | Ứng dụng Streamlit `app/app.py` với 6 phân hệ chuyên sâu, dẫn dắt câu hỏi, số liệu nguồn thật. |
-| **10**| Benchmark truy vấn & hướng dẫn chạy lại | **ĐẠT** | Phân hệ 6 (Tab 3); `explain("executionStats")` IXSCAN (<1ms) vs COLLSCAN (~2.48s); Hướng dẫn chạy lại 7 bước Mục 7. |
+| **10**| Benchmark truy vấn & hướng dẫn chạy lại | **ĐẠT** | Phân hệ 6 (Tab 3); đối chiếu 2 tình huống truy vấn thực tế: `order_id` có B-Tree Index IXSCAN (<1ms) vs `items_count` không Index COLLSCAN (~2.28s); Hướng dẫn chạy lại 7 bước Mục 7. |
 | **11**| Test cơ bản, requirements, README, .env.example | **ĐẠT** | Thư mục `tests/` (12 tests PASS), `requirements.txt` (có `pyspark>=3.5.0`), `.env.example`, `run_app.bat`. |
 | **12**| Kịch bản demo và câu hỏi phản biện Hội đồng | **ĐẠT** | Thao tác demo trực tiếp 6 phân hệ trên Web App và bộ câu hỏi phản biện trong Báo cáo Đồ án. |

@@ -9,25 +9,27 @@
       "items_count": 99999
     },
     "without_index_collscan": {
-      "stage": "COLLSCAN (Quét toàn bộ collection)",
+      "stage": "COLLSCAN (Quét tuần tự toàn bộ collection)",
+      "query_condition": "{\"items_count\": 99999} (Trường không đánh chỉ mục)",
+      "total_keys_examined": 0,
       "total_docs_examined": 2066543,
-      "execution_time_millis": 2283,
-      "driver_measured_latency_ms": 2284.1,
+      "execution_time_millis": 2006,
+      "driver_measured_latency_ms": 2007.02,
       "docs_returned": 0
     },
     "with_btree_index_ixscan": {
       "stage": "FETCH -> IXSCAN",
+      "query_condition": "{\"order_id\": 2} (Trường có chỉ mục đơn order_id_1)",
       "index_name": "order_id_1",
       "total_keys_examined": 1,
       "total_docs_examined": 1,
-      "execution_time_millis": 6,
-      "driver_measured_latency_ms": 7.1,
+      "execution_time_millis": 2,
+      "driver_measured_latency_ms": 3.72,
       "docs_returned": 1
     },
-    "performance_gain": {
-      "speedup_factor": "380.5x",
-      "latency_reduction_percent": "99.74%",
-      "conclusion": "Chỉ mục B-Tree order_id_1 giúp định vị trực tiếp bản ghi qua cây chỉ mục, giảm 99.74% thời gian đáp ứng (từ ~2283ms xuống 6ms)."
+    "comparison_summary": {
+      "methodology_note": "Hai phép đo được thực hiện trên hai tình huống điều kiện truy vấn khác nhau nhằm minh họa cơ chế thực thi vật lý của MongoDB (quét cạn COLLSCAN O(N) khi thiếu chỉ mục so với duyệt cây B-Tree IXSCAN O(log N) khi truy vấn theo trường đã lập chỉ mục). Không tính hệ số tăng tốc gộp từ hai điều kiện tìm kiếm khác nhau.",
+      "conclusion": "Truy vấn theo trường chưa lập chỉ mục (items_count) phải quét toàn bộ 2,066,543 tài liệu mất 2,006 ms, trong khi truy vấn định vị theo trường có chỉ mục B-Tree (order_id_1) chỉ kiểm tra đúng 1 khóa và 1 tài liệu với thời gian 2 ms tại Engine (3.72 ms tại Driver)."
     }
   },
   "serving_layer_rule_benchmark": {
@@ -39,6 +41,6 @@
     "winning_stage": "FETCH",
     "index_used": "antecedent_1",
     "in_memory_rule_engine_latency_ms": 0.25,
-    "architecture_note": "Đối với ứng dụng gợi ý mua kèm thời gian thực, Streamlit nạp 102 luật vào RAM (@st.cache_data) và so khớp tập hợp set.issubset() trong 0.25 ms, hoàn toàn độc lập với chi phí mạng của cơ sở dữ liệu."
+    "architecture_note": "Đối với ứng dụng gợi ý mua kèm thời gian thực, Streamlit nạp 102 luật vào RAM (@st.cache_data) và so khớp tập hợp set.issubset() trong khoảng 0.25 ms, không phát sinh truy vấn mạng tới MongoDB cho từng thao tác chọn giỏ hàng."
   }
 }

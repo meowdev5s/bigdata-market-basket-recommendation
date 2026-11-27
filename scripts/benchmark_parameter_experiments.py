@@ -34,7 +34,7 @@ def run_parameter_matrix_benchmark():
     t_spark_init = time.time()
     spark = SparkSession.builder \
         .appName("Benchmark_Parameter_Matrix_Instacart") \
-        .master("local[4]") \
+        .master("local[*]") \
         .config("spark.driver.memory", "4g") \
         .config("spark.driver.extraJavaOptions", "-XX:+UseG1GC") \
         .getOrCreate()
@@ -147,8 +147,16 @@ def run_parameter_matrix_benchmark():
         # Tổng thời gian pipeline tương ứng = thời gian chuẩn bị dữ liệu + thời gian huấn luyện
         total_time = round(duration_prep + fit_duration, 2)
         if "EXP-03*" in cid:
-            # Ghi nhận tổng thời gian E2E thực tế có bao gồm lưu trữ MongoDB
-            total_time = 923.27
+            # Đọc động tổng thời gian E2E thực tế (có bao gồm nạp 2.06M giỏ vào MongoDB) từ pipeline_runs.json
+            runs_path = os.path.join(EXPORT_DIR, "pipeline_runs.json")
+            if os.path.exists(runs_path):
+                try:
+                    with open(runs_path, "r", encoding="utf-8") as rf:
+                        runs_list = json.load(rf)
+                        if runs_list and "total_duration_seconds" in runs_list[0]:
+                            total_time = float(runs_list[0]["total_duration_seconds"])
+                except Exception:
+                    pass
             
         print(f"       Kết quả đo: Thời gian={fit_duration:.2f}s | Itemsets={itemsets_count} | Rules={rules_count} | Max Lift={max_lift} | Avg Conf={avg_conf}")
         

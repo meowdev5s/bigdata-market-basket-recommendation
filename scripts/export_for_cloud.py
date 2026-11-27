@@ -6,41 +6,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXPORT_DIR = os.path.join(BASE_DIR, "app", "data")
 os.makedirs(EXPORT_DIR, exist_ok=True)
 
-client = MongoClient("mongodb://localhost:27017/", serverSelectionTimeoutMS=2000)
-db = client["instacart_bigdata"]
+MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
+DB_NAME = os.getenv("DB_NAME", "instacart_bigdata")
 
-# 1. Export recommendation rules
-rules = list(db.recommendation_rules.find({}, {"_id": 0}))
-with open(os.path.join(EXPORT_DIR, "recommendation_rules.json"), "w", encoding="utf-8") as f:
-    json.dump(rules, f, ensure_ascii=False, indent=2)
-print(f"Exported {len(rules)} recommendation rules to app/data/")
+client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=2000)
+db = client[DB_NAME]
 
-# 2. Export dashboard aggregation metrics
-top_products = list(db.orders.aggregate([
-    {"$unwind": "$items"},
-    {"$group": {"_id": "$items", "total_sales": {"$sum": 1}}},
-    {"$sort": {"total_sales": -1}},
-    {"$limit": 15}
-]))
+# 1. Export recommendation rules from official Prior collection (3.2M scale)
+rules = list(db["recommendation_rules_prior"].find({}, {"_id": 0}))
+for fname in ["recommendation_rules_prior.json", "recommendation_rules.json"]:
+    with open(os.path.join(EXPORT_DIR, fname), "w", encoding="utf-8") as f:
+        json.dump(rules, f, ensure_ascii=False, indent=2)
+print(f"[+] Exported {len(rules)} recommendation rules to app/data/ (prior & default)")
 
-hourly_data = list(db.orders.aggregate([
-    {"$group": {"_id": "$order_hour_of_day", "orders_count": {"$sum": 1}}},
-    {"$sort": {"_id": 1}}
-]))
-
-heat_data = list(db.orders.aggregate([
-    {"$group": {"_id": {"dow": "$order_dow", "hour": "$order_hour_of_day"}, "count": {"$sum": 1}}}
-]))
-
-summary = {
-    "total_orders": db.orders.count_documents({}),
-    "total_products": db.products.count_documents({}),
-    "total_rules": len(rules),
-    "top_products": top_products,
-    "hourly_data": hourly_data,
-    "heat_data": heat_data
-}
-
-with open(os.path.join(EXPORT_DIR, "dashboard_cache.json"), "w", encoding="utf-8") as f:
-    json.dump(summary, f, ensure_ascii=False, indent=2)
-print("Exported dashboard cache to app/data/dashboard_cache.json successfully!")
+# 2. Export dashboard cache from official Prior collection
+cache_doc = db["dashboard_cache_prior"].find_one({}, {"_id": 0})
+if cache_doc:
+    for fname in ["dashboard_cache_prior.json", "dashboard_cache.json"]:
+        with open(os.path.join(EXPORT_DIR, fname), "w", encoding="utf-8") as f:
+            json.dump(cache_doc, f, ensure_ascii=False, indent=2)
+    print("[+] Exported dashboard cache to app/data/dashboard_cache_prior.json & dashboard_cache.json successfully!")
